@@ -270,7 +270,7 @@ export function AiGeneratorPanel({
         </div>
 
         {uploadedFileName ? (
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-primary-soft dark:bg-primary/15 border border-primary/30 dark:border-primary/30 text-xs font-semibold text-primary dark:text-primary">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-900 text-xs font-semibold text-blue-700 dark:text-blue-300">
             <FileCheck className="w-3.5 h-3.5" />
             <span>{uploadedFileName}</span>
             <span className="text-[11px] opacity-70">({uploadedFileSize})</span>
@@ -314,7 +314,7 @@ export function AiGeneratorPanel({
           value={studyMaterial}
           onChange={e => setStudyMaterial(e.target.value)}
           placeholder="Paste the chapter, notes or syllabus text the questions should come from."
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-800 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-primary"
+          className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-800 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
       </div>
 
@@ -375,7 +375,7 @@ export function AiGeneratorPanel({
               type="checkbox"
               checked={selectedTypes.mcq}
               onChange={e => setSelectedTypes(prev => ({ ...prev, mcq: e.target.checked }))}
-              className="w-4 h-4 accent-primary rounded"
+              className="w-4 h-4 accent-blue-600 rounded"
             />
             <span>Multiple choice</span>
           </label>
@@ -385,7 +385,7 @@ export function AiGeneratorPanel({
               type="checkbox"
               checked={selectedTypes.multi_select}
               onChange={e => setSelectedTypes(prev => ({ ...prev, multi_select: e.target.checked }))}
-              className="w-4 h-4 accent-primary rounded"
+              className="w-4 h-4 accent-blue-600 rounded"
             />
             <span>Multiple correct</span>
           </label>
@@ -395,7 +395,7 @@ export function AiGeneratorPanel({
               type="checkbox"
               checked={selectedTypes.true_false}
               onChange={e => setSelectedTypes(prev => ({ ...prev, true_false: e.target.checked }))}
-              className="w-4 h-4 accent-primary rounded"
+              className="w-4 h-4 accent-blue-600 rounded"
             />
             <span>True / False</span>
           </label>
@@ -405,7 +405,7 @@ export function AiGeneratorPanel({
               type="checkbox"
               checked={selectedTypes.fill_blank}
               onChange={e => setSelectedTypes(prev => ({ ...prev, fill_blank: e.target.checked }))}
-              className="w-4 h-4 accent-primary rounded"
+              className="w-4 h-4 accent-blue-600 rounded"
             />
             <span>Fill in the blank</span>
           </label>
@@ -415,7 +415,7 @@ export function AiGeneratorPanel({
               type="checkbox"
               checked={selectedTypes.short_answer}
               onChange={e => setSelectedTypes(prev => ({ ...prev, short_answer: e.target.checked }))}
-              className="w-4 h-4 accent-primary rounded"
+              className="w-4 h-4 accent-blue-600 rounded"
             />
             <span>Short answer</span>
           </label>
@@ -425,7 +425,7 @@ export function AiGeneratorPanel({
               type="checkbox"
               checked={selectedTypes.essay}
               onChange={e => setSelectedTypes(prev => ({ ...prev, essay: e.target.checked }))}
-              className="w-4 h-4 accent-primary rounded"
+              className="w-4 h-4 accent-blue-600 rounded"
             />
             <span>Essay</span>
           </label>
@@ -439,7 +439,7 @@ export function AiGeneratorPanel({
             type="checkbox"
             checked={includeExplanations}
             onChange={e => setIncludeExplanations(e.target.checked)}
-            className="w-4 h-4 accent-primary rounded"
+            className="w-4 h-4 accent-blue-600 rounded"
           />
           <span>Include answer explanations</span>
         </label>
@@ -450,7 +450,7 @@ export function AiGeneratorPanel({
         type="button"
         disabled={isGenerating}
         onClick={handleGenerate}
-        className="btn-lg btn-primary w-full disabled:opacity-50"
+        className="w-full py-3 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-xs transition-colors cursor-pointer disabled:opacity-50"
       >
         <Sparkles className="w-4 h-4" />
         <span>{isGenerating ? generatingProgress || 'Generating...' : `Generate ${questionCount} questions`}</span>
@@ -493,7 +493,7 @@ export function AiGeneratorPanel({
                       <span className="w-6 h-6 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold flex items-center justify-center">
                         {idx + 1}
                       </span>
-                      <span className="px-2 py-0.5 rounded-md bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary font-mono text-[10px] font-semibold uppercase">
+                      <span className="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 font-mono text-[10px] font-semibold uppercase">
                         {q.type.replace('_', ' ')}
                       </span>
                       <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold capitalize">
@@ -513,7 +513,7 @@ export function AiGeneratorPanel({
                         title="Regenerate this specific question"
                         className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-medium cursor-pointer transition-colors disabled:opacity-50"
                       >
-                        <RotateCw className={`w-3.5 h-3.5 ${isItemRegenerating ? 'animate-spin text-primary' : ''}`} />
+                        <RotateCw className={`w-3.5 h-3.5 ${isItemRegenerating ? 'animate-spin text-blue-600' : ''}`} />
                         <span>Regenerate</span>
                       </button>
 

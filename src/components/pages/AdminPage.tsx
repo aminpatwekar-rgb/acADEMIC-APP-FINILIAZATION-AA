@@ -283,7 +283,7 @@ export function AdminPage() {
           <button
             type="button"
             onClick={() => setIsAddUserOpen(true)}
-            className="btn-sm btn-primary"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
           >
             <UserPlus className="w-4 h-4" />
             <span>Provision User</span>
@@ -326,7 +326,7 @@ export function AdminPage() {
         <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-[11px] text-slate-500 font-semibold uppercase">Total Users</span>
-            <Users className="w-4 h-4 text-primary" />
+            <Users className="w-4 h-4 text-blue-500" />
           </div>
           <div className="text-2xl font-bold text-slate-900 dark:text-white mt-2">
             {users.length}
@@ -384,7 +384,7 @@ export function AdminPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search user by name or email..."
-              className="w-full pl-8.5 pr-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 text-xs bg-slate-50/50 dark:bg-slate-950 focus:bg-white dark:focus:bg-slate-900 outline-hidden focus:border-primary"
+              className="w-full pl-8.5 pr-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 text-xs bg-slate-50/50 dark:bg-slate-950 focus:bg-white dark:focus:bg-slate-900 outline-hidden focus:border-[#005fb8]"
             />
           </div>
 
@@ -438,7 +438,7 @@ export function AdminPage() {
                     <tr key={u.uid} className="hover:bg-slate-50 dark:hover:bg-slate-800/40">
                       <td className="p-3.5 pl-5">
                         <div className="flex items-center gap-2.5">
-                          <div className="w-7 h-7 rounded-full bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary font-bold text-[10px] flex items-center justify-center shrink-0">
+                          <div className="w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold text-[10px] flex items-center justify-center shrink-0">
                             {u.displayName ? u.displayName.slice(0, 2).toUpperCase() : 'OX'}
                           </div>
                           <div>
@@ -466,10 +466,10 @@ export function AdminPage() {
                           u.role === 'admin'
                             ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300/40'
                             : u.role === 'teacher'
-                            ? 'bg-primary-soft dark:bg-primary/15 text-primary-strong dark:text-primary dark:text-primary border border-primary/40'
+                            ? 'bg-blue-100 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 border border-blue-300/40'
                             : 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-300/40'
                         }`}>
-                          <span className={`w-1.5 h-1.5 rounded-full ${u.role === 'admin' ? 'bg-amber-500' : u.role === 'teacher' ? 'bg-primary' : 'bg-emerald-500'}`} />
+                          <span className={`w-1.5 h-1.5 rounded-full ${u.role === 'admin' ? 'bg-amber-500' : u.role === 'teacher' ? 'bg-blue-500' : 'bg-emerald-500'}`} />
                           {u.role}
                         </span>
                       </td>
@@ -558,14 +558,14 @@ export function AdminPage() {
           <div className="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xl space-y-4 animate-in zoom-in-95 duration-100">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
               <h3 id="provision-user-title" className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <UserPlus className="w-4 h-4 text-primary dark:text-primary" aria-hidden="true" />
+                <UserPlus className="w-4 h-4 text-[#005fb8] dark:text-blue-400" aria-hidden="true" />
                 <span>Provision Institutional User</span>
               </h3>
               <button
                 type="button"
                 onClick={() => setIsAddUserOpen(false)}
                 aria-label="Close dialog"
-                className="p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                className="p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -583,7 +583,7 @@ export function AdminPage() {
                   value={newUserName}
                   onChange={(e) => setNewUserName(e.target.value)}
                   placeholder="e.g. Dr. Ada Lovelace"
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -598,7 +598,7 @@ export function AdminPage() {
                   value={newUserEmail}
                   onChange={(e) => setNewUserEmail(e.target.value)}
                   placeholder="e.g. alovelace@university.edu"
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -611,7 +611,7 @@ export function AdminPage() {
                     id="new-user-role"
                     value={newUserRole}
                     onChange={(e) => setNewUserRole(e.target.value as UserRole)}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="student">Student</option>
                     <option value="teacher">Teacher</option>
@@ -629,7 +629,7 @@ export function AdminPage() {
                     value={newUserInstitution}
                     onChange={(e) => setNewUserInstitution(e.target.value)}
                     placeholder="ONYX Academy"
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
@@ -638,14 +638,14 @@ export function AdminPage() {
                 <button
                   type="button"
                   onClick={() => setIsAddUserOpen(false)}
-                  className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                  className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isCreatingUser}
-                  className="btn-sm btn-primary disabled:opacity-50"
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs disabled:opacity-50 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
                 >
                   {isCreatingUser ? 'Provisioning...' : 'Provision User'}
                 </button>
@@ -686,7 +686,7 @@ export function AdminPage() {
               <button
                 type="button"
                 onClick={() => setDeleteConfirmUser(null)}
-                className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
               >
                 Cancel
               </button>

@@ -100,7 +100,7 @@ export function OwnershipTransferModal({
               <select
                 value={selectedTeacherId}
                 onChange={e => setSelectedTeacherId(e.target.value)}
-                className="w-full px-3 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer"
+                className="w-full px-3 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer"
               >
                 {eligibleFaculty.map(teacher => (
                   <option key={teacher.uid} value={teacher.uid}>
@@ -118,7 +118,7 @@ export function OwnershipTransferModal({
                 type="checkbox"
                 checked={confirmedChecked}
                 onChange={e => setConfirmedChecked(e.target.checked)}
-                className="rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary mt-0.5 cursor-pointer"
+                className="rounded border-slate-300 dark:border-slate-700 text-blue-600 focus:ring-blue-500 mt-0.5 cursor-pointer"
               />
               <span className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">
                 I confirm that primary authority over grades, announcements, and submissions for this section will be transferred to <span className="font-semibold text-slate-900 dark:text-white">{newTeacher.displayName}</span>.

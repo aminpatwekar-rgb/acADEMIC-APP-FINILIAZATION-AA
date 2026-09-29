@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User as FirebaseUser } from 'firebase/auth';
-import { isBootstrapAdminEmail } from '../lib/config';
 import {
   OnyxUser,
   UserRole,
@@ -163,7 +162,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const clearError = () => setError(null);
 
-  const emailVerified = user ? (user.emailVerified || isBootstrapAdminEmail(user.email)) : false;
+  const emailVerified = user ? (user.emailVerified || user.email === 'merwynd12@gmail.com' || user.email === 'aminpatwekar@gmail.com') : false;
 
   return (
     <AuthContext.Provider value={{

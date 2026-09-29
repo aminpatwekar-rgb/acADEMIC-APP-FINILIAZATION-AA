@@ -374,7 +374,7 @@ export function QuizEditorModal({
         {/* Modal Header */}
         <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-950">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-primary text-white flex items-center justify-center font-bold">
+            <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
               <FileQuestion className="w-5 h-5" />
             </div>
             <div>
@@ -445,7 +445,7 @@ export function QuizEditorModal({
                 value={title}
                 onChange={e => setTitle(e.target.value)}
                 placeholder="e.g. Midterm Examination: Graph Algorithms"
-                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white font-medium focus:ring-1 focus:ring-primary"
+                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white font-medium focus:ring-1 focus:ring-blue-500"
               />
             </div>
 
@@ -491,7 +491,7 @@ export function QuizEditorModal({
                   <span className="font-bold text-slate-900 dark:text-white">
                     Questions Pool ({questions.length})
                   </span>
-                  <span className="px-2 py-0.5 rounded-md bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary font-mono font-bold">
+                  <span className="px-2 py-0.5 rounded-md bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-mono font-bold">
                     Total: {totalCalculatedPoints} Points
                   </span>
                 </div>
@@ -501,42 +501,42 @@ export function QuizEditorModal({
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('mcq')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-primary cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + MCQ
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('multi_select')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-primary cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + Multi-Select
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('true_false')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-primary cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + True/False
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('fill_blank')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-primary cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + Fill Blank
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('short_answer')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-primary cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + Short Answer
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('essay')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-primary cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + Essay
                   </button>
@@ -677,7 +677,7 @@ export function QuizEditorModal({
                           <button
                             type="button"
                             onClick={() => handleAddOption(qIdx)}
-                            className="text-primary dark:text-primary font-semibold flex items-center gap-1 cursor-pointer"
+                            className="text-blue-600 dark:text-blue-400 font-semibold flex items-center gap-1 cursor-pointer"
                           >
                             <Plus className="w-3 h-3" /> Add Choice
                           </button>
@@ -737,7 +737,7 @@ export function QuizEditorModal({
                           <button
                             type="button"
                             onClick={() => handleAddOption(qIdx)}
-                            className="text-primary dark:text-primary font-semibold flex items-center gap-1 cursor-pointer"
+                            className="text-blue-600 dark:text-blue-400 font-semibold flex items-center gap-1 cursor-pointer"
                           >
                             <Plus className="w-3 h-3" /> Add Choice
                           </button>
@@ -846,7 +846,7 @@ export function QuizEditorModal({
                           <button
                             type="button"
                             onClick={() => handleAddAcceptedAnswer(qIdx)}
-                            className="text-primary dark:text-primary font-semibold flex items-center gap-1 cursor-pointer"
+                            className="text-blue-600 dark:text-blue-400 font-semibold flex items-center gap-1 cursor-pointer"
                           >
                             <Plus className="w-3 h-3" /> Add Accepted Synonym
                           </button>
@@ -920,7 +920,7 @@ export function QuizEditorModal({
               {/* Timing & Attempts Section */}
               <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 space-y-4">
                 <div className="flex items-center gap-2 font-bold text-sm text-slate-900 dark:text-white">
-                  <Clock className="w-4 h-4 text-primary dark:text-primary" />
+                  <Clock className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                   <span>Duration & Attempt Limits</span>
                 </div>
 
@@ -974,7 +974,7 @@ export function QuizEditorModal({
                       type="checkbox"
                       checked={hasScheduling}
                       onChange={e => setHasScheduling(e.target.checked)}
-                      className="w-4 h-4 text-primary accent-primary rounded cursor-pointer"
+                      className="w-4 h-4 text-blue-600 accent-blue-600 rounded cursor-pointer"
                     />
                   </div>
 
@@ -1159,7 +1159,7 @@ export function QuizEditorModal({
               <button
                 type="submit"
                 disabled={isSubmitting || classes.length === 0}
-                className="btn-md btn-primary disabled:opacity-50"
+                className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white font-semibold shadow-xs cursor-pointer disabled:opacity-50"
               >
                 <Check className="w-4 h-4" />
                 <span>{isSubmitting ? 'Saving Assessment...' : initialQuiz ? 'Update Assessment' : 'Publish Assessment'}</span>

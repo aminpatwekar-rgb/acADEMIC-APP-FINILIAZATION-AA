@@ -1,5 +1,8 @@
-# Dependencies
 node_modules/
-
-# Lock files (optional, but often ignored if not using specific lockfile workflows)
-package-lock.json
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example

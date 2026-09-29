@@ -788,7 +788,7 @@ export function AssignmentsPage() {
         );
       default:
         return (
-          <span className="flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary">
+          <span className="flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-300">
             <span>Medium Priority</span>
           </span>
         );
@@ -813,7 +813,7 @@ export function AssignmentsPage() {
         );
       case 'Submitted':
         return (
-          <span className="flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary">
+          <span className="flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
             <CheckCircle className="w-3 h-3" />
             <span>Submitted</span>
           </span>
@@ -862,7 +862,7 @@ export function AssignmentsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-primary dark:text-primary mb-1">
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#005fb8] dark:text-blue-400 mb-1">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Coursework Management</span>
           </div>
@@ -890,7 +890,7 @@ export function AssignmentsPage() {
             <button
               type="button"
               onClick={handleOpenCreateModal}
-              className="flex items-center gap-1.5 btn-sm btn-primary"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Create Assignment</span>
@@ -960,7 +960,7 @@ export function AssignmentsPage() {
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               placeholder="Search assignments by title, course code, or subject..."
-              className="w-full pl-9 pr-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-primary shadow-xs"
+              className="w-full pl-9 pr-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs"
             />
           </div>
 
@@ -969,7 +969,7 @@ export function AssignmentsPage() {
             <select
               value={selectedClassFilter}
               onChange={e => setSelectedClassFilter(e.target.value)}
-              className="px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary shadow-xs cursor-pointer"
+              className="px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs cursor-pointer"
             >
               <option value="All">All Courses</option>
               {classes.map(c => (
@@ -1147,7 +1147,7 @@ export function AssignmentsPage() {
                       title={asg.status === 'archived' ? 'Restore assignment' : 'Archive assignment'}
                     >
                       {asg.status === 'archived' ? (
-                        <ArchiveRestore className="w-3.5 h-3.5 text-primary" />
+                        <ArchiveRestore className="w-3.5 h-3.5 text-blue-500" />
                       ) : (
                         <Archive className="w-3.5 h-3.5" />
                       )}
@@ -1174,7 +1174,7 @@ export function AssignmentsPage() {
                           setImprovementNotesInput(firstSub.improvementNotes || '');
                         }
                       }}
-                      className="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary border border-primary/30 dark:border-primary/30 text-xs font-semibold hover:bg-primary-soft transition-colors cursor-pointer"
+                      className="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-300 border border-blue-200 dark:border-blue-900 text-xs font-semibold hover:bg-blue-100 transition-colors cursor-pointer"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>Review & Grade ({asg.allSubmissions.length})</span>
@@ -1185,7 +1185,7 @@ export function AssignmentsPage() {
                   <button
                     type="button"
                     onClick={() => handleOpenWorkspace(asg)}
-                    className="flex items-center gap-1.5 btn-sm btn-primary"
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
                   >
                     <span>
                       {asg.studentStatus === 'Not Started'
@@ -1231,7 +1231,7 @@ export function AssignmentsPage() {
                 <button
                   type="button"
                   onClick={handleOpenCreateModal}
-                  className="inline-flex items-center gap-1.5 btn-sm btn-primary"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Create Your First Assignment</span>
@@ -1249,7 +1249,7 @@ export function AssignmentsPage() {
             {/* Top Bar */}
             <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/60 dark:bg-slate-950/60">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-xs shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0">
                   {activeWorkspaceAssignment.classCode || 'OX'}
                 </div>
                 <div>
@@ -1284,7 +1284,7 @@ export function AssignmentsPage() {
                       onClick={() => setWorkspaceMode('handwritten')}
                       className={`flex items-center gap-1 px-3 py-1 rounded-md font-medium transition-colors cursor-pointer ${
                         workspaceMode === 'handwritten'
-                          ? 'bg-primary text-white shadow-xs'
+                          ? 'bg-blue-600 text-white shadow-xs'
                           : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
                       }`}
                     >
@@ -1362,7 +1362,7 @@ export function AssignmentsPage() {
                         onClick={() => handleSaveDraft('typed', typedText)}
                         className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer"
                       >
-                        <Save className="w-3.5 h-3.5 text-primary" />
+                        <Save className="w-3.5 h-3.5 text-blue-500" />
                         <span>Save Draft (In Progress)</span>
                       </button>
 
@@ -1370,7 +1370,7 @@ export function AssignmentsPage() {
                         type="button"
                         disabled={submitting || !typedText.trim()}
                         onClick={() => handleFinalSubmit('typed', typedText)}
-                        className="btn-md btn-primary disabled:opacity-50"
+                        className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs cursor-pointer disabled:opacity-50"
                       >
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         <span>Final Submission</span>
@@ -1391,7 +1391,7 @@ export function AssignmentsPage() {
             {/* Header */}
             <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-950">
               <div>
-                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary">
+                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
                   {activeTeacherGradingAssignment.classCode || 'Course'}
                 </span>
                 <h3 className="text-base font-bold text-slate-900 dark:text-white mt-1">
@@ -1445,7 +1445,7 @@ export function AssignmentsPage() {
                           }}
                           className={`w-full text-left p-3 rounded-xl border text-xs transition-colors cursor-pointer ${
                             selectedSubmissionIdx === idx
-                              ? 'border-primary bg-primary-soft/50 dark:bg-primary/15 text-primary-strong dark:text-primary dark:text-primary'
+                              ? 'border-blue-500 bg-blue-50/50 dark:bg-blue-950/40 text-blue-900 dark:text-blue-300'
                               : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'
                           }`}
                         >
@@ -1696,7 +1696,7 @@ export function AssignmentsPage() {
                   value={formTitle}
                   onChange={e => setFormTitle(e.target.value)}
                   placeholder="e.g. Problem Set 3: Recurrence Induction & Master Theorem"
-                  className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary"
+                  className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
               </div>
 
@@ -1838,7 +1838,7 @@ export function AssignmentsPage() {
                       type="checkbox"
                       checked={formAllowImages}
                       onChange={e => setFormAllowImages(e.target.checked)}
-                      className="rounded text-primary"
+                      className="rounded text-blue-600"
                     />
                     <span>Allow Figures / Images</span>
                   </label>
@@ -1848,7 +1848,7 @@ export function AssignmentsPage() {
                       type="checkbox"
                       checked={formAllowAutocorrect}
                       onChange={e => setFormAllowAutocorrect(e.target.checked)}
-                      className="rounded text-primary"
+                      className="rounded text-blue-600"
                     />
                     <span>Allow Autocorrect</span>
                   </label>
@@ -1858,7 +1858,7 @@ export function AssignmentsPage() {
                       type="checkbox"
                       checked={formAllowVoiceTyping}
                       onChange={e => setFormAllowVoiceTyping(e.target.checked)}
-                      className="rounded text-primary"
+                      className="rounded text-blue-600"
                     />
                     <span>Allow Voice Typing</span>
                   </label>
@@ -1876,7 +1876,7 @@ export function AssignmentsPage() {
                 <button
                   type="submit"
                   disabled={classes.length === 0}
-                  className="btn-sm btn-primary disabled:opacity-50"
+                  className="px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white font-semibold shadow-xs cursor-pointer disabled:opacity-50"
                 >
                   {editingAssignment ? 'Update Assignment' : 'Save Assignment'}
                 </button>
@@ -1997,7 +1997,7 @@ export function AssignmentsPage() {
                     <button
                       type="button"
                       onClick={handleSimulateQuickDraft}
-                      className="text-[11px] font-semibold text-primary dark:text-primary hover:underline flex items-center gap-1 cursor-pointer"
+                      className="text-[11px] font-semibold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 cursor-pointer"
                     >
                       <Play className="w-3 h-3" />
                       <span>Simulate Draft Save</span>
@@ -2008,7 +2008,7 @@ export function AssignmentsPage() {
                   <div className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 space-y-1.5">
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-slate-800 dark:text-slate-200">2. Student Submit</span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary font-bold">
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold">
                         Submitted
                       </span>
                     </div>
@@ -2061,7 +2061,7 @@ export function AssignmentsPage() {
                   <div className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 space-y-1.5">
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-slate-800 dark:text-slate-200">5. Grade & Feedback</span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary font-bold">
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold">
                         Scoring
                       </span>
                     </div>

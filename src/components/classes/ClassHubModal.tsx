@@ -544,7 +544,7 @@ export function ClassHubModal({
             onClick={() => setActiveTab('overview')}
             className={`py-3 px-3 border-b-2 transition-colors cursor-pointer ${
               activeTab === 'overview'
-                ? 'border-primary text-primary dark:border-primary dark:text-primary'
+                ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
                 : 'border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
@@ -555,7 +555,7 @@ export function ClassHubModal({
             onClick={() => setActiveTab('roster')}
             className={`py-3 px-3 border-b-2 transition-colors cursor-pointer flex items-center gap-1.5 ${
               activeTab === 'roster'
-                ? 'border-primary text-primary dark:border-primary dark:text-primary'
+                ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
                 : 'border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
@@ -569,7 +569,7 @@ export function ClassHubModal({
             onClick={() => setActiveTab('announcements')}
             className={`py-3 px-3 border-b-2 transition-colors cursor-pointer flex items-center gap-1.5 ${
               activeTab === 'announcements'
-                ? 'border-primary text-primary dark:border-primary dark:text-primary'
+                ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
                 : 'border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
@@ -583,7 +583,7 @@ export function ClassHubModal({
             onClick={() => setActiveTab('resources')}
             className={`py-3 px-3 border-b-2 transition-colors cursor-pointer flex items-center gap-1.5 ${
               activeTab === 'resources'
-                ? 'border-primary text-primary dark:border-primary dark:text-primary'
+                ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
                 : 'border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
@@ -597,7 +597,7 @@ export function ClassHubModal({
             onClick={() => setActiveTab('discussions')}
             className={`py-3 px-3 border-b-2 transition-colors cursor-pointer flex items-center gap-1.5 ${
               activeTab === 'discussions'
-                ? 'border-primary text-primary dark:border-primary dark:text-primary'
+                ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
                 : 'border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
@@ -612,7 +612,7 @@ export function ClassHubModal({
               onClick={() => setActiveTab('settings')}
               className={`py-3 px-3 border-b-2 transition-colors cursor-pointer ${
                 activeTab === 'settings'
-                  ? 'border-primary text-primary dark:border-primary dark:text-primary'
+                  ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
                   : 'border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -637,7 +637,7 @@ export function ClassHubModal({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-1.5 shadow-xs">
                   <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-primary" />
+                    <Clock className="w-3.5 h-3.5 text-blue-500" />
                     <span>Meeting Schedule</span>
                   </div>
                   <div className="font-bold text-slate-900 dark:text-white text-sm">{targetClass.schedule}</div>
@@ -646,7 +646,7 @@ export function ClassHubModal({
 
                 <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-1.5 shadow-xs">
                   <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
-                    <BookOpen className="w-3.5 h-3.5 text-primary" />
+                    <BookOpen className="w-3.5 h-3.5 text-blue-500" />
                     <span>Lecture Location</span>
                   </div>
                   <div className="font-bold text-slate-900 dark:text-white text-sm">{targetClass.room}</div>
@@ -695,14 +695,14 @@ export function ClassHubModal({
           {activeTab === 'roster' && (
             <div className="space-y-4">
               {/* Privacy Notice Banner */}
-              <div className="p-3.5 rounded-xl border border-primary/30 dark:border-primary/30/60 bg-primary-soft/60 dark:bg-primary/15 flex items-start justify-between gap-3 text-xs">
+              <div className="p-3.5 rounded-xl border border-blue-200 dark:border-blue-900/60 bg-blue-50/60 dark:bg-blue-950/30 flex items-start justify-between gap-3 text-xs">
                 <div className="flex items-start gap-2.5">
-                  <Shield className="w-4 h-4 text-primary dark:text-primary shrink-0 mt-0.5" />
+                  <Shield className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-primary-strong dark:text-primary dark:text-primary">
+                    <span className="font-bold text-blue-900 dark:text-blue-200">
                       {isStudent ? 'Student Privacy Shield Active' : 'Faculty Roster Management & Governance'}
                     </span>
-                    <p className="text-primary-strong dark:text-primary dark:text-primary text-[11px] mt-0.5">
+                    <p className="text-blue-800 dark:text-blue-300 text-[11px] mt-0.5">
                       {isStudent
                         ? 'Peer identifiers (Roll, ER, Sr numbers, and private contact emails) are masked to prevent identity tracking.'
                         : 'You have full access to student Roll, ER, and Sr numbers. CSV export is enabled for attendance audits.'}
@@ -714,7 +714,7 @@ export function ClassHubModal({
                   <button
                     type="button"
                     onClick={handleExportCSV}
-                    className="btn-sm btn-primary shrink-0"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs shrink-0 cursor-pointer shadow-xs"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Export CSV</span>
@@ -733,7 +733,7 @@ export function ClassHubModal({
                     setRosterPage(1);
                   }}
                   placeholder="Filter student by name or roll number..."
-                  className="w-full pl-9 pr-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary shadow-xs"
+                  className="w-full pl-9 pr-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs"
                 />
               </div>
 
@@ -787,7 +787,7 @@ export function ClassHubModal({
                             <div className="flex items-center gap-2">
                               <div className="w-16 h-1.5 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
                                 <div
-                                  className="h-full bg-primary rounded-full"
+                                  className="h-full bg-blue-600 rounded-full"
                                   style={{ width: `${student.progress}%` }}
                                 />
                               </div>
@@ -862,7 +862,7 @@ export function ClassHubModal({
                     <button
                       type="button"
                       onClick={() => setShowAnnComposer(true)}
-                      className="flex items-center gap-1.5 text-xs font-semibold text-primary dark:text-primary hover:underline cursor-pointer"
+                      className="flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
                     >
                       <Plus className="w-4 h-4" />
                       <span>Compose announcement for {targetClass.code}</span>
@@ -891,7 +891,7 @@ export function ClassHubModal({
                         value={annTitle}
                         onChange={e => setAnnTitle(e.target.value)}
                         placeholder="Announcement Subject..."
-                        className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white font-semibold focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white font-semibold focus:outline-none focus:ring-1 focus:ring-blue-500"
                       />
 
                       <textarea
@@ -900,7 +900,7 @@ export function ClassHubModal({
                         value={annContent}
                         onChange={e => setAnnContent(e.target.value)}
                         placeholder="Announcement content..."
-                        className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
                       />
 
                       {/* Attachment input */}
@@ -925,7 +925,7 @@ export function ClassHubModal({
                         </button>
                         <button
                           type="submit"
-                          className="px-4 py-1.5 rounded-xl bg-primary text-white font-semibold shadow-xs cursor-pointer"
+                          className="px-4 py-1.5 rounded-xl bg-[#005fb8] text-white font-semibold shadow-xs cursor-pointer"
                         >
                           Publish Announcement
                         </button>
@@ -945,7 +945,7 @@ export function ClassHubModal({
                     <div className="flex items-center justify-between text-[11px] text-slate-500">
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-slate-900 dark:text-white">{ann.authorName}</span>
-                        <span className="px-2 py-0.2 rounded-full bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary font-semibold text-[10px]">
+                        <span className="px-2 py-0.2 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-semibold text-[10px]">
                           Audience: {ann.targetAudience}
                         </span>
                       </div>
@@ -967,7 +967,7 @@ export function ClassHubModal({
                             key={idx}
                             className="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs"
                           >
-                            <Paperclip className="w-3.5 h-3.5 text-primary" />
+                            <Paperclip className="w-3.5 h-3.5 text-blue-500" />
                             <span className="font-semibold text-slate-800 dark:text-slate-200">{att.name}</span>
                             <span className="text-[10px] text-slate-400">({att.size})</span>
                           </div>
@@ -989,7 +989,7 @@ export function ClassHubModal({
                     <button
                       type="button"
                       onClick={() => setShowResComposer(true)}
-                      className="flex items-center gap-1.5 text-xs font-semibold text-primary dark:text-primary hover:underline cursor-pointer"
+                      className="flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
                     >
                       <Upload className="w-4 h-4" />
                       <span>Upload learning material or problem set solution</span>
@@ -1059,7 +1059,7 @@ export function ClassHubModal({
                         </button>
                         <button
                           type="submit"
-                          className="px-4 py-1.5 rounded-xl bg-primary text-white font-semibold shadow-xs cursor-pointer"
+                          className="px-4 py-1.5 rounded-xl bg-[#005fb8] text-white font-semibold shadow-xs cursor-pointer"
                         >
                           Save Material
                         </button>
@@ -1077,7 +1077,7 @@ export function ClassHubModal({
                     className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between shadow-xs hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary flex items-center justify-center font-bold text-xs shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs shrink-0">
                         <FileText className="w-5 h-5" />
                       </div>
                       <div>
@@ -1089,7 +1089,7 @@ export function ClassHubModal({
                           <span>•</span>
                           <span>{res.fileSize}</span>
                           <span>•</span>
-                          <span className="font-sans font-semibold text-primary dark:text-primary">{res.category}</span>
+                          <span className="font-sans font-semibold text-blue-600 dark:text-blue-400">{res.category}</span>
                         </div>
                       </div>
                     </div>
@@ -1136,7 +1136,7 @@ export function ClassHubModal({
                   <button
                     type="button"
                     onClick={() => setShowDiscComposer(true)}
-                    className="flex items-center gap-1.5 text-xs font-semibold text-primary dark:text-primary hover:underline cursor-pointer"
+                    className="flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>Ask a question or start a discussion</span>
@@ -1185,7 +1185,7 @@ export function ClassHubModal({
                       </button>
                       <button
                         type="submit"
-                        className="px-4 py-1.5 rounded-xl bg-primary text-white font-semibold shadow-xs cursor-pointer"
+                        className="px-4 py-1.5 rounded-xl bg-[#005fb8] text-white font-semibold shadow-xs cursor-pointer"
                       >
                         Post Discussion
                       </button>
@@ -1218,7 +1218,7 @@ export function ClassHubModal({
                             {post.authorRole}
                           </span>
                           <span className="text-slate-400">• {post.createdAt}</span>
-                          <span className="px-2 py-0.5 rounded-full bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary font-semibold text-[10px]">
+                          <span className="px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 font-semibold text-[10px]">
                             {post.tag}
                           </span>
                         </div>
@@ -1302,12 +1302,12 @@ export function ClassHubModal({
                               }
                             }}
                             placeholder="Write a constructive reply to this thread..."
-                            className="flex-1 px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary"
+                            className="flex-1 px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
                           />
                           <button
                             type="button"
                             onClick={() => handleReplyDiscussion(post.id)}
-                            className="btn-sm btn-primary shrink-0"
+                            className="px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs cursor-pointer shadow-xs shrink-0 flex items-center gap-1"
                           >
                             <Send className="w-3 h-3" />
                             <span>Reply</span>
@@ -1345,7 +1345,7 @@ export function ClassHubModal({
                   <button
                     type="button"
                     onClick={onOpenEditModal}
-                    className="btn-sm btn-primary"
+                    className="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold cursor-pointer shadow-xs"
                   >
                     Edit Class Details
                   </button>

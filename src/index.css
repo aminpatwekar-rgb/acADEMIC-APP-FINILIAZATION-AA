@@ -1,159 +1,68 @@
 @import "tailwindcss";
 
-/* =============================================================
-   ONYX DESIGN SYSTEM — single source of truth for color & depth
-   Tailwind v4 theme tokens: bg-primary / text-primary / etc.
-   resolve to these variables, so every surface stays in sync.
-   ============================================================= */
-@theme {
-  --color-background: #f6f8fb;
-  --color-foreground: #0f172a;
-  --color-card: #ffffff;
-  --color-primary: #2f5fe0;          /* confident indigo-blue */
-  --color-primary-soft: #eaf0fe;     /* tinted chips / active nav */
-  --color-primary-strong: #21489f;   /* hover / pressed */
-  --color-primary-foreground: #ffffff;
-  --color-secondary: #f1f5f9;
-  --color-muted: #f1f5f9;
-  --color-muted-foreground: #64748b;
-  --color-border: #e2e8f0;
-  --color-ring: #2f5fe0;
-
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-
-  --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 16px -4px rgb(15 23 42 / 0.07);
-  --shadow-lift: 0 2px 4px rgb(15 23 42 / 0.05), 0 12px 28px -8px rgb(47 95 224 / 0.18);
-
-  --radius-xl: 0.875rem;
-  --radius-2xl: 1.125rem;
-}
-
 @layer base {
   :root {
-    --background: 246 248 251;
+    --background: 248 249 251;
     --foreground: 15 23 42;
     --card: 255 255 255;
     --card-foreground: 15 23 42;
-    --primary: 47 95 224;
+    --primary: 217 119 6;
     --primary-foreground: 255 255 255;
     --secondary: 241 245 249;
     --secondary-foreground: 15 23 42;
     --muted: 241 245 249;
     --muted-foreground: 100 116 139;
-    --accent: 47 95 224;
+    --accent: 217 119 6;
     --accent-foreground: 255 255 255;
     --border: 226 232 240;
     --input: 226 232 240;
-    --ring: 47 95 224;
+    --ring: 217 119 6;
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 9 13 22;
+    --background: 11 15 25;
     --foreground: 248 250 252;
-    --card: 17 24 39;
+    --card: 18 24 38;
     --card-foreground: 248 250 252;
-    --primary: 129 161 255;
-    --primary-foreground: 11 17 32;
+    --primary: 245 158 11;
+    --primary-foreground: 15 23 42;
     --secondary: 30 41 59;
     --secondary-foreground: 248 250 252;
     --muted: 30 41 59;
     --muted-foreground: 148 163 184;
-    --accent: 129 161 255;
-    --accent-foreground: 11 17 32;
-    --border: 37 48 68;
-    --input: 37 48 68;
-    --ring: 129 161 255;
+    --accent: 245 158 11;
+    --accent-foreground: 15 23 42;
+    --border: 30 41 59;
+    --input: 30 41 59;
+    --ring: 245 158 11;
   }
 
-  html {
-    scroll-behavior: smooth;
+  /* Theme Presets */
+  body[data-theme="onyx"] {
+    --primary-color: #d97706;
+    --primary-hover: #b45309;
+    --sidebar-bg: #ffffff;
   }
-
-  body {
-    @apply antialiased;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  body[data-theme="midnight"] {
+    --primary-color: #0284c7;
+    --primary-hover: #0369a1;
   }
-
-  /* Theme presets keep working via the same token names */
-  body[data-theme="onyx"]     { --color-primary: #2f5fe0; --color-primary-strong: #21489f; }
-  body[data-theme="midnight"] { --color-primary: #0284c7; --color-primary-strong: #0369a1; }
-  body[data-theme="sunset"]   { --color-primary: #ea580c; --color-primary-strong: #c2410c; }
-  body[data-theme="forest"]   { --color-primary: #059669; --color-primary-strong: #047857; }
-  body[data-theme="ocean"]    { --color-primary: #0d9488; --color-primary-strong: #0f766e; }
-  body[data-theme="mono"]     { --color-primary: #18181b; --color-primary-strong: #27272a; }
-}
-
-/* =============================================================
-   COMPONENT LAYER — consistent buttons, cards, inputs, badges
-   ============================================================= */
-@layer components {
-  .btn-primary,
-  .btn-secondary,
-  .btn-ghost,
-  .btn-danger,
-  .btn-sm,
-  .btn-md,
-  .btn-lg {
-    @apply inline-flex items-center justify-center gap-1.5 rounded-xl font-semibold
-           transition-all duration-150 cursor-pointer select-none whitespace-nowrap
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60
-           focus-visible:ring-offset-2 focus-visible:ring-offset-white
-           dark:focus-visible:ring-offset-slate-950
-           disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98];
+  body[data-theme="sunset"] {
+    --primary-color: #ea580c;
+    --primary-hover: #c2410c;
   }
-  .btn-sm { @apply px-3.5 py-1.5 text-xs; }
-  .btn-md { @apply px-4 py-2 text-sm; }
-  .btn-lg { @apply px-6 py-2.5 text-sm; }
-
-  .btn-primary {
-    @apply bg-primary text-primary-foreground shadow-soft hover:bg-primary-strong;
+  body[data-theme="forest"] {
+    --primary-color: #059669;
+    --primary-hover: #047857;
   }
-  .btn-secondary {
-    @apply border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900
-           text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800;
+  body[data-theme="ocean"] {
+    --primary-color: #0d9488;
+    --primary-hover: #0f766e;
   }
-  .btn-ghost {
-    @apply text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800
-           hover:text-slate-900 dark:hover:text-white;
-  }
-  .btn-danger {
-    @apply bg-rose-600 text-white hover:bg-rose-700 shadow-soft;
-  }
-
-  .card,
-  .card-hover {
-    @apply rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-soft;
-  }
-  .card-hover {
-    @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lift
-           hover:border-primary/30 dark:hover:border-primary/40;
-  }
-
-  .input {
-    @apply w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950
-           px-3.5 py-2 text-sm text-slate-900 dark:text-white placeholder:text-slate-400
-           transition-colors focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/25;
-  }
-
-  .badge-primary,
-  .badge-success,
-  .badge-warning,
-  .badge-danger,
-  .badge-neutral {
-    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold;
-  }
-  .badge-primary { @apply bg-primary-soft text-primary-strong dark:bg-primary/15 dark:text-primary; }
-  .badge-success { @apply bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400; }
-  .badge-warning { @apply bg-amber-50 text-amber-700 dark:bg-amber-950/60 dark:text-amber-400; }
-  .badge-danger  { @apply bg-rose-50 text-rose-700 dark:bg-rose-950/60 dark:text-rose-400; }
-  .badge-neutral { @apply bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300; }
-
-  .section-title {
-    @apply text-base font-bold tracking-tight text-slate-900 dark:text-white;
-  }
-  .eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400;
+  body[data-theme="mono"] {
+    --primary-color: #18181b;
+    --primary-hover: #27272a;
   }
 }
 
@@ -187,12 +96,12 @@
 
 /* Visible high-contrast focus rings for keyboard navigation */
 :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid #005fb8;
   outline-offset: 2px;
 }
 
 .dark :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid #38bdf8;
   outline-offset: 2px;
 }
 

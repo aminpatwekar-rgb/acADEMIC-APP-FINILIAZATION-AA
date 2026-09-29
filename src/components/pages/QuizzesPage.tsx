@@ -337,7 +337,7 @@ export function QuizzesPage() {
       {/* Top Banner & Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-primary dark:text-primary mb-1">
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#005fb8] dark:text-blue-400 mb-1">
             <FileQuestion className="w-4 h-4" />
             <span>Phase 6 Evaluation Engine</span>
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
@@ -383,7 +383,7 @@ export function QuizzesPage() {
               <button
                 type="button"
                 onClick={() => setEditorQuiz('new')}
-                className="flex items-center gap-1.5 btn-sm btn-primary"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Create Assessment</span>
@@ -424,7 +424,7 @@ export function QuizzesPage() {
             onClick={() => setActiveTab('timed')}
             className={`px-3 py-1.5 rounded-xl whitespace-nowrap cursor-pointer transition-all ${
               activeTab === 'timed'
-                ? 'bg-primary text-white'
+                ? 'bg-blue-600 text-white'
                 : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
             }`}
           >
@@ -475,7 +475,7 @@ export function QuizzesPage() {
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               placeholder="Search assessments..."
-              className="pl-8 pr-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white w-44 sm:w-56 focus:outline-none focus:ring-1 focus:ring-primary"
+              className="pl-8 pr-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white w-44 sm:w-56 focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </div>
 
@@ -539,7 +539,7 @@ export function QuizzesPage() {
                             att.status === 'submitted'
                               ? 'bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300'
                               : att.status === 'in_progress'
-                              ? 'bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary animate-pulse'
+                              ? 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 animate-pulse'
                               : 'bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300'
                           }`}
                         >
@@ -627,7 +627,7 @@ export function QuizzesPage() {
                           quiz.type === 'practice'
                             ? 'bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300'
                             : quiz.type === 'timed'
-                            ? 'bg-primary-soft dark:bg-primary/15 text-primary-strong dark:text-primary dark:text-primary'
+                            ? 'bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300'
                             : quiz.type === 'scheduled'
                             ? 'bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300'
                             : 'bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300'
@@ -677,7 +677,7 @@ export function QuizzesPage() {
                       {quiz.points} points
                     </span>
                     <span className="flex items-center gap-1">
-                      <FileQuestion className="w-3.5 h-3.5 text-primary" />
+                      <FileQuestion className="w-3.5 h-3.5 text-blue-500" />
                       {quiz.questions?.length || 0} questions
                     </span>
                     <span className="flex items-center gap-1 font-mono text-[11px]">
@@ -716,8 +716,8 @@ export function QuizzesPage() {
                         Best: {bestScore} / {quiz.points} pts
                       </span>
                     ) : inProgressAttempt ? (
-                      <span className="font-semibold text-primary dark:text-primary flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
+                      <span className="font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-1">
+                        <span className="w-2 h-2 rounded-full bg-blue-500 animate-ping" />
                         In Progress
                       </span>
                     ) : (
@@ -741,7 +741,7 @@ export function QuizzesPage() {
                           type="button"
                           onClick={() => setEditorQuiz(quiz)}
                           title="Edit Assessment"
-                          className="p-1.5 rounded-lg text-slate-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+                          className="p-1.5 rounded-lg text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
                         >
                           <Edit3 className="w-4 h-4" />
                         </button>
@@ -764,7 +764,7 @@ export function QuizzesPage() {
                       className={`flex items-center gap-1.5 px-4 py-1.5 rounded-xl font-semibold text-xs shadow-xs transition-colors cursor-pointer ${
                         inProgressAttempt
                           ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
-                          : 'bg-primary hover:bg-primary-strong text-white disabled:opacity-40 disabled:cursor-not-allowed'
+                          : 'bg-[#005fb8] hover:bg-[#004e9a] text-white disabled:opacity-40 disabled:cursor-not-allowed'
                       }`}
                     >
                       {inProgressAttempt ? (
@@ -823,7 +823,7 @@ export function QuizzesPage() {
               <button
                 type="button"
                 onClick={() => setEditorQuiz('new')}
-                className="inline-flex items-center gap-1.5 btn-sm btn-primary"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Create Assessment</span>
