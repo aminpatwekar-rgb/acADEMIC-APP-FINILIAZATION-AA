@@ -97,14 +97,14 @@ export function QuizSecurityAuditModal({ quiz, onClose }: QuizSecurityAuditModal
         {/* Modal Body */}
         <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-5 text-xs">
           {/* Explanation Banner */}
-          <div className="p-4 rounded-xl border border-primary/30 dark:border-primary/30/50 bg-primary-soft/60 dark:bg-primary/15 space-y-2">
-            <div className="flex items-center gap-2 font-bold text-primary-strong dark:text-primary dark:text-primary text-sm">
-              <EyeOff className="w-4 h-4 text-primary dark:text-primary" />
+          <div className="p-4 rounded-xl border border-blue-200 dark:border-blue-900/50 bg-blue-50/60 dark:bg-blue-950/30 space-y-2">
+            <div className="flex items-center gap-2 font-bold text-blue-900 dark:text-blue-300 text-sm">
+              <EyeOff className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               <span>Architectural Invariant: Zero-Knowledge Student Clients</span>
             </div>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-[11px]">
-              ONYX enforces strict separation between public quiz metadata (<code className="px-1.5 py-0.5 rounded bg-primary-soft dark:bg-primary/20 text-primary-strong dark:text-primary dark:text-primary font-mono">/quizzes/{'{quizId}'}</code>)
-              and master answer keys with explanations (<code className="px-1.5 py-0.5 rounded bg-primary-soft dark:bg-primary/20 text-primary-strong dark:text-primary dark:text-primary font-mono">/quiz_answers/{'{quizId}'}</code>).
+              ONYX enforces strict separation between public quiz metadata (<code className="px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-200 font-mono">/quizzes/{'{quizId}'}</code>)
+              and master answer keys with explanations (<code className="px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-200 font-mono">/quiz_answers/{'{quizId}'}</code>).
               Even if a student uses Chrome DevTools or constructs raw Firestore SDK calls, the security rules guarantee a hard database rejection.
             </p>
           </div>
@@ -152,7 +152,7 @@ export function QuizSecurityAuditModal({ quiz, onClose }: QuizSecurityAuditModal
               <span className="text-emerald-400 font-bold">$ </span>
               <span>// Direct bypass attempt on secure answer collection</span>
               <br />
-              <span className="text-slate-500">const</span> docRef = doc(db, <span className="text-amber-300">"quiz_answers"</span>, <span className="text-primary">"{quiz.id}"</span>);
+              <span className="text-slate-500">const</span> docRef = doc(db, <span className="text-amber-300">"quiz_answers"</span>, <span className="text-blue-300">"{quiz.id}"</span>);
               <br />
               <span className="text-slate-500">const</span> payload = <span className="text-slate-500">await</span> getDoc(docRef);
             </div>
@@ -234,7 +234,7 @@ export function QuizSecurityAuditModal({ quiz, onClose }: QuizSecurityAuditModal
           {/* Active Security Rules Snippet */}
           <div className="space-y-2">
             <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300">
-              <FileCode className="w-3.5 h-3.5 text-primary" />
+              <FileCode className="w-3.5 h-3.5 text-blue-500" />
               <span>Active Firestore Security Rule in firestore.rules</span>
             </div>
             <pre className="p-3.5 rounded-xl bg-slate-900 text-slate-200 font-mono text-[11px] overflow-x-auto leading-relaxed border border-slate-800">

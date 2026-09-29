@@ -107,7 +107,7 @@ export function ErrorPage({
             <button
               type="button"
               onClick={resetErrorBoundary}
-              className="btn-md btn-primary"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
             >
               <RotateCcw className="w-4 h-4" aria-hidden="true" />
               <span>Try Again</span>
@@ -116,7 +116,7 @@ export function ErrorPage({
 
           <a
             href="/dashboard"
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-2xs focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-2xs focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
           >
             <Home className="w-4 h-4" aria-hidden="true" />
             <span>Dashboard</span>
@@ -125,7 +125,7 @@ export function ErrorPage({
           <button
             type="button"
             onClick={() => setShowReportModal(true)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
           >
             <MessageSquare className="w-3.5 h-3.5" aria-hidden="true" />
             <span>Report Issue</span>
@@ -138,7 +138,7 @@ export function ErrorPage({
             type="button"
             onClick={() => setShowDiagnostics(!showDiagnostics)}
             aria-expanded={showDiagnostics}
-            className="flex items-center justify-center gap-1.5 text-[11px] font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 mx-auto transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+            className="flex items-center justify-center gap-1.5 text-[11px] font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 mx-auto transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
           >
             <span>{showDiagnostics ? 'Hide Technical Diagnostics' : 'Show Technical Diagnostics'}</span>
             {showDiagnostics ? <ChevronUp className="w-3 h-3" aria-hidden="true" /> : <ChevronDown className="w-3 h-3" aria-hidden="true" />}
@@ -184,14 +184,14 @@ export function ErrorPage({
           <div className="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xl space-y-4 animate-in zoom-in-95 duration-150">
             <div className="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800">
               <h3 id="report-modal-title" className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <MessageSquare className="w-4 h-4 text-primary dark:text-primary" aria-hidden="true" />
+                <MessageSquare className="w-4 h-4 text-blue-600 dark:text-blue-400" aria-hidden="true" />
                 <span>Submit Error Feedback</span>
               </h3>
               <button
                 type="button"
                 onClick={() => setShowReportModal(false)}
                 aria-label="Close feedback dialog"
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -217,7 +217,7 @@ export function ErrorPage({
                     id="issue-category-select"
                     value={reportCategory}
                     onChange={(e) => setReportCategory(e.target.value as any)}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs font-medium text-slate-800 dark:text-slate-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs font-medium text-slate-800 dark:text-slate-200 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
                   >
                     <option value="bug">Software Bug / Crash</option>
                     <option value="visual_glitch">Display or Layout Issue</option>
@@ -237,7 +237,7 @@ export function ErrorPage({
                     value={reportComment}
                     onChange={(e) => setReportComment(e.target.value)}
                     placeholder="e.g. Submitting problem set 2 on mobile canvas..."
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
@@ -245,13 +245,13 @@ export function ErrorPage({
                   <button
                     type="button"
                     onClick={() => setShowReportModal(false)}
-                    className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                    className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="btn-sm btn-primary"
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
                   >
                     <Send className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>Send Report</span>
@@ -282,7 +282,7 @@ export function RouteErrorPage({
       aria-label="Course Page Not Found"
       className="min-h-[70vh] flex flex-col items-center justify-center p-6 text-center space-y-6"
     >
-      <div className="w-16 h-16 rounded-3xl bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary flex items-center justify-center mx-auto shadow-inner">
+      <div className="w-16 h-16 rounded-3xl bg-blue-50 dark:bg-blue-950/40 text-[#005fb8] dark:text-blue-400 flex items-center justify-center mx-auto shadow-inner">
         <Compass className="w-8 h-8" aria-hidden="true" />
       </div>
 
@@ -299,7 +299,7 @@ export function RouteErrorPage({
         <button
           type="button"
           onClick={() => onNavigate('/dashboard')}
-          className="btn-sm btn-primary"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
         >
           <LayoutGrid className="w-4 h-4" aria-hidden="true" />
           <span>Dashboard</span>
@@ -307,7 +307,7 @@ export function RouteErrorPage({
         <button
           type="button"
           onClick={() => onNavigate('/classes')}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
         >
           <GraduationCap className="w-4 h-4" aria-hidden="true" />
           <span>Classes</span>
@@ -315,7 +315,7 @@ export function RouteErrorPage({
         <button
           type="button"
           onClick={() => onNavigate('/assignments')}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
         >
           <BookOpen className="w-4 h-4" aria-hidden="true" />
           <span>Assignments</span>

@@ -20,7 +20,6 @@ import {
   serverTimestamp
 } from 'firebase/firestore';
 import { auth, db, handleFirestoreError, OperationType } from '../firebase/index';
-import { isBootstrapAdminEmail } from '../config';
 
 export type UserRole = 'student' | 'teacher' | 'admin';
 
@@ -63,9 +62,7 @@ export async function getOrCreateUserProfile(
     }
 
     const now = new Date().toISOString();
-    // Optional bootstrap (VITE_ADMIN_BOOTSTRAP_EMAILS) for first-admin provisioning only.
-    // In production, set role='admin' in Firestore (Admin page) or use custom claims.
-    const isAdmin = isBootstrapAdminEmail(fbUser.email);
+    const isAdmin = fbUser.email === 'merwynd12@gmail.com' || fbUser.email === 'aminpatwekar@gmail.com';
     const resolvedRole: UserRole = isAdmin ? 'admin' : (initialRole === 'admin' ? 'teacher' : initialRole);
     const resolvedDisplayName = customDisplayName || fbUser.displayName || 'ONYX Scholar';
     const resolvedAvatar = fbUser.photoURL || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(resolvedDisplayName)}`;

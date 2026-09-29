@@ -306,9 +306,9 @@ export function NotebookCanvas({
             type="button"
             onClick={handleAIRecognition}
             disabled={isRecognizing}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/20 text-primary hover:bg-primary/30 border border-primary/30 text-xs font-medium cursor-pointer transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/20 text-indigo-300 hover:bg-indigo-600/30 border border-indigo-500/30 text-xs font-medium cursor-pointer transition-colors"
           >
-            <Sparkles className="w-3.5 h-3.5 text-primary" />
+            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
             <span>{isRecognizing ? 'Transcribing...' : 'AI Transcribe'}</span>
           </button>
 
@@ -473,15 +473,15 @@ export function NotebookCanvas({
 
       {/* AI Handwriting Transcription Alert Banner */}
       {recognizedText && (
-        <div className="bg-indigo-950/80 border-b border-indigo-800/80 px-4 py-2.5 text-xs flex items-center justify-between text-primary">
+        <div className="bg-indigo-950/80 border-b border-indigo-800/80 px-4 py-2.5 text-xs flex items-center justify-between text-indigo-200">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-primary shrink-0" />
+            <Sparkles className="w-4 h-4 text-indigo-400 shrink-0" />
             <span><strong>AI Transcription:</strong> {recognizedText}</span>
           </div>
           <button
             type="button"
             onClick={() => setRecognizedText(null)}
-            className="text-primary hover:text-white"
+            className="text-indigo-400 hover:text-white"
           >
             ✕
           </button>

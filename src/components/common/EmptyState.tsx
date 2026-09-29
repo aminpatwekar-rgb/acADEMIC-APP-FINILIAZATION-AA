@@ -41,7 +41,7 @@ export function EmptyState({
 
       <div className="space-y-1.5">
         {badge && (
-          <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary border border-primary/30 dark:border-primary/30 mb-1">
+          <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-[#005fb8] dark:text-blue-300 border border-blue-200 dark:border-blue-900 mb-1">
             {badge}
           </span>
         )}
@@ -59,7 +59,7 @@ export function EmptyState({
             <button
               type="button"
               onClick={action.onClick}
-              className="btn-sm btn-primary"
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
             >
               {ActionIcon && <ActionIcon className="w-3.5 h-3.5" aria-hidden="true" />}
               <span>{action.label}</span>
@@ -70,7 +70,7 @@ export function EmptyState({
             <button
               type="button"
               onClick={secondaryAction.onClick}
-              className="px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+              className="px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
             >
               <span>{secondaryAction.label}</span>
             </button>

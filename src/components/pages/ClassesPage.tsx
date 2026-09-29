@@ -124,7 +124,7 @@ export function ClassesPage() {
       rollNumber: m.rollNumber || 'N/A',
       erNumber: m.erNumber || 'N/A',
       srNumber: m.srNumber || 'N/A',
-      avatarBg: m.avatarBg || 'bg-primary',
+      avatarBg: m.avatarBg || 'bg-blue-600',
       attendance: m.attendance || 100,
       progress: m.progress || 0,
       grade: m.grade || 100,
@@ -307,20 +307,20 @@ export function ClassesPage() {
 
       {/* Platform Announcements Banner (if targeted) */}
       {platformAnns.length > 0 && (
-        <div className="p-4 rounded-2xl border border-primary/30 dark:border-primary/30/60 bg-primary-soft/70 dark:bg-primary/15 flex items-start gap-3.5 shadow-xs">
-          <div className="w-8 h-8 rounded-xl bg-primary text-white flex items-center justify-center shrink-0">
+        <div className="p-4 rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-blue-50/70 dark:bg-blue-950/30 flex items-start gap-3.5 shadow-xs">
+          <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0">
             <Megaphone className="w-4 h-4" />
           </div>
           <div className="flex-1 text-xs">
             <div className="flex items-center gap-2">
-              <span className="font-bold text-primary-strong dark:text-primary dark:text-primary">
+              <span className="font-bold text-blue-900 dark:text-blue-200">
                 {platformAnns[0].title}
               </span>
-              <span className="text-[10px] font-mono px-2 py-0.2 rounded-full bg-primary/25 dark:bg-primary/20 text-primary-strong dark:text-primary dark:text-primary font-semibold">
+              <span className="text-[10px] font-mono px-2 py-0.2 rounded-full bg-blue-200/80 dark:bg-blue-900 text-blue-800 dark:text-blue-300 font-semibold">
                 Platform Broadcast
               </span>
             </div>
-            <p className="text-primary-strong dark:text-primary dark:text-primary mt-0.5 leading-relaxed">
+            <p className="text-blue-800 dark:text-blue-300 mt-0.5 leading-relaxed">
               {platformAnns[0].content}
             </p>
           </div>
@@ -330,7 +330,7 @@ export function ClassesPage() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-primary dark:text-primary mb-1">
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#005fb8] dark:text-blue-400 mb-1">
             <GraduationCap className="w-3.5 h-3.5" />
             <span>Academic Curriculum</span>
           </div>
@@ -352,9 +352,9 @@ export function ClassesPage() {
               setJoinModalInitialCode('');
               setShowJoinModal(true);
             }}
-            className="flex items-center gap-1.5 btn-sm btn-secondary shadow-xs"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer shadow-xs"
           >
-            <DoorOpen className="w-4 h-4 text-primary" />
+            <DoorOpen className="w-4 h-4 text-blue-500" />
             <span>Join Section</span>
           </button>
 
@@ -365,7 +365,7 @@ export function ClassesPage() {
                 setEditingClass(null);
                 setShowCreateModal(true);
               }}
-              className="flex items-center gap-1.5 btn-sm btn-primary"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Create Class</span>
@@ -419,7 +419,7 @@ export function ClassesPage() {
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             placeholder="Search classes by title, course code, join code, or instructor..."
-            className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-primary shadow-xs"
+            className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs"
           />
         </div>
       </div>
@@ -439,7 +439,7 @@ export function ClassesPage() {
           return (
             <div
               key={c.id}
-              className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs hover:border-primary dark:hover:border-primary transition-all flex flex-col justify-between overflow-hidden group"
+              className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs hover:border-blue-400 dark:hover:border-blue-600 transition-all flex flex-col justify-between overflow-hidden group"
             >
               {/* Card Banner Top */}
               <div
@@ -489,7 +489,7 @@ export function ClassesPage() {
                   </div>
                   <div className="flex items-center justify-between pt-1">
                     <span className="flex items-center gap-1 font-semibold text-slate-700 dark:text-slate-300">
-                      <Users className="w-3.5 h-3.5 text-primary" />
+                      <Users className="w-3.5 h-3.5 text-blue-500" />
                       <span>{c.roster.length} Registered Scholars</span>
                     </span>
                     <span className="font-mono text-[10px] bg-slate-100 dark:bg-slate-800 px-1.5 py-0.2 rounded font-bold">
@@ -508,7 +508,7 @@ export function ClassesPage() {
                   <button
                     type="button"
                     onClick={() => setActiveClassHub(c)}
-                    className="flex items-center gap-1 text-xs font-semibold text-primary dark:text-primary hover:text-primary dark:hover:text-primary transition-colors cursor-pointer"
+                    className="flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors cursor-pointer"
                   >
                     <span>Class Hub</span>
                     <ChevronRight className="w-3.5 h-3.5" />
@@ -548,7 +548,7 @@ export function ClassesPage() {
                   setEditingClass(null);
                   setShowCreateModal(true);
                 }}
-                className="inline-flex items-center gap-1.5 btn-sm btn-primary"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Create Your First Class</span>
