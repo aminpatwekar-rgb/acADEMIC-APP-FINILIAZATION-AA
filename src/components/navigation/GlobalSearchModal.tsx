@@ -256,7 +256,7 @@ export function GlobalSearchModal({ isOpen, onClose, onNavigate }: GlobalSearchM
                   onMouseEnter={() => setSelectedIndex(idx)}
                   className={`flex items-center justify-between p-3 rounded-2xl cursor-pointer transition-colors ${
                     isSelected
-                      ? 'bg-blue-50/70 dark:bg-blue-950/40 text-slate-900 dark:text-white'
+                      ? 'bg-primary-soft/70 dark:bg-primary/15 text-slate-900 dark:text-white'
                       : 'hover:bg-slate-50 dark:hover:bg-slate-800/40 text-slate-700 dark:text-slate-300'
                   }`}
                 >
@@ -264,7 +264,7 @@ export function GlobalSearchModal({ isOpen, onClose, onNavigate }: GlobalSearchM
                     <div
                       className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
                         isSelected
-                          ? 'bg-[#005fb8] text-white shadow-2xs'
+                          ? 'bg-primary text-white shadow-2xs'
                           : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
                       }`}
                     >
@@ -290,7 +290,7 @@ export function GlobalSearchModal({ isOpen, onClose, onNavigate }: GlobalSearchM
 
                   <ArrowRight
                     className={`w-4 h-4 text-slate-400 shrink-0 ml-2 transition-transform ${
-                      isSelected ? 'translate-x-1 text-[#005fb8] dark:text-blue-400' : 'opacity-0'
+                      isSelected ? 'translate-x-1 text-primary dark:text-primary' : 'opacity-0'
                     }`}
                   />
                 </div>

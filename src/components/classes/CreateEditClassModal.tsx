@@ -152,7 +152,7 @@ export function CreateEditClassModal({
                   onClick={() => setBannerPreset(preset.id as any)}
                   className={`h-11 rounded-xl p-1 border-2 transition-all flex flex-col items-center justify-center cursor-pointer ${
                     bannerPreset === preset.id
-                      ? 'border-blue-600 dark:border-blue-400 scale-105 shadow-xs'
+                      ? 'border-primary dark:border-primary scale-105 shadow-xs'
                       : 'border-transparent opacity-80 hover:opacity-100'
                   }`}
                   style={{ background: preset.gradient }}
@@ -178,7 +178,7 @@ export function CreateEditClassModal({
                 value={code}
                 onChange={e => setCode(e.target.value)}
                 placeholder="e.g. CS-201"
-                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white uppercase font-mono focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white uppercase font-mono focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
 
@@ -192,7 +192,7 @@ export function CreateEditClassModal({
                 value={subject}
                 onChange={e => setSubject(e.target.value)}
                 placeholder="e.g. Science, Humanities, Arts..."
-                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
           </div>
@@ -209,7 +209,7 @@ export function CreateEditClassModal({
                 value={name}
                 onChange={e => setName(e.target.value)}
                 placeholder="e.g. Distributed Operating Systems"
-                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
 
@@ -222,7 +222,7 @@ export function CreateEditClassModal({
                 value={section}
                 onChange={e => setSection(e.target.value)}
                 placeholder="e.g. Section A-01"
-                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
           </div>
@@ -238,7 +238,7 @@ export function CreateEditClassModal({
                 value={schedule}
                 onChange={e => setSchedule(e.target.value)}
                 placeholder="e.g. Mon / Wed 10:00 AM - 11:30 AM"
-                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
 
@@ -251,7 +251,7 @@ export function CreateEditClassModal({
                 value={room}
                 onChange={e => setRoom(e.target.value)}
                 placeholder="e.g. Science Building 302"
-                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
           </div>
@@ -266,7 +266,7 @@ export function CreateEditClassModal({
               value={description}
               onChange={e => setDescription(e.target.value)}
               placeholder="Core learning objectives, grading breakdown, and lecture scope..."
-              className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary"
             />
           </div>
 
@@ -304,7 +304,7 @@ export function CreateEditClassModal({
             </button>
             <button
               type="submit"
-              className="px-5 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white font-semibold shadow-xs cursor-pointer"
+              className="btn-md btn-primary"
             >
               {isEditing ? 'Save Changes' : 'Create Section'}
             </button>

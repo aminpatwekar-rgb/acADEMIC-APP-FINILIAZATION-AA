@@ -23,9 +23,9 @@ export function EmailVerificationBanner() {
   };
 
   return (
-    <div className="w-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900/60 text-blue-900 dark:text-blue-200 px-4 py-2.5 rounded-lg flex items-center justify-between text-xs font-medium mb-6 shadow-xs animate-in fade-in">
+    <div className="w-full bg-primary-soft dark:bg-primary/15 border border-primary/30 dark:border-primary/30/60 text-primary-strong dark:text-primary dark:text-primary px-4 py-2.5 rounded-lg flex items-center justify-between text-xs font-medium mb-6 shadow-xs animate-in fade-in">
       <div className="flex items-center gap-2">
-        <Mail className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
+        <Mail className="w-4 h-4 text-primary dark:text-primary shrink-0" />
         <span>
           A verification link has been sent to <strong className="font-semibold">{user.email}</strong>. Please verify your email to unlock all institutional privileges.
         </span>
@@ -42,7 +42,7 @@ export function EmailVerificationBanner() {
             type="button"
             onClick={handleResend}
             disabled={sending}
-            className="text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-white font-semibold underline underline-offset-2 cursor-pointer transition-colors flex items-center gap-1"
+            className="text-primary dark:text-primary hover:text-primary-strong dark:text-primary dark:hover:text-white font-semibold underline underline-offset-2 cursor-pointer transition-colors flex items-center gap-1"
           >
             {sending && <Loader2 className="w-3 h-3 animate-spin" />}
             Resend Email

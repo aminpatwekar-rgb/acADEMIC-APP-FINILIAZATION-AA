@@ -16,10 +16,10 @@ export const THEME_PRESETS: ThemeConfig[] = [
   {
     id: 'onyx',
     name: 'Onyx',
-    primaryColor: '#d97706',
-    secondaryColor: '#f59e0b',
-    previewLeft: '#1c1917',
-    previewRight: '#d97706',
+    primaryColor: '#2f5fe0',
+    secondaryColor: '#81a1ff',
+    previewLeft: '#0f172a',
+    previewRight: '#2f5fe0',
   },
   {
     id: 'midnight',
@@ -63,8 +63,28 @@ export const THEME_PRESETS: ThemeConfig[] = [
   },
 ];
 
+/* ---------- tiny color utils for live accent theming ---------- */
+function hexToRgb(hex: string): [number, number, number] {
+  const h = hex.replace('#', '');
+  const full = h.length === 3 ? h.split('').map((c) => c + c).join('') : h;
+  const n = parseInt(full.slice(0, 6), 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+/** percent < 0 darkens, > 0 lightens toward white */
+function shade(hex: string, percent: number): string {
+  const [r, g, b] = hexToRgb(hex);
+  const f = (c: number) =>
+    Math.round(percent < 0 ? c * (1 + percent / 100) : c + (255 - c) * (percent / 100));
+  return `rgb(${f(r)}, ${f(g)}, ${f(b)})`;
+}
+function tint(hex: string, amount: number): string {
+  const [r, g, b] = hexToRgb(hex);
+  const f = (c: number) => Math.round(c + (255 - c) * amount);
+  return `rgb(${f(r)}, ${f(g)}, ${f(b)})`;
+}
+
 export const ACCENT_SWATCHES = [
-  '#d97706', // Onyx Amber
+  '#2f5fe0', // Onyx Blue
   '#0284c7', // Sky Blue
   '#10b981', // Emerald
   '#ef4444', // Rose Red
@@ -87,7 +107,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType>({
   mode: 'light',
   themeStyle: 'onyx',
-  accentColor: '#d97706',
+  accentColor: '#2f5fe0',
   setMode: () => {},
   setThemeStyle: () => {},
   setAccentColor: () => {},
@@ -104,7 +124,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   });
 
   const [accentColor, setAccentColorState] = useState<string>(() => {
-    return localStorage.getItem('onyx_accent_color') || '#d97706';
+    return localStorage.getItem('onyx_accent_color') || '#2f5fe0';
   });
 
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -135,8 +155,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     document.body.setAttribute('data-theme', themeStyle);
     localStorage.setItem('onyx_theme_style', themeStyle);
 
-    // Apply primary accent color to CSS variable
-    document.documentElement.style.setProperty('--onyx-accent', accentColor);
+    // Apply the chosen accent live so every bg-primary/text-primary surface updates
+    const root = document.documentElement;
+    root.style.setProperty('--onyx-accent', accentColor);
+    root.style.setProperty('--color-primary', accentColor);
+    root.style.setProperty('--color-ring', accentColor);
+    root.style.setProperty('--color-primary-strong', shade(accentColor, -18));
+    root.style.setProperty('--color-primary-soft', tint(accentColor, 0.92));
     localStorage.setItem('onyx_accent_color', accentColor);
   }, [themeStyle, accentColor]);
 

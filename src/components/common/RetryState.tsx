@@ -52,7 +52,7 @@ export function RetryState({
             type="button"
             disabled={isRetrying}
             onClick={onRetry}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs disabled:opacity-50 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+            className="btn-sm btn-primary disabled:opacity-50"
           >
             <RotateCcw className={`w-3.5 h-3.5 ${isRetrying ? 'animate-spin' : ''}`} aria-hidden="true" />
             <span>{isRetrying ? 'Retrying...' : 'Retry Connection'}</span>
@@ -63,7 +63,7 @@ export function RetryState({
           <button
             type="button"
             onClick={onSecondaryAction}
-            className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+            className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
           >
             <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
             <span>{secondaryActionLabel}</span>

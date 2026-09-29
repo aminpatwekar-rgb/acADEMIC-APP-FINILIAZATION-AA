@@ -263,7 +263,7 @@ export function QuizAnalyticsPanel({
                       <button
                         type="button"
                         onClick={() => setSelectedQuestionIdx(isExpanded ? null : idx)}
-                        className="text-xs text-blue-600 dark:text-blue-400 font-medium hover:underline flex items-center gap-0.5 cursor-pointer"
+                        className="text-xs text-primary dark:text-primary font-medium hover:underline flex items-center gap-0.5 cursor-pointer"
                       >
                         <span>{isExpanded ? 'Hide Stats' : 'Option Stats'}</span>
                         {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}

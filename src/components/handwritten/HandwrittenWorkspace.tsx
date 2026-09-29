@@ -163,7 +163,7 @@ export function HandwrittenWorkspace({
               <button
                 type="button"
                 onClick={handleAddPage}
-                className="flex items-center gap-1 px-3 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900 font-semibold hover:bg-blue-100 dark:hover:bg-blue-900/60 transition-colors cursor-pointer"
+                className="flex items-center gap-1 px-3 py-1 rounded-lg bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary border border-primary/30 dark:border-primary/30 font-semibold hover:bg-primary-soft dark:hover:bg-primary/25 transition-colors cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add Page</span>
@@ -182,7 +182,7 @@ export function HandwrittenWorkspace({
                 onClick={() => setActivePageIndex(idx)}
                 className={`relative shrink-0 w-28 h-36 rounded-xl border-2 transition-all p-2 flex flex-col justify-between cursor-pointer ${
                   activePageIndex === idx
-                    ? 'border-blue-600 bg-blue-50/40 dark:bg-blue-950/40 shadow-xs'
+                    ? 'border-primary bg-primary-soft/40 dark:bg-primary/15 shadow-xs'
                     : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 hover:border-slate-300'
                 }`}
               >
@@ -234,7 +234,7 @@ export function HandwrittenWorkspace({
                         e.stopPropagation();
                         handleMovePage(idx, 'prev');
                       }}
-                      className="hover:text-blue-500 disabled:opacity-30 cursor-pointer"
+                      className="hover:text-primary disabled:opacity-30 cursor-pointer"
                       title="Move left"
                     >
                       <ArrowLeft className="w-3 h-3" />
@@ -246,7 +246,7 @@ export function HandwrittenWorkspace({
                         e.stopPropagation();
                         handleMovePage(idx, 'next');
                       }}
-                      className="hover:text-blue-500 disabled:opacity-30 cursor-pointer"
+                      className="hover:text-primary disabled:opacity-30 cursor-pointer"
                       title="Move right"
                     >
                       <ArrowRight className="w-3 h-3" />
@@ -264,7 +264,7 @@ export function HandwrittenWorkspace({
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
           <div className="flex-1">
             <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded text-xs font-bold bg-[#005fb8] text-white">
+              <span className="px-2 py-0.5 rounded text-xs font-bold bg-primary text-white">
                 Page {activePageIndex + 1} of {pages.length}
               </span>
               {editingCaption && !readOnly ? (
@@ -281,7 +281,7 @@ export function HandwrittenWorkspace({
                   <button
                     type="button"
                     onClick={() => setEditingCaption(false)}
-                    className="text-xs px-2 py-1 rounded bg-blue-600 text-white font-semibold cursor-pointer"
+                    className="text-xs px-2 py-1 rounded bg-primary text-white font-semibold cursor-pointer"
                   >
                     Done
                   </button>
@@ -345,8 +345,8 @@ export function HandwrittenWorkspace({
         {activeTab === 'upload' || readOnly ? (
           <div className="space-y-4">
             {isUploading ? (
-              <div className="p-12 border-2 border-dashed border-blue-300 dark:border-blue-800 rounded-2xl flex flex-col items-center justify-center text-center space-y-3 bg-blue-50/30 dark:bg-blue-950/20 animate-pulse">
-                <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
+              <div className="p-12 border-2 border-dashed border-primary/40 dark:border-primary/40 rounded-2xl flex flex-col items-center justify-center text-center space-y-3 bg-primary-soft/30 dark:bg-primary/15 animate-pulse">
+                <Loader2 className="w-8 h-8 text-primary animate-spin" />
                 <div>
                   <h4 className="font-semibold text-sm text-slate-900 dark:text-white">
                     Uploading to Firebase Storage...
@@ -371,7 +371,7 @@ export function HandwrittenWorkspace({
                         href={currentPage.imageUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 font-semibold"
+                        className="text-primary dark:text-primary hover:underline flex items-center gap-1 font-semibold"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
                         <span>Open Document</span>
@@ -396,7 +396,7 @@ export function HandwrittenWorkspace({
                 {!readOnly && (
                   <div className="flex items-center gap-3 text-xs">
                     <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
-                      <Upload className="w-3.5 h-3.5 text-blue-500" />
+                      <Upload className="w-3.5 h-3.5 text-primary" />
                       <span>Replace This Page</span>
                       <input
                         type="file"
@@ -410,7 +410,7 @@ export function HandwrittenWorkspace({
               </div>
             ) : (
               <div className="p-10 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col items-center justify-center text-center space-y-3 bg-slate-50/50 dark:bg-slate-950/40">
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary flex items-center justify-center">
                   <Upload className="w-6 h-6" />
                 </div>
                 <div>
@@ -422,7 +422,7 @@ export function HandwrittenWorkspace({
                   </p>
                 </div>
                 {!readOnly && (
-                  <label className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer">
+                  <label className="flex items-center gap-1.5 btn-sm btn-primary">
                     <Upload className="w-3.5 h-3.5" />
                     <span>Select Scan or PDF File</span>
                     <input
@@ -438,7 +438,7 @@ export function HandwrittenWorkspace({
           </div>
         ) : (
           <div className="space-y-3">
-            <div className="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900 text-xs text-blue-700 dark:text-blue-300 flex items-center justify-between">
+            <div className="p-2.5 rounded-xl bg-primary-soft dark:bg-primary/15 border border-primary/30 dark:border-primary/30 text-xs text-primary dark:text-primary flex items-center justify-between">
               <span>Write or draw with vector digital ink. Strokes are automatically captured for Page {activePageIndex + 1}.</span>
               <span className="font-semibold">Digital Ink Engine</span>
             </div>
@@ -478,7 +478,7 @@ export function HandwrittenWorkspace({
                 onClick={() => onSaveDraft(pages, inputNotes)}
                 className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer disabled:opacity-50"
               >
-                <Save className="w-3.5 h-3.5 text-blue-500" />
+                <Save className="w-3.5 h-3.5 text-primary" />
                 <span>Save Draft (In Progress)</span>
               </button>
 
@@ -486,7 +486,7 @@ export function HandwrittenWorkspace({
                 type="button"
                 disabled={submitting || isUploading || pages.filter(p => Boolean(p.imageUrl)).length === 0}
                 onClick={() => onSubmitFinal(pages, inputNotes)}
-                className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer disabled:opacity-50"
+                className="btn-md btn-primary disabled:opacity-50"
               >
                 {submitting ? (
                   <Loader2 className="w-3.5 h-3.5 animate-spin" />

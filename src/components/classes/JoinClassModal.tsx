@@ -97,7 +97,7 @@ export function JoinClassModal({
     }
 
     // All validations passed! Create new enrolled student
-    const avatarColors = ['bg-blue-600', 'bg-indigo-600', 'bg-emerald-600', 'bg-purple-600', 'bg-amber-600', 'bg-cyan-600'];
+    const avatarColors = ['bg-primary', 'bg-primary', 'bg-emerald-600', 'bg-purple-600', 'bg-amber-600', 'bg-cyan-600'];
     const randomAvatarBg = avatarColors[Math.floor(Math.random() * avatarColors.length)];
 
     const newStudent: EnrolledStudent = {
@@ -129,7 +129,7 @@ export function JoinClassModal({
         {/* Header */}
         <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary flex items-center justify-center">
               <DoorOpen className="w-4 h-4" />
             </div>
             <div>
@@ -169,7 +169,7 @@ export function JoinClassModal({
                 setError(null);
               }}
               placeholder="e.g. Enter Join Code"
-              className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 font-mono text-sm uppercase tracking-wider text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 font-mono text-sm uppercase tracking-wider text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary"
             />
           </div>
 
@@ -184,7 +184,7 @@ export function JoinClassModal({
               value={fullName}
               onChange={e => setFullName(e.target.value)}
               placeholder="Enter your full name"
-              className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary"
             />
           </div>
 
@@ -203,7 +203,7 @@ export function JoinClassModal({
                   setError(null);
                 }}
                 placeholder="e.g. R-2026-030"
-                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 font-mono text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 font-mono text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
 
@@ -220,7 +220,7 @@ export function JoinClassModal({
                   setError(null);
                 }}
                 placeholder="e.g. ER-88430"
-                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 font-mono text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 font-mono text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
 
@@ -237,7 +237,7 @@ export function JoinClassModal({
                   setError(null);
                 }}
                 placeholder="e.g. SR-030"
-                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 font-mono text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 font-mono text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
           </div>
@@ -245,7 +245,7 @@ export function JoinClassModal({
           {/* Privacy & Anti-Duplicate Advisory */}
           <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 space-y-1 text-[11px] text-slate-500">
             <div className="flex items-center gap-1.5 font-semibold text-slate-700 dark:text-slate-300">
-              <ShieldCheck className="w-3.5 h-3.5 text-blue-500" />
+              <ShieldCheck className="w-3.5 h-3.5 text-primary" />
               <span>Identity Verification & Duplicate Prevention</span>
             </div>
             <p>
@@ -264,7 +264,7 @@ export function JoinClassModal({
             </button>
             <button
               type="submit"
-              className="px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white font-semibold shadow-xs cursor-pointer"
+              className="btn-sm btn-primary"
             >
               Verify & Register
             </button>
