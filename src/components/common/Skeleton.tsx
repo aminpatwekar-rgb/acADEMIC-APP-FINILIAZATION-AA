@@ -144,7 +144,7 @@ export function SkeletonQuizEditor() {
 
 export function SkeletonAuthLoading() {
   return (
-    <div className="min-h-screen bg-[#f8f9fb] dark:bg-slate-950 flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen bg-background dark:bg-slate-950 flex flex-col items-center justify-center p-6">
       <div className="flex flex-col items-center gap-4 text-center max-w-sm w-full">
         <div className="w-12 h-12 rounded-2xl bg-slate-950 dark:bg-white text-white dark:text-slate-950 flex items-center justify-center font-black text-lg shadow-md animate-pulse">
           OX

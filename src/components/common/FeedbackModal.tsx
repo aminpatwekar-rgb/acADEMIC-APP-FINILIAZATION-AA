@@ -71,7 +71,7 @@ export function FeedbackModal({
       <div className="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xl space-y-4 animate-in zoom-in-95 duration-100">
         <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
           <h3 id="feedback-modal-title" className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <MessageSquare className="w-4 h-4 text-[#005fb8] dark:text-blue-400" aria-hidden="true" />
+            <MessageSquare className="w-4 h-4 text-brand dark:text-blue-400" aria-hidden="true" />
             <span>Send Feedback or Report Issue</span>
           </h3>
           <button
@@ -146,7 +146,7 @@ export function FeedbackModal({
               </button>
               <button
                 type="submit"
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none cursor-pointer"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none cursor-pointer"
               >
                 <Send className="w-3.5 h-3.5" aria-hidden="true" />
                 <span>Submit Feedback</span>

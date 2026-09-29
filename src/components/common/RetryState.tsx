@@ -52,7 +52,7 @@ export function RetryState({
             type="button"
             disabled={isRetrying}
             onClick={onRetry}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs disabled:opacity-50 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs disabled:opacity-50 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
           >
             <RotateCcw className={`w-3.5 h-3.5 ${isRetrying ? 'animate-spin' : ''}`} aria-hidden="true" />
             <span>{isRetrying ? 'Retrying...' : 'Retry Connection'}</span>

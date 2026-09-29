@@ -304,7 +304,7 @@ export function CreateEditClassModal({
             </button>
             <button
               type="submit"
-              className="px-5 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white font-semibold shadow-xs cursor-pointer"
+              className="px-5 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white font-semibold shadow-xs cursor-pointer"
             >
               {isEditing ? 'Save Changes' : 'Create Section'}
             </button>

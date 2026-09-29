@@ -32,7 +32,7 @@ export function NotebookPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-[#005fb8] dark:text-blue-400 mb-1">
+          <div className="flex items-center gap-2 text-xs font-semibold text-brand dark:text-blue-400 mb-1">
             <PenTool className="w-3.5 h-3.5" />
             <span>ONYX Digital Ink Studio</span>
           </div>
@@ -137,7 +137,7 @@ export function NotebookPage() {
       <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 shadow-xs">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Sigma className="w-4 h-4 text-[#005fb8] dark:text-blue-400" />
+            <Sigma className="w-4 h-4 text-brand dark:text-blue-400" />
             <h3 className="text-sm font-semibold text-slate-900 dark:text-white">
               KaTeX Math Expressions Quick Reference
             </h3>

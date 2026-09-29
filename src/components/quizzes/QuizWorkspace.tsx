@@ -375,7 +375,7 @@ export function QuizWorkspace({
             type="button"
             disabled={isSaving}
             onClick={handleSaveQuiz}
-            className="flex items-center gap-2 px-5 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer disabled:opacity-50"
+            className="flex items-center gap-2 px-5 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer disabled:opacity-50"
           >
             <Save className="w-3.5 h-3.5" />
             <span>{isSaving ? 'Saving...' : 'Save'}</span>
@@ -1040,7 +1040,7 @@ export function QuizWorkspace({
                 type="button"
                 onClick={() => setLockdownMode(!lockdownMode)}
                 className={`w-11 h-6 flex items-center rounded-full p-1 cursor-pointer transition-colors ${
-                  lockdownMode ? 'bg-[#005fb8]' : 'bg-slate-300 dark:bg-slate-700'
+                  lockdownMode ? 'bg-brand' : 'bg-slate-300 dark:bg-slate-700'
                 }`}
               >
                 <div
@@ -1065,7 +1065,7 @@ export function QuizWorkspace({
                 type="button"
                 onClick={() => setShuffleQuestions(!shuffleQuestions)}
                 className={`w-11 h-6 flex items-center rounded-full p-1 cursor-pointer transition-colors ${
-                  shuffleQuestions ? 'bg-[#005fb8]' : 'bg-slate-300 dark:bg-slate-700'
+                  shuffleQuestions ? 'bg-brand' : 'bg-slate-300 dark:bg-slate-700'
                 }`}
               >
                 <div
@@ -1090,7 +1090,7 @@ export function QuizWorkspace({
                 type="button"
                 onClick={() => setShuffleOptions(!shuffleOptions)}
                 className={`w-11 h-6 flex items-center rounded-full p-1 cursor-pointer transition-colors ${
-                  shuffleOptions ? 'bg-[#005fb8]' : 'bg-slate-300 dark:bg-slate-700'
+                  shuffleOptions ? 'bg-brand' : 'bg-slate-300 dark:bg-slate-700'
                 }`}
               >
                 <div
@@ -1115,7 +1115,7 @@ export function QuizWorkspace({
                 type="button"
                 onClick={() => setShowResults(!showResults)}
                 className={`w-11 h-6 flex items-center rounded-full p-1 cursor-pointer transition-colors ${
-                  showResults ? 'bg-[#005fb8]' : 'bg-slate-300 dark:bg-slate-700'
+                  showResults ? 'bg-brand' : 'bg-slate-300 dark:bg-slate-700'
                 }`}
               >
                 <div

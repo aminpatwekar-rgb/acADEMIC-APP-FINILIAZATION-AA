@@ -925,7 +925,7 @@ export function ClassHubModal({
                         </button>
                         <button
                           type="submit"
-                          className="px-4 py-1.5 rounded-xl bg-[#005fb8] text-white font-semibold shadow-xs cursor-pointer"
+                          className="px-4 py-1.5 rounded-xl bg-brand text-white font-semibold shadow-xs cursor-pointer"
                         >
                           Publish Announcement
                         </button>
@@ -1059,7 +1059,7 @@ export function ClassHubModal({
                         </button>
                         <button
                           type="submit"
-                          className="px-4 py-1.5 rounded-xl bg-[#005fb8] text-white font-semibold shadow-xs cursor-pointer"
+                          className="px-4 py-1.5 rounded-xl bg-brand text-white font-semibold shadow-xs cursor-pointer"
                         >
                           Save Material
                         </button>
@@ -1185,7 +1185,7 @@ export function ClassHubModal({
                       </button>
                       <button
                         type="submit"
-                        className="px-4 py-1.5 rounded-xl bg-[#005fb8] text-white font-semibold shadow-xs cursor-pointer"
+                        className="px-4 py-1.5 rounded-xl bg-brand text-white font-semibold shadow-xs cursor-pointer"
                       >
                         Post Discussion
                       </button>

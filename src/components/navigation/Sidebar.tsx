@@ -84,7 +84,7 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
       {/* Accessible Skip to Content Link */}
       <a
         href="#main-content"
-        className="sr-only-focusable z-50 px-4 py-2 bg-[#005fb8] text-white font-semibold text-xs rounded-br-xl shadow-lg focus:not-sr-only focus:fixed focus:top-0 focus:left-0"
+        className="sr-only-focusable z-50 px-4 py-2 bg-brand text-white font-semibold text-xs rounded-br-xl shadow-lg focus:not-sr-only focus:fixed focus:top-0 focus:left-0"
       >
         Skip to main content
       </a>
@@ -240,15 +240,15 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
                   className={`
                     w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium transition-all cursor-pointer relative focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none
                     ${active
-                      ? 'bg-blue-50 dark:bg-blue-950/40 text-[#005fb8] dark:text-blue-400 font-semibold'
+                      ? 'bg-blue-50 dark:bg-blue-950/40 text-brand dark:text-blue-400 font-semibold'
                       : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/60'
                     }
                   `}
                 >
                   {active && (
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 rounded-r bg-[#005fb8] dark:bg-blue-500" />
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 rounded-r bg-brand" />
                   )}
-                  <Icon className={`w-4 h-4 ml-1 ${active ? 'text-[#005fb8] dark:text-blue-400' : 'text-slate-400'}`} />
+                  <Icon className={`w-4 h-4 ml-1 ${active ? 'text-brand dark:text-blue-400' : 'text-slate-400'}`} />
                   <span>{item.label}</span>
                 </button>
               );

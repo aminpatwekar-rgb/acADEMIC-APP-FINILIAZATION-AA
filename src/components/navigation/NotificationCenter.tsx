@@ -127,7 +127,7 @@ export function NotificationCenter({ onNavigate }: NotificationCenterProps) {
                 Notifications
               </span>
               {unreadCount > 0 && (
-                <span className="px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-[#005fb8] dark:text-blue-400 font-mono text-[10px] font-bold">
+                <span className="px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-brand dark:text-blue-400 font-mono text-[10px] font-bold">
                   {unreadCount} new
                 </span>
               )}
@@ -138,7 +138,7 @@ export function NotificationCenter({ onNavigate }: NotificationCenterProps) {
                 <button
                   type="button"
                   onClick={() => markAllNotificationsAsRead(user.uid)}
-                  className="text-[11px] font-semibold text-[#005fb8] dark:text-blue-400 hover:underline cursor-pointer flex items-center gap-1"
+                  className="text-[11px] font-semibold text-brand dark:text-blue-400 hover:underline cursor-pointer flex items-center gap-1"
                 >
                   <Check className="w-3 h-3 stroke-[3]" />
                   <span>Mark all read</span>

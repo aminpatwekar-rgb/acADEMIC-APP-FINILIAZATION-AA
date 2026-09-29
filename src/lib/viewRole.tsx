@@ -81,16 +81,16 @@ export function RolePreviewBanner() {
   const actualRoleLabel = actualRole.charAt(0).toUpperCase() + actualRole.slice(1);
 
   return (
-    <div className="w-full bg-[#fef9ee] border border-[#fde68a] text-[#92400e] px-4 py-2.5 rounded-lg flex items-center justify-between text-xs sm:text-sm font-medium mb-6 shadow-xs animate-in fade-in duration-200">
+    <div className="w-full bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900 text-amber-800 dark:text-amber-300 px-4 py-2.5 rounded-lg flex items-center justify-between text-xs sm:text-sm font-medium mb-6 shadow-xs animate-in fade-in duration-200">
       <div className="flex items-center gap-2">
-        <Eye className="w-4 h-4 text-[#d97706] shrink-0" />
+        <Eye className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
         <span>
           Previewing as <strong className="font-semibold">{roleLabel}</strong> — your account&apos;s actual role is <strong className="font-semibold">{actualRoleLabel}</strong>. Real permissions remain protected by Firebase rules.
         </span>
       </div>
       <button
         onClick={resetRole}
-        className="text-[#b45309] hover:text-[#78350f] font-semibold underline underline-offset-2 ml-4 shrink-0 transition-colors cursor-pointer flex items-center gap-1"
+        className="text-amber-700 hover:text-amber-900 dark:text-amber-300 dark:hover:text-amber-100 font-semibold underline underline-offset-2 ml-4 shrink-0 transition-colors cursor-pointer flex items-center gap-1"
       >
         <RotateCcw className="w-3.5 h-3.5" />
         Reset to {actualRole}

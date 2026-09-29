@@ -264,7 +264,7 @@ export function HandwrittenWorkspace({
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
           <div className="flex-1">
             <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded text-xs font-bold bg-[#005fb8] text-white">
+              <span className="px-2 py-0.5 rounded text-xs font-bold bg-brand text-white">
                 Page {activePageIndex + 1} of {pages.length}
               </span>
               {editingCaption && !readOnly ? (
@@ -422,7 +422,7 @@ export function HandwrittenWorkspace({
                   </p>
                 </div>
                 {!readOnly && (
-                  <label className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer">
+                  <label className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer">
                     <Upload className="w-3.5 h-3.5" />
                     <span>Select Scan or PDF File</span>
                     <input
@@ -486,7 +486,7 @@ export function HandwrittenWorkspace({
                 type="button"
                 disabled={submitting || isUploading || pages.filter(p => Boolean(p.imageUrl)).length === 0}
                 onClick={() => onSubmitFinal(pages, inputNotes)}
-                className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer disabled:opacity-50"
+                className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer disabled:opacity-50"
               >
                 {submitting ? (
                   <Loader2 className="w-3.5 h-3.5 animate-spin" />
