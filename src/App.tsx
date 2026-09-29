@@ -12,10 +12,8 @@ import { Router } from './router';
 
 function AppContent() {
   const { profile, user, loading } = useAuth();
-  // Ensure bootstrap admin email resolves to admin even prior to Firestore snapshot response
-  const actualRole = (user?.email === 'merwynd12@gmail.com' || user?.email === 'aminpatwekar@gmail.com')
-    ? 'admin'
-    : (profile?.role || 'student');
+  // Use the role from Firestore profile (updated via Firebase security rules and custom claims)
+  const actualRole = profile?.role || 'student';
 
   return (
     <ViewRoleProvider actualRole={actualRole} authLoading={loading}>

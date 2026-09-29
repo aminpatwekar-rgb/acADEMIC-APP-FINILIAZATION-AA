@@ -10,27 +10,28 @@ service cloud.firestore {
       return isSignedIn() && request.auth.uid == userId;
     }
 
-    // Role check from user document, custom claims, or bootstrap email
+    // Role check from user document (primary), custom claims (fallback), or bootstrap emails (emergency only)
+    // PRIORITY: Firestore profile > Firebase custom claims > Bootstrap emails
     function isAdmin() {
       return isSignedIn() && (
-        request.auth.token.role == "admin" ||
-        request.auth.token.email == "merwynd12@gmail.com" ||
-        request.auth.token.email == "aminpatwekar@gmail.com" ||
         (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin" &&
          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.active == true) ||
+        request.auth.token.role == "admin" ||
+        request.auth.token.email == "merwynd12@gmail.com" ||
+        request.auth.token.email == "aminpatwekar@gmail.com" ||
         exists(/databases/$(database)/documents/admins/$(request.auth.uid))
       );
     }
 
-    // Teacher check
+    // Teacher check (includes admins for all teacher operations)
     function isTeacher() {
       return isSignedIn() && (
-        isAdmin() ||
-        request.auth.token.role == "teacher" ||
         (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ["teacher", "admin"] &&
-         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.active == true)
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.active == true) ||
+        request.auth.token.role in ["teacher", "admin"] ||
+        isAdmin()
       );
     }
 
@@ -191,6 +192,25 @@ service cloud.firestore {
     // User Settings: notification preferences, reminder lead time, study target, teacher defaults
     match /user_settings/{userId} {
       allow read, write: if isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Discussion replies: nested under discussions (when implemented)
+    match /discussions/{discussionId}/replies/{replyId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if isTeacher() || (isSignedIn() && resource.data.authorId == request.auth.uid);
+    }
+
+    // Submission grading feedback: nested under submissions (when implemented)
+    match /submissions/{submissionId}/feedback/{feedbackId} {
+      allow read: if isTeacher() || (isSignedIn() && resource.data.studentId == request.auth.uid);
+      allow write: if isTeacher();
+    }
+
+    // Admin audit log: read-only for admins, auto-created by functions
+    match /admin_audit_log/{entryId} {
+      allow read: if isAdmin();
+      allow create, write: if false; // Only backend functions create entries
     }
   }
 }

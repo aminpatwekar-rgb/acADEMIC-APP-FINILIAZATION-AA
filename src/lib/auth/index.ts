@@ -230,3 +230,5 @@ export function subscribeToAuth(
     if (unsubscribeProfile) unsubscribeProfile();
   };
 }
+
+export { promoteUserToAdmin, revokeAdminRole, isUserAdmin, getAllAdmins } from './adminManager';
