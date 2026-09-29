@@ -203,13 +203,13 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
               className={`
                 p-3 rounded-xl border flex flex-col items-start gap-1 transition-all cursor-pointer text-left
                 ${role === 'student'
-                  ? 'border-[#005fb8] bg-[#f0f7ff] dark:bg-blue-950/40 text-[#005fb8] dark:text-blue-300 ring-1 ring-[#005fb8]'
+                  ? 'border-primary bg-[#f0f7ff] dark:bg-primary/15 text-primary dark:text-primary ring-1 ring-primary'
                   : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 hover:border-slate-300'
                 }
               `}
             >
               <div className="flex items-center gap-1.5">
-                <GraduationCap className={`w-4 h-4 ${role === 'student' ? 'text-[#005fb8] dark:text-blue-300' : 'text-slate-500'}`} />
+                <GraduationCap className={`w-4 h-4 ${role === 'student' ? 'text-primary dark:text-primary' : 'text-slate-500'}`} />
                 <span className="text-xs font-semibold">Student</span>
               </div>
               <span className="text-[10px] text-slate-400">Submit work & tests</span>
@@ -221,13 +221,13 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
               className={`
                 p-3 rounded-xl border flex flex-col items-start gap-1 transition-all cursor-pointer text-left
                 ${role === 'teacher'
-                  ? 'border-[#005fb8] bg-[#f0f7ff] dark:bg-blue-950/40 text-[#005fb8] dark:text-blue-300 ring-1 ring-[#005fb8]'
+                  ? 'border-primary bg-[#f0f7ff] dark:bg-primary/15 text-primary dark:text-primary ring-1 ring-primary'
                   : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 hover:border-slate-300'
                 }
               `}
             >
               <div className="flex items-center gap-1.5">
-                <Monitor className={`w-4 h-4 ${role === 'teacher' ? 'text-[#005fb8] dark:text-blue-300' : 'text-slate-500'}`} />
+                <Monitor className={`w-4 h-4 ${role === 'teacher' ? 'text-primary dark:text-primary' : 'text-slate-500'}`} />
                 <span className="text-xs font-semibold">Teacher</span>
               </div>
               <span className="text-[10px] text-slate-400">Create & grade</span>
@@ -248,7 +248,7 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
                 onChange={(e) => setFullName(e.target.value)}
                 placeholder="Enter your full name"
                 required
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-hidden focus:border-[#005fb8] focus:ring-1 focus:ring-[#005fb8] transition-all"
+                className="w-full px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-hidden focus:border-primary focus:ring-1 focus:ring-primary transition-all"
               />
             </div>
           )}
@@ -263,7 +263,7 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@school.edu"
               required
-              className="w-full px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-hidden focus:border-[#005fb8] focus:ring-1 focus:ring-[#005fb8] transition-all"
+              className="w-full px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-hidden focus:border-primary focus:ring-1 focus:ring-primary transition-all"
             />
           </div>
 
@@ -276,7 +276,7 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
                 <button
                   type="button"
                   onClick={() => onNavigate('/reset-password')}
-                  className="text-[11px] text-slate-500 hover:text-[#005fb8] dark:text-slate-400 dark:hover:text-blue-400 font-medium cursor-pointer transition-colors"
+                  className="text-[11px] text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary font-medium cursor-pointer transition-colors"
                 >
                   Forgot password?
                 </button>
@@ -288,14 +288,14 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
               required
-              className="w-full px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-hidden focus:border-[#005fb8] focus:ring-1 focus:ring-[#005fb8] transition-all"
+              className="w-full px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-hidden focus:border-primary focus:ring-1 focus:ring-primary transition-all"
             />
           </div>
 
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full mt-2 py-2.5 px-4 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs sm:text-sm font-semibold shadow-xs flex items-center justify-center gap-2 transition-colors cursor-pointer disabled:opacity-50"
+            className="btn-sm btn-primary w-full mt-2 sm: disabled:opacity-50"
           >
             {isLoading && <Loader2 className="w-4 h-4 animate-spin" />}
             <span>{mode === 'signin' ? 'Sign in to ONYX' : 'Create ONYX account'}</span>
@@ -310,7 +310,7 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
               <button
                 type="button"
                 onClick={() => setMode('signup')}
-                className="font-semibold text-[#005fb8] hover:underline cursor-pointer"
+                className="font-semibold text-primary hover:underline cursor-pointer"
               >
                 Sign up
               </button>
@@ -321,7 +321,7 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
               <button
                 type="button"
                 onClick={() => setMode('signin')}
-                className="font-semibold text-[#005fb8] hover:underline cursor-pointer"
+                className="font-semibold text-primary hover:underline cursor-pointer"
               >
                 Sign in
               </button>
@@ -375,7 +375,7 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
                   <button
                     type="submit"
                     disabled={resetLoading}
-                    className="px-4 py-1.5 rounded-lg bg-[#005fb8] text-white text-xs font-semibold"
+                    className="px-4 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold"
                   >
                     {resetLoading ? 'Sending...' : 'Send link'}
                   </button>

@@ -32,7 +32,7 @@ export function NotebookPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-[#005fb8] dark:text-blue-400 mb-1">
+          <div className="flex items-center gap-2 text-xs font-semibold text-primary dark:text-primary mb-1">
             <PenTool className="w-3.5 h-3.5" />
             <span>ONYX Digital Ink Studio</span>
           </div>
@@ -87,7 +87,7 @@ export function NotebookPage() {
       {/* Feature Highlights Banner */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
         <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-start gap-3 shadow-xs">
-          <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+          <div className="w-8 h-8 rounded-lg bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary flex items-center justify-center shrink-0">
             <PenTool className="w-4 h-4" />
           </div>
           <div>
@@ -137,7 +137,7 @@ export function NotebookPage() {
       <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 shadow-xs">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Sigma className="w-4 h-4 text-[#005fb8] dark:text-blue-400" />
+            <Sigma className="w-4 h-4 text-primary dark:text-primary" />
             <h3 className="text-sm font-semibold text-slate-900 dark:text-white">
               KaTeX Math Expressions Quick Reference
             </h3>
@@ -158,11 +158,11 @@ export function NotebookPage() {
               key={idx}
               type="button"
               onClick={() => handleCopyLatex(item.code)}
-              className="p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950/60 text-left hover:border-blue-400 dark:hover:border-blue-500 transition-colors group cursor-pointer"
+              className="p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950/60 text-left hover:border-primary dark:hover:border-primary transition-colors group cursor-pointer"
             >
               <div className="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 font-medium mb-1">
                 <span>{item.label}</span>
-                <Copy className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-blue-600 dark:text-blue-400" />
+                <Copy className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-primary dark:text-primary" />
               </div>
               <div className="py-1 text-slate-800 dark:text-slate-200 overflow-x-auto text-xs">
                 <RenderMathText content={`$$${item.code}$$`} />

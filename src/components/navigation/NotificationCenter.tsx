@@ -72,7 +72,7 @@ export function NotificationCenter({ onNavigate }: NotificationCenterProps) {
   const getNotificationIcon = (type: NotificationType) => {
     switch (type) {
       case 'assignment':
-        return <BookOpen className="w-4 h-4 text-blue-600" />;
+        return <BookOpen className="w-4 h-4 text-primary" />;
       case 'deadline':
         return <Clock className="w-4 h-4 text-amber-600" />;
       case 'submission':
@@ -127,7 +127,7 @@ export function NotificationCenter({ onNavigate }: NotificationCenterProps) {
                 Notifications
               </span>
               {unreadCount > 0 && (
-                <span className="px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-[#005fb8] dark:text-blue-400 font-mono text-[10px] font-bold">
+                <span className="px-2 py-0.5 rounded-full bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary font-mono text-[10px] font-bold">
                   {unreadCount} new
                 </span>
               )}
@@ -138,7 +138,7 @@ export function NotificationCenter({ onNavigate }: NotificationCenterProps) {
                 <button
                   type="button"
                   onClick={() => markAllNotificationsAsRead(user.uid)}
-                  className="text-[11px] font-semibold text-[#005fb8] dark:text-blue-400 hover:underline cursor-pointer flex items-center gap-1"
+                  className="text-[11px] font-semibold text-primary dark:text-primary hover:underline cursor-pointer flex items-center gap-1"
                 >
                   <Check className="w-3 h-3 stroke-[3]" />
                   <span>Mark all read</span>
@@ -224,7 +224,7 @@ export function NotificationCenter({ onNavigate }: NotificationCenterProps) {
                   className={`p-3 sm:p-3.5 flex items-start gap-3 transition-colors cursor-pointer relative group ${
                     n.isRead
                       ? 'bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/50'
-                      : 'bg-blue-50/40 dark:bg-blue-950/20 hover:bg-blue-50/80 dark:hover:bg-blue-950/40'
+                      : 'bg-primary-soft/40 dark:bg-primary/15 hover:bg-primary-soft/80 dark:hover:bg-primary/20'
                   }`}
                 >
                   {/* Left Icon Pill */}
@@ -245,7 +245,7 @@ export function NotificationCenter({ onNavigate }: NotificationCenterProps) {
                         {n.title}
                       </h4>
                       {!n.isRead && (
-                        <span className="w-2 h-2 rounded-full bg-blue-600 shrink-0" />
+                        <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
                       )}
                     </div>
                     <p className="text-[11px] text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">

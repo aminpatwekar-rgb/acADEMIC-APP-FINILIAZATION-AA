@@ -91,10 +91,10 @@ export function LeaderboardPage() {
   };
 
   const avatarColors = [
-    'bg-indigo-600',
+    'bg-primary',
     'bg-emerald-600',
     'bg-purple-600',
-    'bg-blue-600',
+    'bg-primary',
     'bg-amber-600',
     'bg-rose-600',
     'bg-cyan-600'

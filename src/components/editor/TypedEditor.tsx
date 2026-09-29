@@ -451,7 +451,7 @@ export function TypedEditor({
                 onClick={() => setShowEquationPicker(!showEquationPicker)}
                 className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
               >
-                <Sigma className="w-3.5 h-3.5 text-blue-500" />
+                <Sigma className="w-3.5 h-3.5 text-primary" />
                 <span>Insert Equation</span>
               </button>
 
@@ -464,10 +464,10 @@ export function TypedEditor({
                         key={i}
                         type="button"
                         onClick={() => handleInsertEquation(eq.latex)}
-                        className="p-1.5 rounded-lg border border-slate-200 dark:border-slate-800 text-left hover:bg-blue-50 dark:hover:bg-blue-950/40 text-[11px] font-mono truncate cursor-pointer"
+                        className="p-1.5 rounded-lg border border-slate-200 dark:border-slate-800 text-left hover:bg-primary-soft dark:hover:bg-primary/20 text-[11px] font-mono truncate cursor-pointer"
                       >
                         <div className="font-sans font-semibold text-[10px] text-slate-500">{eq.label}</div>
-                        <div className="text-blue-600 dark:text-blue-400 truncate">{eq.latex}</div>
+                        <div className="text-primary dark:text-primary truncate">{eq.latex}</div>
                       </button>
                     ))}
                   </div>
@@ -493,7 +493,7 @@ export function TypedEditor({
               onClick={() => setSpellCheckEnabled(!spellCheckEnabled)}
               className={`flex items-center gap-1 px-2.5 py-1 rounded-lg border cursor-pointer ${
                 spellCheckEnabled
-                  ? 'bg-blue-50 dark:bg-blue-950/40 text-blue-600 border-blue-200 dark:border-blue-900'
+                  ? 'bg-primary-soft dark:bg-primary/15 text-primary border-primary/30 dark:border-primary/30'
                   : 'bg-white dark:bg-slate-900 text-slate-400 border-slate-200 dark:border-slate-800'
               }`}
             >
@@ -671,7 +671,7 @@ export function TypedEditor({
                   type="file"
                   accept="image/*"
                   onChange={handleImageFileChange}
-                  className="w-full text-xs text-slate-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer"
+                  className="w-full text-xs text-slate-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-primary-soft file:text-primary hover:file:bg-primary-soft cursor-pointer"
                 />
               </div>
 
@@ -711,7 +711,7 @@ export function TypedEditor({
               <button
                 type="button"
                 onClick={() => handleAddImage(newImageUrl, newImageCaption)}
-                className="px-4 py-1.5 rounded-lg bg-[#005fb8] text-white text-xs font-semibold cursor-pointer"
+                className="px-4 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold cursor-pointer"
               >
                 Attach Image
               </button>

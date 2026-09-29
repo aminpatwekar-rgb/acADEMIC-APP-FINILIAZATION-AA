@@ -38,7 +38,7 @@ export function AuthLayout({
           className="absolute inset-0 pointer-events-none opacity-40 dark:opacity-60"
           style={{
             background:
-              'radial-gradient(ellipse at 15% 15%, rgba(0, 95, 184, 0.35) 0%, transparent 50%), radial-gradient(ellipse at 85% 85%, rgba(124, 58, 237, 0.28) 0%, transparent 55%)'
+              'radial-gradient(ellipse at 15% 15%, rgba(47, 95, 224, 0.35) 0%, transparent 50%), radial-gradient(ellipse at 85% 85%, rgba(124, 58, 237, 0.28) 0%, transparent 55%)'
           }}
         />
 
@@ -84,7 +84,7 @@ export function AuthLayout({
           {/* Layered Architectural & Mathematical Isometric Showcase */}
           <div className="relative w-full max-w-lg">
             {/* Ambient Backlight Glow behind card */}
-            <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-3xl blur-2xl opacity-70" />
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-primary/30 to-purple-600/30 rounded-3xl blur-2xl opacity-70" />
 
             {/* Primary Glassmorphic Canvas Showcase Card */}
             <div className="relative rounded-2xl border border-slate-700/60 bg-slate-900/85 backdrop-blur-md p-6 xl:p-7 shadow-2xl space-y-5">
@@ -106,9 +106,9 @@ export function AuthLayout({
               <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
                 <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono">
                   <span>Theorem 4.12: Stokes & Surface Integrals</span>
-                  <span className="text-blue-400 font-semibold">Verified Proof</span>
+                  <span className="text-primary font-semibold">Verified Proof</span>
                 </div>
-                <div className="font-serif italic text-lg sm:text-xl text-blue-200 tracking-wide text-center py-2 select-all">
+                <div className="font-serif italic text-lg sm:text-xl text-primary tracking-wide text-center py-2 select-all">
                   ∮<sub>∂Ω</sub> F · dr = ∬<sub>Ω</sub> (∇ × F) · n̂ dA
                 </div>
                 <div className="text-[11px] text-slate-400 flex items-center justify-between pt-1 border-t border-slate-800/50">
@@ -120,7 +120,7 @@ export function AuthLayout({
               {/* Floating Feature Indicators */}
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                  <div className="w-7 h-7 rounded-lg bg-primary/20 text-primary flex items-center justify-center shrink-0">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
@@ -142,7 +142,7 @@ export function AuthLayout({
             </div>
 
             {/* Overlapping Floating Badge Bottom-Right */}
-            <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2 border border-blue-400/40 animate-in fade-in zoom-in-95 duration-200">
+            <div className="absolute -bottom-4 -right-4 bg-primary text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2 border border-primary/40 animate-in fade-in zoom-in-95 duration-200">
               <Sparkles className="w-3.5 h-3.5 fill-current" />
               <span>Handwritten Canvas & LaTeX Math</span>
             </div>

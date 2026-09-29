@@ -102,7 +102,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
       {/* Top Header Section */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <div className="flex items-center gap-1.5 text-xs font-semibold text-[#005fb8] dark:text-blue-400 mb-1">
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-primary dark:text-primary mb-1">
             <Sparkles className="w-3.5 h-3.5" />
             <span>{isTeacherOrAdmin ? 'Faculty Workspace' : 'Student Dashboard'}</span>
           </div>
@@ -124,14 +124,14 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <button
                 type="button"
                 onClick={() => onNavigate('/classes')}
-                className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="btn-sm btn-secondary"
               >
                 Manage Classes
               </button>
               <button
                 type="button"
                 onClick={() => onNavigate('/assignments')}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                className="btn-sm btn-primary"
               >
                 <span>View Assignments</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -142,14 +142,14 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <button
                 type="button"
                 onClick={() => onNavigate('/classes')}
-                className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="btn-sm btn-secondary"
               >
                 Join Class
               </button>
               <button
                 type="button"
                 onClick={() => onNavigate('/assignments')}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                className="btn-sm btn-primary"
               >
                 <span>Assignments</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -163,13 +163,12 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
       {isTeacherOrAdmin ? (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Active Classes */}
-          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+          <div className="card p-5 group hover:-translate-y-0.5 hover:shadow-lift transition-all duration-200">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 ACTIVE CLASSES
               </span>
-              <div className="w-7 h-7 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center">
-                <GraduationCap className="w-4 h-4" />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 text-white flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform duration-200"><GraduationCap className="w-4 h-4" />
               </div>
             </div>
             <div className="text-3xl font-bold text-slate-900 dark:text-white mt-3 font-mono">
@@ -178,13 +177,12 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Enrolled Students */}
-          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+          <div className="card p-5 group hover:-translate-y-0.5 hover:shadow-lift transition-all duration-200">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 ENROLLED STUDENTS
               </span>
-              <div className="w-7 h-7 rounded-full bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                <Users className="w-4 h-4" />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 text-white flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform duration-200"><Users className="w-4 h-4" />
               </div>
             </div>
             <div className="text-3xl font-bold text-slate-900 dark:text-white mt-3 font-mono">
@@ -193,13 +191,12 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Active Assignments */}
-          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+          <div className="card p-5 group hover:-translate-y-0.5 hover:shadow-lift transition-all duration-200">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 ACTIVE ASSIGNMENTS
               </span>
-              <div className="w-7 h-7 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
-                <BookOpen className="w-4 h-4" />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 text-white flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform duration-200"><BookOpen className="w-4 h-4" />
               </div>
             </div>
             <div className="text-3xl font-bold text-slate-900 dark:text-white mt-3 font-mono">
@@ -208,13 +205,12 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Pending Review */}
-          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+          <div className="card p-5 group hover:-translate-y-0.5 hover:shadow-lift transition-all duration-200">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 PENDING REVIEW
               </span>
-              <div className="w-7 h-7 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center">
-                <Clock className="w-4 h-4" />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 text-white flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform duration-200"><Clock className="w-4 h-4" />
               </div>
             </div>
             <div className="text-3xl font-bold text-slate-900 dark:text-white mt-3 font-mono">
@@ -226,13 +222,12 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
         <>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Pending Work */}
-            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+            <div className="card p-5 group hover:-translate-y-0.5 hover:shadow-lift transition-all duration-200">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   PENDING WORK
                 </span>
-                <div className="w-7 h-7 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center">
-                  <Clock className="w-4 h-4" />
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 text-white flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform duration-200"><Clock className="w-4 h-4" />
                 </div>
               </div>
               <div className="text-3xl font-bold text-slate-900 dark:text-white mt-3 font-mono">
@@ -241,13 +236,12 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
             </div>
 
             {/* Overdue */}
-            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+            <div className="card p-5 group hover:-translate-y-0.5 hover:shadow-lift transition-all duration-200">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   OVERDUE
                 </span>
-                <div className="w-7 h-7 rounded-full bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center">
-                  <AlertTriangle className="w-4 h-4" />
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 text-white flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform duration-200"><AlertTriangle className="w-4 h-4" />
                 </div>
               </div>
               <div className="text-3xl font-bold text-slate-900 dark:text-white mt-3 font-mono">
@@ -256,13 +250,12 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
             </div>
 
             {/* Completed */}
-            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+            <div className="card p-5 group hover:-translate-y-0.5 hover:shadow-lift transition-all duration-200">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   COMPLETED
                 </span>
-                <div className="w-7 h-7 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
-                  <CheckCircle2 className="w-4 h-4" />
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 text-white flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform duration-200"><CheckCircle2 className="w-4 h-4" />
                 </div>
               </div>
               <div className="text-3xl font-bold text-slate-900 dark:text-white mt-3 font-mono">
@@ -271,13 +264,12 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
             </div>
 
             {/* Enrolled Classes */}
-            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+            <div className="card p-5 group hover:-translate-y-0.5 hover:shadow-lift transition-all duration-200">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   ENROLLED CLASSES
                 </span>
-                <div className="w-7 h-7 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center">
-                  <GraduationCap className="w-4 h-4" />
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 text-white flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform duration-200"><GraduationCap className="w-4 h-4" />
                 </div>
               </div>
               <div className="text-3xl font-bold text-slate-900 dark:text-white mt-3 font-mono">
@@ -292,11 +284,11 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <span className="font-semibold text-slate-800 dark:text-slate-200">
                 Overall Completion <span className="font-normal text-slate-400">({completedAssignmentsCount} of {totalTasks} tasks completed)</span>
               </span>
-              <span className="font-bold text-[#005fb8] dark:text-blue-400">{completionPercent}%</span>
+              <span className="font-bold text-primary dark:text-primary">{completionPercent}%</span>
             </div>
             <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
               <div
-                className="h-full bg-[#005fb8] rounded-full transition-all"
+                className="h-full bg-gradient-to-r from-primary to-primary-strong rounded-full transition-all duration-500 ease-out"
                 style={{ width: `${completionPercent}%` }}
               />
             </div>
@@ -340,7 +332,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <div
                 key={asg.id}
                 onClick={() => onNavigate('/assignments')}
-                className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700 cursor-pointer transition-all space-y-2.5 shadow-xs"
+                className="card-hover p-5 cursor-pointer space-y-2.5 group/asg"
               >
                 <div className="flex items-center justify-between text-xs">
                   <span className="font-mono font-bold text-slate-600 dark:text-slate-400">{asg.classCode || 'Section'}</span>
@@ -353,7 +345,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
                     <Clock className="w-3.5 h-3.5" />
                     Due {asg.dueDate}
                   </span>
-                  <span className="font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-1">
+                  <span className="font-semibold text-primary flex items-center gap-1 group-hover/asg:gap-2 transition-all">
                     Open <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
@@ -383,7 +375,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <button
                 type="button"
                 onClick={() => onNavigate('/classes')}
-                className="px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs cursor-pointer transition-colors flex items-center gap-1.5"
+                className="btn-sm btn-primary"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Get Started with Classes</span>

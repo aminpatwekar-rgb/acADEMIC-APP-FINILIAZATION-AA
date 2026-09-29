@@ -230,7 +230,7 @@ export function QuestionBankModal({
         {/* TOP BAR */}
         <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-2xl bg-[#005fb8]/10 text-[#005fb8] flex items-center justify-center">
+            <div className="w-9 h-9 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
@@ -248,7 +248,7 @@ export function QuestionBankModal({
               <button
                 type="button"
                 onClick={() => setIsCreating(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#005fb8] text-white hover:bg-[#004e9a] text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary text-white hover:bg-primary-strong text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
               >
                 <Plus className="w-4 h-4" />
                 <span>New Item</span>
@@ -271,10 +271,10 @@ export function QuestionBankModal({
           {(isCreating || editingItem) && (
             <form
               onSubmit={handleSaveForm}
-              className="p-5 rounded-2xl border border-blue-200 dark:border-blue-900 bg-blue-50/30 dark:bg-blue-950/20 space-y-4 animate-in fade-in duration-150"
+              className="p-5 rounded-2xl border border-primary/30 dark:border-primary/30 bg-primary-soft/30 dark:bg-primary/15 space-y-4 animate-in fade-in duration-150"
             >
               <div className="flex items-center justify-between">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#005fb8] dark:text-blue-400">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-primary dark:text-primary">
                   {editingItem ? 'Edit Question Bank Item' : 'Add Question to Repository'}
                 </h3>
                 <button
@@ -377,7 +377,7 @@ export function QuestionBankModal({
                         name="correctOpt"
                         checked={formCorrectIndex === optIdx}
                         onChange={() => setFormCorrectIndex(optIdx)}
-                        className="w-4 h-4 accent-blue-600"
+                        className="w-4 h-4 accent-primary"
                       />
                       <input
                         type="text"
@@ -421,7 +421,7 @@ export function QuestionBankModal({
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-1.5 rounded-xl bg-[#005fb8] text-white text-xs font-semibold shadow-xs"
+                  className="px-4 py-1.5 rounded-xl bg-primary text-white text-xs font-semibold shadow-xs"
                 >
                   {editingItem ? 'Save Changes' : 'Commit to Bank'}
                 </button>
@@ -484,7 +484,7 @@ export function QuestionBankModal({
                 onClick={() => setSelectedTag('all')}
                 className={`px-2.5 py-0.5 rounded-lg text-[10px] font-semibold transition-colors cursor-pointer ${
                   selectedTag === 'all'
-                    ? 'bg-[#005fb8] text-white'
+                    ? 'bg-primary text-white'
                     : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                 }`}
               >
@@ -497,7 +497,7 @@ export function QuestionBankModal({
                   onClick={() => setSelectedTag(tag === selectedTag ? 'all' : tag)}
                   className={`px-2.5 py-0.5 rounded-lg text-[10px] font-semibold transition-colors cursor-pointer ${
                     selectedTag === tag
-                      ? 'bg-[#005fb8] text-white'
+                      ? 'bg-primary text-white'
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900'
                   }`}
                 >
@@ -532,7 +532,7 @@ export function QuestionBankModal({
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 font-mono text-[10px] font-bold uppercase">
+                      <span className="px-2 py-0.5 rounded-md bg-primary-soft dark:bg-primary/15 text-primary dark:text-primary font-mono text-[10px] font-bold uppercase">
                         {item.type.replace('_', ' ')}
                       </span>
                       <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-semibold capitalize">

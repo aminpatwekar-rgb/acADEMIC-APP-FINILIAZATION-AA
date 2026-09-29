@@ -54,7 +54,7 @@ export function ResetPasswordPage({ onNavigate }: ResetPasswordPageProps) {
             <button
               type="button"
               onClick={() => onNavigate('/login')}
-              className="w-full py-2.5 px-4 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
+              className="btn-sm btn-primary w-full"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Sign In</span>
@@ -72,14 +72,14 @@ export function ResetPasswordPage({ onNavigate }: ResetPasswordPageProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@school.edu"
                 required
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm text-slate-900 dark:text-white outline-hidden focus:border-[#005fb8] focus:ring-1 focus:ring-[#005fb8]"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-sm text-slate-900 dark:text-white outline-hidden focus:border-primary focus:ring-1 focus:ring-primary"
               />
             </div>
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-2.5 px-4 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-sm font-semibold shadow-xs flex items-center justify-center transition-colors cursor-pointer disabled:opacity-50"
+              className="btn-sm btn-primary w-full flex items-center justify-center disabled:opacity-50"
             >
               {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Send reset link'}
             </button>

@@ -9,11 +9,15 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import { ViewRoleProvider } from './lib/viewRole';
 import { ErrorBoundary } from './components/error-page';
 import { Router } from './router';
+import { isBootstrapAdminEmail } from './lib/config';
 
 function AppContent() {
   const { profile, user, loading } = useAuth();
-  // Ensure bootstrap admin email resolves to admin even prior to Firestore snapshot response
-  const actualRole = (user?.email === 'merwynd12@gmail.com' || user?.email === 'aminpatwekar@gmail.com')
+  // Authorization source of truth: the `role` field on the Firestore `users`
+  // document (or an `admin` custom claim). The optional VITE_ADMIN_BOOTSTRAP_EMAILS
+  // env var only pre-resolves the role for the very first admin before their
+  // Firestore profile snapshot arrives — remove it in production.
+  const actualRole = isBootstrapAdminEmail(user?.email)
     ? 'admin'
     : (profile?.role || 'student');
 

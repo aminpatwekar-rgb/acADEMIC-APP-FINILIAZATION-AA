@@ -83,7 +83,7 @@ export function RolePreviewBanner() {
   return (
     <div className="w-full bg-[#fef9ee] border border-[#fde68a] text-[#92400e] px-4 py-2.5 rounded-lg flex items-center justify-between text-xs sm:text-sm font-medium mb-6 shadow-xs animate-in fade-in duration-200">
       <div className="flex items-center gap-2">
-        <Eye className="w-4 h-4 text-[#d97706] shrink-0" />
+        <Eye className="w-4 h-4 text-amber-500 shrink-0" />
         <span>
           Previewing as <strong className="font-semibold">{roleLabel}</strong> — your account&apos;s actual role is <strong className="font-semibold">{actualRoleLabel}</strong>. Real permissions remain protected by Firebase rules.
         </span>

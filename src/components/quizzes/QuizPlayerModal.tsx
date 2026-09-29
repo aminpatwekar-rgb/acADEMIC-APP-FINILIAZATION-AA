@@ -443,7 +443,7 @@ export function QuizPlayerModal({
         {/* Top Header */}
         <div className="p-3.5 sm:p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/80 dark:bg-slate-950/80">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-xl bg-blue-600 text-white font-bold text-xs flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-primary text-white font-bold text-xs flex items-center justify-center">
               {quiz.classCode || 'OX'}
             </div>
             <div>
@@ -500,7 +500,7 @@ export function QuizPlayerModal({
               type="button"
               onClick={onClose}
               aria-label="Close assessment player"
-              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
             >
               <X className="w-5 h-5" />
             </button>
@@ -574,7 +574,7 @@ export function QuizPlayerModal({
               </div>
               <div className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
                 <span className="text-[10px] uppercase font-bold text-slate-400">Answered</span>
-                <div className="text-lg font-mono font-bold text-blue-600 dark:text-blue-400 mt-1">
+                <div className="text-lg font-mono font-bold text-primary dark:text-primary mt-1">
                   {submissionSummary?.answeredCount ?? answeredTotal}
                 </div>
               </div>
@@ -589,7 +589,7 @@ export function QuizPlayerModal({
             <button
               type="button"
               onClick={onClose}
-              className="px-6 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold cursor-pointer shadow-xs"
+              className="btn-lg btn-primary"
             >
               Return to Quizzes
             </button>
@@ -606,7 +606,7 @@ export function QuizPlayerModal({
                   {/* Question Header Badge */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-[#005fb8] dark:text-blue-400 uppercase tracking-wider">
+                      <span className="text-xs font-bold text-primary dark:text-primary uppercase tracking-wider">
                         Question {currentIdx + 1} of {questions.length}
                       </span>
                       <span className="px-2 py-0.5 rounded-md font-mono text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-bold">
@@ -650,7 +650,7 @@ export function QuizPlayerModal({
                             onClick={() => handleSelectOption(currentQ.id, optIdx)}
                             className={`w-full text-left p-3.5 sm:p-4 rounded-xl border transition-all flex items-center justify-between cursor-pointer ${
                               isSelected
-                                ? 'border-blue-600 bg-blue-50/60 dark:bg-blue-950/40 text-blue-950 dark:text-blue-100 shadow-xs'
+                                ? 'border-primary bg-primary-soft/60 dark:bg-primary/15 text-primary-strong dark:text-primary shadow-xs'
                                 : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/60 text-slate-800 dark:text-slate-200'
                             }`}
                           >
@@ -658,7 +658,7 @@ export function QuizPlayerModal({
                               <span
                                 className={`w-6 h-6 rounded-lg text-xs font-bold flex items-center justify-center font-mono ${
                                   isSelected
-                                    ? 'bg-blue-600 text-white'
+                                    ? 'bg-primary text-white'
                                     : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                                 }`}
                               >
@@ -666,7 +666,7 @@ export function QuizPlayerModal({
                               </span>
                               <span className="text-xs sm:text-sm font-medium">{opt}</span>
                             </div>
-                            {isSelected && <Check className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />}
+                            {isSelected && <Check className="w-4 h-4 text-primary dark:text-primary shrink-0" />}
                           </button>
                         );
                       })}
@@ -815,9 +815,9 @@ export function QuizPlayerModal({
                         type="button"
                         onClick={() => setCurrentIdx(idx)}
                         aria-label={`Question ${idx + 1}${answered ? ', answered' : ', unanswered'}${isFlagged ? ', flagged for review' : ''}`}
-                        className={`h-8 rounded-lg font-mono text-xs font-bold transition-all relative flex items-center justify-center cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                        className={`h-8 rounded-lg font-mono text-xs font-bold transition-all relative flex items-center justify-center cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none ${
                           isCurrent
-                            ? 'ring-2 ring-blue-600 bg-blue-600 text-white shadow-xs'
+                            ? 'ring-2 ring-primary bg-primary text-white shadow-xs'
                             : answered
                             ? 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800'
                             : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-400'
