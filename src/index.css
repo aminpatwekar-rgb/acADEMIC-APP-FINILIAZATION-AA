@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 248 249 251;
+    --foreground: 15 23 42;
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+    --primary: 217 119 6;
+    --primary-foreground: 255 255 255;
+    --secondary: 241 245 249;
+    --secondary-foreground: 15 23 42;
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
+    --accent: 217 119 6;
+    --accent-foreground: 255 255 255;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 217 119 6;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 11 15 25;
+    --foreground: 248 250 252;
+    --card: 18 24 38;
+    --card-foreground: 248 250 252;
+    --primary: 245 158 11;
+    --primary-foreground: 15 23 42;
+    --secondary: 30 41 59;
+    --secondary-foreground: 248 250 252;
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
+    --accent: 245 158 11;
+    --accent-foreground: 15 23 42;
+    --border: 30 41 59;
+    --input: 30 41 59;
+    --ring: 245 158 11;
+  }
+
+  /* Theme Presets */
+  body[data-theme="onyx"] {
+    --primary-color: #d97706;
+    --primary-hover: #b45309;
+    --sidebar-bg: #ffffff;
+  }
+  body[data-theme="midnight"] {
+    --primary-color: #0284c7;
+    --primary-hover: #0369a1;
+  }
+  body[data-theme="sunset"] {
+    --primary-color: #ea580c;
+    --primary-hover: #c2410c;
+  }
+  body[data-theme="forest"] {
+    --primary-color: #059669;
+    --primary-hover: #047857;
+  }
+  body[data-theme="ocean"] {
+    --primary-color: #0d9488;
+    --primary-hover: #0f766e;
+  }
+  body[data-theme="mono"] {
+    --primary-color: #18181b;
+    --primary-hover: #27272a;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.7);
+}
+
+/* KaTeX custom tweaks */
+.katex-display {
+  margin: 0.75em 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+/* -------------------------------------------------------------
+   ACCESSIBILITY & REDUCED MOTION
+   ------------------------------------------------------------- */
+
+/* Visible high-contrast focus rings for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #005fb8;
+  outline-offset: 2px;
+}
+
+.dark :focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* Compliance with prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen reader focusable utility */
+.sr-only-focusable:not(:focus):not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+

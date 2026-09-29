@@ -1,0 +1,7 @@
+{
+  "name": "ONYX - Modern Learning Management System",
+  "description": "Handwritten-first LMS with anti-cheat locked typed editor, math rendering, and AI assessments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

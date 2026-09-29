@@ -1,0 +1,395 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with academic role, status, and metadata",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string", "maxLength": 100 },
+        "avatar": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "teacher", "admin"] },
+        "active": { "type": "boolean" },
+        "institution": { "type": "string", "maxLength": 150 },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "displayName", "role", "active", "createdAt", "updatedAt"]
+    },
+    "Class": {
+      "title": "Class",
+      "description": "Academic course section with join codes and roster",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "code": { "type": "string" },
+        "name": { "type": "string" },
+        "subject": { "type": "string" },
+        "section": { "type": "string" },
+        "description": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "instructor": { "type": "string" },
+        "schedule": { "type": "string" },
+        "room": { "type": "string" },
+        "bannerPreset": { "type": "string" },
+        "bannerColor": { "type": "string" },
+        "archived": { "type": "boolean" },
+        "joinCode": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "code", "name", "subject", "joinCode", "ownerId", "archived"]
+    },
+    "ClassMember": {
+      "title": "ClassMember",
+      "description": "Student or faculty membership in a class section",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "classId": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "teacher", "admin"] },
+        "rollNumber": { "type": "string" },
+        "erNumber": { "type": "string" },
+        "srNumber": { "type": "string" },
+        "attendance": { "type": "number" },
+        "progress": { "type": "number" },
+        "grade": { "type": "number" },
+        "joinedAt": { "type": "string" }
+      },
+      "required": ["id", "classId", "userId", "name", "role", "joinedAt"]
+    },
+    "Assignment": {
+      "title": "Assignment",
+      "description": "Academic assignment deliverable with permission controls and workflow statuses",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "classId": { "type": "string" },
+        "classCode": { "type": "string" },
+        "className": { "type": "string" },
+        "title": { "type": "string" },
+        "subject": { "type": "string" },
+        "instructions": { "type": "string" },
+        "dueDate": { "type": "string" },
+        "dueTime": { "type": "string" },
+        "maximumMarks": { "type": "number" },
+        "points": { "type": "number" },
+        "priority": { "type": "string", "enum": ["low", "medium", "high"] },
+        "submissionType": { "type": "string", "enum": ["handwritten", "typed", "both"] },
+        "allowImages": { "type": "boolean" },
+        "allowAutocorrect": { "type": "boolean" },
+        "allowVoiceTyping": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["draft", "published", "archived"] },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "classId", "title", "maximumMarks", "submissionType", "status", "createdAt"]
+    },
+    "Submission": {
+      "title": "Submission",
+      "description": "Student assignment deliverable with lifecycle statuses, handwritten pages, and anti-cheat tracking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "assignmentId": { "type": "string" },
+        "classId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "content": { "type": "string" },
+        "mode": { "type": "string", "enum": ["handwritten", "typed"] },
+        "status": { "type": "string", "enum": ["Not Started", "In Progress", "Submitted", "Late", "Reviewed", "Returned", "Completed"] },
+        "handwrittenPages": { "type": "array" },
+        "typedImages": { "type": "array" },
+        "violations": { "type": "array" },
+        "violationsCount": { "type": "number" },
+        "score": { "type": "number" },
+        "gradeFeedback": { "type": "string" },
+        "improvementNotes": { "type": "string" },
+        "reviewerId": { "type": "string" },
+        "reviewerName": { "type": "string" },
+        "gradeReleased": { "type": "boolean" },
+        "savedAt": { "type": "string" },
+        "submittedAt": { "type": "string" },
+        "reviewedAt": { "type": "string" }
+      },
+      "required": ["id", "assignmentId", "classId", "studentId", "status"]
+    },
+    "Quiz": {
+      "title": "Quiz",
+      "description": "Timed course assessment or exam without answer keys",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "classId": { "type": "string" },
+        "classCode": { "type": "string" },
+        "className": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "type": { "type": "string", "enum": ["practice", "timed", "scheduled", "exam"] },
+        "durationMinutes": { "type": "number" },
+        "totalPoints": { "type": "number" },
+        "points": { "type": "number" },
+        "maxAttempts": { "type": "number" },
+        "shuffleQuestions": { "type": "boolean" },
+        "shuffleOptions": { "type": "boolean" },
+        "opensAt": { "type": "string" },
+        "closesAt": { "type": "string" },
+        "lockdownConfig": { "type": "object" },
+        "questions": { "type": "array" },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "classId", "title", "type", "durationMinutes", "points", "createdAt"]
+    },
+    "QuizAnswerKey": {
+      "title": "QuizAnswerKey",
+      "description": "Secure master answer keys and explanations accessible exclusively by instructors",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "quizId": { "type": "string" },
+        "questions": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "quizId", "questions", "updatedAt"]
+    },
+    "QuizAttempt": {
+      "title": "QuizAttempt",
+      "description": "Student exam attempt recording responses, persisted shuffled order, lockdown violations, and grading",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "quizId": { "type": "string" },
+        "quizTitle": { "type": "string" },
+        "classId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "attemptNumber": { "type": "number" },
+        "startTime": { "type": "string" },
+        "submissionTime": { "type": "string" },
+        "status": { "type": "string", "enum": ["in_progress", "submitted", "timed_out", "locked"] },
+        "timeRemainingSeconds": { "type": "number" },
+        "shuffledQuestions": { "type": "array" },
+        "answers": { "type": "object" },
+        "violations": { "type": "array" },
+        "violationsCount": { "type": "number" },
+        "isLocked": { "type": "boolean" },
+        "score": { "type": "number" },
+        "maxScore": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "quizId", "studentId", "status", "startTime", "attemptNumber"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Class or platform-wide broadcast announcement",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "classId": { "type": "string" },
+        "authorId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "targetAudience": { "type": "string", "enum": ["everyone", "teachers", "students"] },
+        "isPlatformWide": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title", "content", "targetAudience", "authorId", "createdAt"]
+    },
+    "Resource": {
+      "title": "Resource",
+      "description": "Course learning materials, syllabi, or lab guidelines",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "classId": { "type": "string" },
+        "title": { "type": "string" },
+        "fileName": { "type": "string" },
+        "fileSize": { "type": "string" },
+        "fileType": { "type": "string" },
+        "category": { "type": "string" },
+        "uploadedBy": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "classId", "title", "fileName", "uploadedBy", "createdAt"]
+    },
+    "DiscussionPost": {
+      "title": "DiscussionPost",
+      "description": "Class community questions, proof inquiries, and threaded replies",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "classId": { "type": "string" },
+        "authorId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "pinned": { "type": "boolean" },
+        "locked": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "classId", "authorId", "authorName", "title", "content", "createdAt"]
+    },
+    "QuestionBankItem": {
+      "title": "QuestionBankItem",
+      "description": "Pedagogical questions repository with answer keys, rubrics, tags, and difficulty metrics",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "question": { "type": "object" },
+        "answerKey": { "type": "object" },
+        "topic": { "type": "string" },
+        "subject": { "type": "string" },
+        "difficulty": { "type": "string", "enum": ["easy", "medium", "hard"] },
+        "type": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "source": { "type": "string" },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "question", "difficulty", "type", "createdBy", "createdAt"]
+    },
+    "NotificationItem": {
+      "title": "NotificationItem",
+      "description": "Persistent user notifications for assignments, deadlines, submissions, announcements, grading, enrollment",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "type": { "type": "string", "enum": ["assignment", "deadline", "submission", "announcement", "grading", "enrollment", "student_leaving"] },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "classId": { "type": "string" },
+        "className": { "type": "string" },
+        "link": { "type": "string" },
+        "isRead": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "type", "title", "message", "isRead", "createdAt"]
+    },
+    "PointLedgerItem": {
+      "title": "PointLedgerItem",
+      "description": "Gamification point ledger entries",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "classId": { "type": "string" },
+        "className": { "type": "string" },
+        "points": { "type": "number" },
+        "reason": { "type": "string" },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "points", "reason", "createdAt"]
+    },
+    "UserBadgeItem": {
+      "title": "UserBadgeItem",
+      "description": "Earned student achievement badges",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "badgeId": { "type": "string" },
+        "badgeTitle": { "type": "string" },
+        "badgeCategory": { "type": "string" },
+        "badgeIcon": { "type": "string" },
+        "pointsAwarded": { "type": "number" },
+        "unlockedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "badgeId", "badgeTitle", "unlockedAt"]
+    },
+    "UserSettingsItem": {
+      "title": "UserSettingsItem",
+      "description": "User persistent settings and preferences",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "emailNotifications": { "type": "boolean" },
+        "inAppNotifications": { "type": "boolean" },
+        "assignmentAlerts": { "type": "boolean" },
+        "gradeAlerts": { "type": "boolean" },
+        "announcementAlerts": { "type": "boolean" },
+        "reminderLeadTimeHours": { "type": "number" },
+        "dailyStudyTargetMinutes": { "type": "number" },
+        "teacherDefaults": { "type": "object" },
+        "submissionPreferences": { "type": "object" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Authenticated user profile documents"
+    },
+    "/classes/{classId}": {
+      "schema": "Class",
+      "description": "Class documents"
+    },
+    "/class_members/{memberId}": {
+      "schema": "ClassMember",
+      "description": "Roster memberships for classes"
+    },
+    "/assignments/{assignmentId}": {
+      "schema": "Assignment",
+      "description": "Course assignment deliverables"
+    },
+    "/submissions/{submissionId}": {
+      "schema": "Submission",
+      "description": "Student work submissions"
+    },
+    "/quizzes/{quizId}": {
+      "schema": "Quiz",
+      "description": "Timed course assessments without answer keys"
+    },
+    "/quiz_answers/{quizId}": {
+      "schema": "QuizAnswerKey",
+      "description": "Instructor-only secure answer keys and rubrics"
+    },
+    "/quiz_attempts/{attemptId}": {
+      "schema": "QuizAttempt",
+      "description": "Student quiz attempts with persisted order, timer, and lockdown monitoring"
+    },
+    "/announcements/{announcementId}": {
+      "schema": "Announcement",
+      "description": "Class and platform-wide announcement broadcasts"
+    },
+    "/resources/{resourceId}": {
+      "schema": "Resource",
+      "description": "Shared course materials and laboratory guides"
+    },
+    "/discussions/{discussionId}": {
+      "schema": "DiscussionPost",
+      "description": "Class discussion threads and community inquiries"
+    },
+    "/question_bank/{questionId}": {
+      "schema": "QuestionBankItem",
+      "description": "Reusable pedagogical questions with answer keys, rubrics, tags, and difficulty metrics"
+    },
+    "/notifications/{notificationId}": {
+      "schema": "NotificationItem",
+      "description": "Persistent student and teacher notifications"
+    },
+    "/point_ledger/{entryId}": {
+      "schema": "PointLedgerItem",
+      "description": "Gamification point ledger tracking student achievement events"
+    },
+    "/user_badges/{badgeId}": {
+      "schema": "UserBadgeItem",
+      "description": "Student earned achievement badges"
+    },
+    "/user_settings/{userId}": {
+      "schema": "UserSettingsItem",
+      "description": "User persistent settings and preferences"
+    }
+  }
+}

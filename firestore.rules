@@ -1,0 +1,196 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Role check from user document, custom claims, or bootstrap email
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.role == "admin" ||
+        request.auth.token.email == "merwynd12@gmail.com" ||
+        request.auth.token.email == "aminpatwekar@gmail.com" ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin" &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.active == true) ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    // Teacher check
+    function isTeacher() {
+      return isSignedIn() && (
+        isAdmin() ||
+        request.auth.token.role == "teacher" ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ["teacher", "admin"] &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.active == true)
+      );
+    }
+
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // User collection rules
+    match /users/{userId} {
+      allow read: if isSignedIn();
+
+      allow create: if isOwner(userId) &&
+        request.resource.data.uid == request.auth.uid &&
+        request.resource.data.active == true &&
+        (request.resource.data.role in ['student', 'teacher'] || request.auth.token.email in ["merwynd12@gmail.com", "aminpatwekar@gmail.com"]);
+
+      allow update: if (
+        (isAdmin() && 
+         (request.auth.uid != userId || (request.resource.data.role == resource.data.role && request.resource.data.active == resource.data.active))
+        ) ||
+        (
+          isOwner(userId) &&
+          request.resource.data.role == resource.data.role &&
+          request.resource.data.active == resource.data.active &&
+          request.resource.data.uid == resource.data.uid &&
+          request.resource.data.email == resource.data.email &&
+          request.resource.data.createdAt == resource.data.createdAt
+        )
+      );
+
+      allow delete: if isAdmin() && request.auth.uid != userId;
+    }
+
+    // Classes collection: teachers and admins manage, signed-in users can read
+    match /classes/{classId} {
+      allow read: if isSignedIn();
+      allow create, update: if isTeacher();
+      allow delete: if isAdmin() || (isTeacher() && resource.data.ownerId == request.auth.uid);
+    }
+
+    // Class members: enrolled students and teachers in a class
+    match /class_members/{memberId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if isTeacher() || (isSignedIn() && resource.data.userId == request.auth.uid);
+    }
+
+    // Assignments collection: teachers manage, signed-in users read
+    match /assignments/{assignmentId} {
+      allow read: if isSignedIn();
+      allow create, update, delete: if isTeacher();
+    }
+
+    // Submissions: students submit & save drafts, teachers grade & release
+    match /submissions/{submissionId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && (
+        isTeacher() || (
+          request.resource.data.studentId == request.auth.uid &&
+          !('score' in request.resource.data) &&
+          !('grade' in request.resource.data) &&
+          !('gradeFeedback' in request.resource.data) &&
+          !('feedback' in request.resource.data) &&
+          !('improvementNotes' in request.resource.data) &&
+          !('reviewerId' in request.resource.data) &&
+          !('reviewerName' in request.resource.data) &&
+          (!('gradeReleased' in request.resource.data) || request.resource.data.gradeReleased == false)
+        )
+      );
+      allow update: if isTeacher() || (
+        isSignedIn() &&
+        resource.data.studentId == request.auth.uid &&
+        resource.data.status != "Completed" &&
+        resource.data.status != "Reviewed" &&
+        // Students cannot alter grading fields
+        (!('score' in request.resource.data) || request.resource.data.score == resource.data.score) &&
+        (!('grade' in request.resource.data) || request.resource.data.grade == resource.data.grade) &&
+        (!('gradeFeedback' in request.resource.data) || request.resource.data.gradeFeedback == resource.data.gradeFeedback) &&
+        (!('feedback' in request.resource.data) || request.resource.data.feedback == resource.data.feedback) &&
+        (!('improvementNotes' in request.resource.data) || request.resource.data.improvementNotes == resource.data.improvementNotes) &&
+        (!('reviewerId' in request.resource.data) || request.resource.data.reviewerId == resource.data.reviewerId) &&
+        (!('reviewerName' in request.resource.data) || request.resource.data.reviewerName == resource.data.reviewerName) &&
+        (!('gradeReleased' in request.resource.data) || request.resource.data.gradeReleased == resource.data.gradeReleased)
+      );
+      allow delete: if isAdmin() || (isTeacher() && resource.data.studentId != request.auth.uid);
+    }
+
+    // Quizzes collection: questions without answer keys
+    match /quizzes/{quizId} {
+      allow read: if isSignedIn();
+      allow create, update, delete: if isTeacher();
+    }
+
+    // Quiz Answer Keys: SECURE — NEVER SEND TO STUDENTS
+    // Only teachers and admins have read/write access
+    match /quiz_answers/{quizId} {
+      allow read, write: if isTeacher();
+    }
+
+    // Quiz Attempts: Student attempts, timer tracking, and lockdown violations
+    match /quiz_attempts/{attemptId} {
+      allow read: if isTeacher() || (isSignedIn() && resource.data.studentId == request.auth.uid);
+      allow create: if isSignedIn() && (
+        isTeacher() ||
+        (request.resource.data.studentId == request.auth.uid && request.resource.data.status in ['in_progress', 'submitted'])
+      );
+      allow update: if isTeacher() || (
+        isSignedIn() &&
+        resource.data.studentId == request.auth.uid &&
+        resource.data.status == 'in_progress'
+      );
+      allow delete: if isAdmin() || (isTeacher() && resource.data.studentId != request.auth.uid);
+    }
+
+    // Question Bank: reusable pedagogical questions and answer keys
+    match /question_bank/{questionId} {
+      allow read, write: if isTeacher();
+    }
+
+    // Announcements: class & platform announcements
+    match /announcements/{announcementId} {
+      allow read: if isSignedIn();
+      allow create, update, delete: if isTeacher();
+    }
+
+    // Resources: course learning materials
+    match /resources/{resourceId} {
+      allow read: if isSignedIn();
+      allow create, update, delete: if isTeacher();
+    }
+
+    // Discussions: questions and community forum
+    match /discussions/{discussionId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if isTeacher() || (isSignedIn() && resource.data.authorId == request.auth.uid);
+    }
+
+    // Notifications: persistent alerts for assignments, deadlines, submissions, announcements, grading, enrollment
+    match /notifications/{notificationId} {
+      allow read, update, delete: if isSignedIn() && (resource.data.userId == request.auth.uid || isTeacher() || isAdmin());
+      allow create: if isSignedIn();
+    }
+
+    // Point Ledger: gamification point events and records
+    match /point_ledger/{entryId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn();
+    }
+
+    // User Badges: awarded achievement badges
+    match /user_badges/{badgeId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn();
+    }
+
+    // User Settings: notification preferences, reminder lead time, study target, teacher defaults
+    match /user_settings/{userId} {
+      allow read, write: if isSignedIn() && request.auth.uid == userId;
+    }
+  }
+}
