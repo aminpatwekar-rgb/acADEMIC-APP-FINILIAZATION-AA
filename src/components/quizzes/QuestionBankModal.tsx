@@ -230,7 +230,7 @@ export function QuestionBankModal({
         {/* TOP BAR */}
         <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-2xl bg-[#005fb8]/10 text-[#005fb8] flex items-center justify-center">
+            <div className="w-9 h-9 rounded-2xl bg-brand/10 text-brand flex items-center justify-center">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
@@ -248,7 +248,7 @@ export function QuestionBankModal({
               <button
                 type="button"
                 onClick={() => setIsCreating(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#005fb8] text-white hover:bg-[#004e9a] text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand text-white hover:bg-brand-hover] text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
               >
                 <Plus className="w-4 h-4" />
                 <span>New Item</span>
@@ -274,7 +274,7 @@ export function QuestionBankModal({
               className="p-5 rounded-2xl border border-blue-200 dark:border-blue-900 bg-blue-50/30 dark:bg-blue-950/20 space-y-4 animate-in fade-in duration-150"
             >
               <div className="flex items-center justify-between">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#005fb8] dark:text-blue-400">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-brand dark:text-blue-400">
                   {editingItem ? 'Edit Question Bank Item' : 'Add Question to Repository'}
                 </h3>
                 <button
@@ -421,7 +421,7 @@ export function QuestionBankModal({
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-1.5 rounded-xl bg-[#005fb8] text-white text-xs font-semibold shadow-xs"
+                  className="px-4 py-1.5 rounded-xl bg-brand text-white text-xs font-semibold shadow-xs"
                 >
                   {editingItem ? 'Save Changes' : 'Commit to Bank'}
                 </button>
@@ -484,7 +484,7 @@ export function QuestionBankModal({
                 onClick={() => setSelectedTag('all')}
                 className={`px-2.5 py-0.5 rounded-lg text-[10px] font-semibold transition-colors cursor-pointer ${
                   selectedTag === 'all'
-                    ? 'bg-[#005fb8] text-white'
+                    ? 'bg-brand text-white'
                     : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                 }`}
               >
@@ -497,7 +497,7 @@ export function QuestionBankModal({
                   onClick={() => setSelectedTag(tag === selectedTag ? 'all' : tag)}
                   className={`px-2.5 py-0.5 rounded-lg text-[10px] font-semibold transition-colors cursor-pointer ${
                     selectedTag === tag
-                      ? 'bg-[#005fb8] text-white'
+                      ? 'bg-brand text-white'
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900'
                   }`}
                 >

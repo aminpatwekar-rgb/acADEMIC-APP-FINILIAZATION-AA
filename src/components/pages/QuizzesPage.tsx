@@ -337,7 +337,7 @@ export function QuizzesPage() {
       {/* Top Banner & Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-[#005fb8] dark:text-blue-400 mb-1">
+          <div className="flex items-center gap-2 text-xs font-semibold text-brand dark:text-blue-400 mb-1">
             <FileQuestion className="w-4 h-4" />
             <span>Phase 6 Evaluation Engine</span>
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
@@ -383,7 +383,7 @@ export function QuizzesPage() {
               <button
                 type="button"
                 onClick={() => setEditorQuiz('new')}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Create Assessment</span>
@@ -764,7 +764,7 @@ export function QuizzesPage() {
                       className={`flex items-center gap-1.5 px-4 py-1.5 rounded-xl font-semibold text-xs shadow-xs transition-colors cursor-pointer ${
                         inProgressAttempt
                           ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
-                          : 'bg-[#005fb8] hover:bg-[#004e9a] text-white disabled:opacity-40 disabled:cursor-not-allowed'
+                          : 'bg-brand hover:bg-brand-hover] text-white disabled:opacity-40 disabled:cursor-not-allowed'
                       }`}
                     >
                       {inProgressAttempt ? (
@@ -823,7 +823,7 @@ export function QuizzesPage() {
               <button
                 type="button"
                 onClick={() => setEditorQuiz('new')}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Create Assessment</span>

@@ -711,7 +711,7 @@ export function TypedEditor({
               <button
                 type="button"
                 onClick={() => handleAddImage(newImageUrl, newImageCaption)}
-                className="px-4 py-1.5 rounded-lg bg-[#005fb8] text-white text-xs font-semibold cursor-pointer"
+                className="px-4 py-1.5 rounded-lg bg-brand text-white text-xs font-semibold cursor-pointer"
               >
                 Attach Image
               </button>

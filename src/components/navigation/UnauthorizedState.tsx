@@ -18,7 +18,7 @@ export function UnauthorizedState({
   onExitPreview
 }: UnauthorizedStateProps) {
   return (
-    <div className="min-h-screen bg-[#f8f9fb] dark:bg-slate-950 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-background dark:bg-slate-950 flex items-center justify-center p-6">
       <div className="max-w-md w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 shadow-xl text-center space-y-5">
         <div className="w-14 h-14 bg-rose-500/10 text-rose-500 rounded-2xl flex items-center justify-center mx-auto">
           <ShieldAlert className="w-7 h-7" />
@@ -55,7 +55,7 @@ export function UnauthorizedState({
             <button
               type="button"
               onClick={() => onNavigate('/dashboard')}
-              className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs cursor-pointer transition-colors"
+              className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs cursor-pointer transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Return to Dashboard</span>

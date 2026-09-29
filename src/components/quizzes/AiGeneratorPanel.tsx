@@ -450,7 +450,7 @@ export function AiGeneratorPanel({
         type="button"
         disabled={isGenerating}
         onClick={handleGenerate}
-        className="w-full py-3 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-xs transition-colors cursor-pointer disabled:opacity-50"
+        className="w-full py-3 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-xs transition-colors cursor-pointer disabled:opacity-50"
       >
         <Sparkles className="w-4 h-4" />
         <span>{isGenerating ? generatingProgress || 'Generating...' : `Generate ${questionCount} questions`}</span>

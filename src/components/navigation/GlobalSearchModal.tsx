@@ -264,7 +264,7 @@ export function GlobalSearchModal({ isOpen, onClose, onNavigate }: GlobalSearchM
                     <div
                       className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
                         isSelected
-                          ? 'bg-[#005fb8] text-white shadow-2xs'
+                          ? 'bg-brand text-white shadow-2xs'
                           : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
                       }`}
                     >
@@ -290,7 +290,7 @@ export function GlobalSearchModal({ isOpen, onClose, onNavigate }: GlobalSearchM
 
                   <ArrowRight
                     className={`w-4 h-4 text-slate-400 shrink-0 ml-2 transition-transform ${
-                      isSelected ? 'translate-x-1 text-[#005fb8] dark:text-blue-400' : 'opacity-0'
+                      isSelected ? 'translate-x-1 text-brand dark:text-blue-400' : 'opacity-0'
                     }`}
                   />
                 </div>

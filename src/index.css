@@ -1,69 +1,97 @@
 @import "tailwindcss";
 
+/* Map the design tokens to Tailwind colour utilities (bg-background, text-foreground, ...) */
+@theme inline {
+  --color-background: rgb(var(--background) / <alpha-value>);
+  --color-foreground: rgb(var(--foreground) / <alpha-value>);
+  --color-card: rgb(var(--card) / <alpha-value>);
+  --color-card-foreground: rgb(var(--card-foreground) / <alpha-value>);
+  --color-primary: rgb(var(--primary) / <alpha-value>);
+  --color-primary-foreground: rgb(var(--primary-foreground) / <alpha-value>);
+  --color-secondary: rgb(var(--secondary) / <alpha-value>);
+  --color-secondary-foreground: rgb(var(--secondary-foreground) / <alpha-value>);
+  --color-muted: rgb(var(--muted) / <alpha-value>);
+  --color-muted-foreground: rgb(var(--muted-foreground) / <alpha-value>);
+  --color-accent: rgb(var(--accent) / <alpha-value>);
+  --color-accent-foreground: rgb(var(--accent-foreground) / <alpha-value>);
+  --color-border: rgb(var(--border) / <alpha-value>);
+  --color-input: rgb(var(--input) / <alpha-value>);
+  --color-ring: rgb(var(--ring) / <alpha-value>);
+
+  /* Themeable brand accent — driven live by ThemeContext (preset + custom colour) */
+  --color-brand: rgb(var(--brand-rgb) / <alpha-value>);
+  --color-brand-hover: rgb(var(--brand-hover-rgb) / <alpha-value>);
+  --color-brand-tint: rgb(var(--brand-tint-rgb) / <alpha-value>);
+}
+
 @layer base {
   :root {
-    --background: 248 249 251;
-    --foreground: 15 23 42;
+    /* Brand accent defaults (Onyx amber). ThemeContext overrides these at runtime. */
+    --brand-rgb: 217 119 6;
+    --brand-hover-rgb: 180 83 9;
+    --brand-tint-rgb: 253 250 244;
+    --onyx-accent: #d97706;
+
+    /* App canvas per theme (light = soft warm tint, dark = deep warm charcoal) */
+    --app-bg-light: 253 250 244;
+    --app-bg-dark: 24 21 18;
+
+    --background: var(--app-bg-light);
+    --foreground: 23 25 29;
     --card: 255 255 255;
-    --card-foreground: 15 23 42;
-    --primary: 217 119 6;
+    --card-foreground: 23 25 29;
+    --primary: var(--brand-rgb);
     --primary-foreground: 255 255 255;
-    --secondary: 241 245 249;
-    --secondary-foreground: 15 23 42;
-    --muted: 241 245 249;
-    --muted-foreground: 100 116 139;
-    --accent: 217 119 6;
+    --secondary: 243 241 236;
+    --secondary-foreground: 23 25 29;
+    --muted: 243 241 236;
+    --muted-foreground: 107 114 128;
+    --accent: var(--brand-rgb);
     --accent-foreground: 255 255 255;
-    --border: 226 232 240;
-    --input: 226 232 240;
-    --ring: 217 119 6;
+    --border: 229 228 226;
+    --input: 229 228 226;
+    --ring: var(--brand-rgb);
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 11 15 25;
-    --foreground: 248 250 252;
-    --card: 18 24 38;
-    --card-foreground: 248 250 252;
-    --primary: 245 158 11;
-    --primary-foreground: 15 23 42;
-    --secondary: 30 41 59;
-    --secondary-foreground: 248 250 252;
-    --muted: 30 41 59;
-    --muted-foreground: 148 163 184;
-    --accent: 245 158 11;
-    --accent-foreground: 15 23 42;
-    --border: 30 41 59;
-    --input: 30 41 59;
-    --ring: 245 158 11;
+    --background: var(--app-bg-dark);
+    --foreground: 245 243 240;
+    /* Cards lift slightly out of the canvas instead of sinking into black */
+    --card: color-mix(in srgb, rgb(var(--app-bg-dark)) 86%, white);
+    --card-foreground: 245 243 240;
+    --primary: var(--brand-rgb);
+    --primary-foreground: 255 255 255;
+    --secondary: color-mix(in srgb, rgb(var(--app-bg-dark)) 68%, white);
+    --secondary-foreground: 245 243 240;
+    --muted: color-mix(in srgb, rgb(var(--app-bg-dark)) 68%, white);
+    --muted-foreground: 168 162 158;
+    --accent: var(--brand-rgb);
+    --accent-foreground: 255 255 255;
+    --border: color-mix(in srgb, rgb(var(--app-bg-dark)) 52%, white);
+    --input: color-mix(in srgb, rgb(var(--app-bg-dark)) 52%, white);
+    --ring: var(--brand-rgb);
   }
+}
 
-  /* Theme Presets */
-  body[data-theme="onyx"] {
-    --primary-color: #d97706;
-    --primary-hover: #b45309;
-    --sidebar-bg: #ffffff;
-  }
-  body[data-theme="midnight"] {
-    --primary-color: #0284c7;
-    --primary-hover: #0369a1;
-  }
-  body[data-theme="sunset"] {
-    --primary-color: #ea580c;
-    --primary-hover: #c2410c;
-  }
-  body[data-theme="forest"] {
-    --primary-color: #059669;
-    --primary-hover: #047857;
-  }
-  body[data-theme="ocean"] {
-    --primary-color: #0d9488;
-    --primary-hover: #0f766e;
-  }
-  body[data-theme="mono"] {
-    --primary-color: #18181b;
-    --primary-hover: #27272a;
-  }
+/* Smoothly cross-fade when switching themes */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    fill 220ms ease,
+    stroke 220ms ease !important;
+}
+
+/* Body always reflects the active theme canvas */
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  min-height: 100vh;
 }
 
 /* Custom Scrollbar */
@@ -96,12 +124,12 @@
 
 /* Visible high-contrast focus rings for keyboard navigation */
 :focus-visible {
-  outline: 2px solid #005fb8;
+  outline: 2px solid rgb(var(--brand-rgb));
   outline-offset: 2px;
 }
 
 .dark :focus-visible {
-  outline: 2px solid #38bdf8;
+  outline: 2px solid rgb(var(--brand-rgb));
   outline-offset: 2px;
 }
 
@@ -129,4 +157,3 @@
   white-space: nowrap;
   border-width: 0;
 }
-

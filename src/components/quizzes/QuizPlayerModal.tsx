@@ -589,7 +589,7 @@ export function QuizPlayerModal({
             <button
               type="button"
               onClick={onClose}
-              className="px-6 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold cursor-pointer shadow-xs"
+              className="px-6 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold cursor-pointer shadow-xs"
             >
               Return to Quizzes
             </button>
@@ -606,7 +606,7 @@ export function QuizPlayerModal({
                   {/* Question Header Badge */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-[#005fb8] dark:text-blue-400 uppercase tracking-wider">
+                      <span className="text-xs font-bold text-brand dark:text-blue-400 uppercase tracking-wider">
                         Question {currentIdx + 1} of {questions.length}
                       </span>
                       <span className="px-2 py-0.5 rounded-md font-mono text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-bold">

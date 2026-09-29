@@ -1159,7 +1159,7 @@ export function QuizEditorModal({
               <button
                 type="submit"
                 disabled={isSubmitting || classes.length === 0}
-                className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white font-semibold shadow-xs cursor-pointer disabled:opacity-50"
+                className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white font-semibold shadow-xs cursor-pointer disabled:opacity-50"
               >
                 <Check className="w-4 h-4" />
                 <span>{isSubmitting ? 'Saving Assessment...' : initialQuiz ? 'Update Assessment' : 'Publish Assessment'}</span>

@@ -26,7 +26,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#090b10] text-slate-100 flex flex-col font-sans selection:bg-amber-500/30">
+    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-brand/25">
       {/* Top Navigation */}
       <header className="w-full max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
         <div className="flex items-center gap-3">
@@ -50,7 +50,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
             <button
               type="button"
               onClick={() => onNavigate('/dashboard')}
-              className="px-4 py-2 rounded-lg bg-[#0284c7] hover:bg-[#0369a1] text-white text-xs font-semibold shadow-xs transition-all cursor-pointer"
+              className="px-4 py-2 rounded-lg bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-all cursor-pointer"
             >
               Open Dashboard →
             </button>
@@ -67,7 +67,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
               <button
                 type="button"
                 onClick={() => onNavigate('/signup')}
-                className="px-4 py-2 rounded-lg bg-[#0284c7] hover:bg-[#0369a1] text-white text-xs font-semibold shadow-xs transition-all cursor-pointer"
+                className="px-4 py-2 rounded-lg bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-all cursor-pointer"
               >
                 Get started
               </button>
@@ -134,7 +134,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           <button
             type="button"
             onClick={() => onNavigate('/signup')}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0284c7] hover:bg-[#0369a1] text-white text-xs sm:text-sm font-semibold shadow-md transition-all cursor-pointer group"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs sm:text-sm font-semibold shadow-md transition-all cursor-pointer group"
           >
             <span>Create your account</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -143,7 +143,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           <button
             type="button"
             onClick={() => onNavigate('/login')}
-            className="px-5 py-2.5 rounded-xl border border-slate-800 bg-[#121620] hover:bg-[#1a2130] text-slate-300 text-xs sm:text-sm font-semibold transition-all cursor-pointer"
+            className="px-5 py-2.5 rounded-xl border border-border bg-card hover:bg-secondary text-muted-foreground text-xs sm:text-sm font-semibold transition-all cursor-pointer"
           >
             I already have one
           </button>
@@ -152,7 +152,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
         {/* Feature Cards Grid (2x2) */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Card 1 */}
-          <div className="p-6 rounded-2xl border border-slate-800/80 bg-[#0d1017] hover:border-slate-700 transition-colors">
+          <div className="p-6 rounded-2xl border border-border bg-card hover:border-brand/50 transition-colors">
             <div className="w-9 h-9 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4">
               <Camera className="w-5 h-5" />
             </div>
@@ -165,7 +165,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           </div>
 
           {/* Card 2 */}
-          <div className="p-6 rounded-2xl border border-slate-800/80 bg-[#0d1017] hover:border-slate-700 transition-colors">
+          <div className="p-6 rounded-2xl border border-border bg-card hover:border-brand/50 transition-colors">
             <div className="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
               <ShieldCheck className="w-5 h-5" />
             </div>
@@ -178,7 +178,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           </div>
 
           {/* Card 3 */}
-          <div className="p-6 rounded-2xl border border-slate-800/80 bg-[#0d1017] hover:border-slate-700 transition-colors">
+          <div className="p-6 rounded-2xl border border-border bg-card hover:border-brand/50 transition-colors">
             <div className="w-9 h-9 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
               <PenTool className="w-5 h-5" />
             </div>
@@ -191,7 +191,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           </div>
 
           {/* Card 4 */}
-          <div className="p-6 rounded-2xl border border-slate-800/80 bg-[#0d1017] hover:border-slate-700 transition-colors">
+          <div className="p-6 rounded-2xl border border-border bg-card hover:border-brand/50 transition-colors">
             <div className="w-9 h-9 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center mb-4">
               <BarChart3 className="w-5 h-5" />
             </div>

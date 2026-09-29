@@ -73,7 +73,7 @@ export function ErrorPage({
     <div
       role="alert"
       aria-live="assertive"
-      className="min-h-screen bg-[#f8f9fb] dark:bg-slate-950 flex flex-col items-center justify-center p-4 sm:p-6"
+      className="min-h-screen bg-background dark:bg-slate-950 flex flex-col items-center justify-center p-4 sm:p-6"
     >
       <div className="w-full max-w-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6 text-center animate-in fade-in zoom-in-95 duration-200">
         {/* Brand Header */}
@@ -107,7 +107,7 @@ export function ErrorPage({
             <button
               type="button"
               onClick={resetErrorBoundary}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
             >
               <RotateCcw className="w-4 h-4" aria-hidden="true" />
               <span>Try Again</span>
@@ -251,7 +251,7 @@ export function ErrorPage({
                   </button>
                   <button
                     type="submit"
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
                   >
                     <Send className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>Send Report</span>
@@ -282,7 +282,7 @@ export function RouteErrorPage({
       aria-label="Course Page Not Found"
       className="min-h-[70vh] flex flex-col items-center justify-center p-6 text-center space-y-6"
     >
-      <div className="w-16 h-16 rounded-3xl bg-blue-50 dark:bg-blue-950/40 text-[#005fb8] dark:text-blue-400 flex items-center justify-center mx-auto shadow-inner">
+      <div className="w-16 h-16 rounded-3xl bg-blue-50 dark:bg-blue-950/40 text-brand dark:text-blue-400 flex items-center justify-center mx-auto shadow-inner">
         <Compass className="w-8 h-8" aria-hidden="true" />
       </div>
 
@@ -299,7 +299,7 @@ export function RouteErrorPage({
         <button
           type="button"
           onClick={() => onNavigate('/dashboard')}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
         >
           <LayoutGrid className="w-4 h-4" aria-hidden="true" />
           <span>Dashboard</span>

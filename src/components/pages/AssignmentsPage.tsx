@@ -862,7 +862,7 @@ export function AssignmentsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-[#005fb8] dark:text-blue-400 mb-1">
+          <div className="flex items-center gap-2 text-xs font-semibold text-brand dark:text-blue-400 mb-1">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Coursework Management</span>
           </div>
@@ -890,7 +890,7 @@ export function AssignmentsPage() {
             <button
               type="button"
               onClick={handleOpenCreateModal}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Create Assignment</span>
@@ -1185,7 +1185,7 @@ export function AssignmentsPage() {
                   <button
                     type="button"
                     onClick={() => handleOpenWorkspace(asg)}
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
                   >
                     <span>
                       {asg.studentStatus === 'Not Started'
@@ -1231,7 +1231,7 @@ export function AssignmentsPage() {
                 <button
                   type="button"
                   onClick={handleOpenCreateModal}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Create Your First Assignment</span>
@@ -1370,7 +1370,7 @@ export function AssignmentsPage() {
                         type="button"
                         disabled={submitting || !typedText.trim()}
                         onClick={() => handleFinalSubmit('typed', typedText)}
-                        className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs cursor-pointer disabled:opacity-50"
+                        className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs cursor-pointer disabled:opacity-50"
                       >
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         <span>Final Submission</span>
@@ -1876,7 +1876,7 @@ export function AssignmentsPage() {
                 <button
                   type="submit"
                   disabled={classes.length === 0}
-                  className="px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white font-semibold shadow-xs cursor-pointer disabled:opacity-50"
+                  className="px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white font-semibold shadow-xs cursor-pointer disabled:opacity-50"
                 >
                   {editingAssignment ? 'Update Assignment' : 'Save Assignment'}
                 </button>

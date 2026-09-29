@@ -139,7 +139,7 @@ export function Router() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8f9fb] dark:bg-slate-950 flex flex-col lg:flex-row text-slate-900 dark:text-slate-100">
+    <div className="min-h-screen bg-background dark:bg-slate-950 flex flex-col lg:flex-row text-slate-900 dark:text-slate-100">
       {/* Persistent Left Sidebar */}
       <Sidebar currentPath={currentPath} onNavigate={navigate} />
 

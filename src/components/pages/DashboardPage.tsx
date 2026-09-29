@@ -102,7 +102,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
       {/* Top Header Section */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <div className="flex items-center gap-1.5 text-xs font-semibold text-[#005fb8] dark:text-blue-400 mb-1">
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-brand dark:text-blue-400 mb-1">
             <Sparkles className="w-3.5 h-3.5" />
             <span>{isTeacherOrAdmin ? 'Faculty Workspace' : 'Student Dashboard'}</span>
           </div>
@@ -131,7 +131,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <button
                 type="button"
                 onClick={() => onNavigate('/assignments')}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
               >
                 <span>View Assignments</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -149,7 +149,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <button
                 type="button"
                 onClick={() => onNavigate('/assignments')}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
               >
                 <span>Assignments</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -292,11 +292,11 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <span className="font-semibold text-slate-800 dark:text-slate-200">
                 Overall Completion <span className="font-normal text-slate-400">({completedAssignmentsCount} of {totalTasks} tasks completed)</span>
               </span>
-              <span className="font-bold text-[#005fb8] dark:text-blue-400">{completionPercent}%</span>
+              <span className="font-bold text-brand dark:text-blue-400">{completionPercent}%</span>
             </div>
             <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
               <div
-                className="h-full bg-[#005fb8] rounded-full transition-all"
+                className="h-full bg-brand rounded-full transition-all"
                 style={{ width: `${completionPercent}%` }}
               />
             </div>
@@ -383,7 +383,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <button
                 type="button"
                 onClick={() => onNavigate('/classes')}
-                className="px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs cursor-pointer transition-colors flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs cursor-pointer transition-colors flex items-center gap-1.5"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Get Started with Classes</span>

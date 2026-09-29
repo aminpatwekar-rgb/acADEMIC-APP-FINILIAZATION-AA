@@ -283,7 +283,7 @@ export function AdminPage() {
           <button
             type="button"
             onClick={() => setIsAddUserOpen(true)}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
           >
             <UserPlus className="w-4 h-4" />
             <span>Provision User</span>
@@ -384,7 +384,7 @@ export function AdminPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search user by name or email..."
-              className="w-full pl-8.5 pr-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 text-xs bg-slate-50/50 dark:bg-slate-950 focus:bg-white dark:focus:bg-slate-900 outline-hidden focus:border-[#005fb8]"
+              className="w-full pl-8.5 pr-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 text-xs bg-slate-50/50 dark:bg-slate-950 focus:bg-white dark:focus:bg-slate-900 outline-hidden focus:border-brand"
             />
           </div>
 
@@ -558,7 +558,7 @@ export function AdminPage() {
           <div className="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xl space-y-4 animate-in zoom-in-95 duration-100">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
               <h3 id="provision-user-title" className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <UserPlus className="w-4 h-4 text-[#005fb8] dark:text-blue-400" aria-hidden="true" />
+                <UserPlus className="w-4 h-4 text-brand dark:text-blue-400" aria-hidden="true" />
                 <span>Provision Institutional User</span>
               </h3>
               <button
@@ -645,7 +645,7 @@ export function AdminPage() {
                 <button
                   type="submit"
                   disabled={isCreatingUser}
-                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#005fb8] hover:bg-[#004e9a] text-white text-xs font-semibold shadow-xs disabled:opacity-50 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover] text-white text-xs font-semibold shadow-xs disabled:opacity-50 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
                 >
                   {isCreatingUser ? 'Provisioning...' : 'Provision User'}
                 </button>
