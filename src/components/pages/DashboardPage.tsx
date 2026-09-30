@@ -124,7 +124,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <button
                 type="button"
                 onClick={() => onNavigate('/classes')}
-                className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-card text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               >
                 Manage Classes
               </button>
@@ -142,7 +142,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <button
                 type="button"
                 onClick={() => onNavigate('/classes')}
-                className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-card text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               >
                 Join Class
               </button>
@@ -163,7 +163,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
       {isTeacherOrAdmin ? (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Active Classes */}
-          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 ACTIVE CLASSES
@@ -178,7 +178,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Enrolled Students */}
-          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 ENROLLED STUDENTS
@@ -193,7 +193,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Active Assignments */}
-          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 ACTIVE ASSIGNMENTS
@@ -208,7 +208,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Pending Review */}
-          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 PENDING REVIEW
@@ -226,7 +226,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
         <>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Pending Work */}
-            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   PENDING WORK
@@ -241,7 +241,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
             </div>
 
             {/* Overdue */}
-            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   OVERDUE
@@ -256,7 +256,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
             </div>
 
             {/* Completed */}
-            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   COMPLETED
@@ -271,7 +271,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
             </div>
 
             {/* Enrolled Classes */}
-            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+            <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   ENROLLED CLASSES
@@ -287,7 +287,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Student Progress Bar */}
-          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs space-y-3">
+          <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs space-y-3">
             <div className="flex items-center justify-between text-xs">
               <span className="font-semibold text-slate-800 dark:text-slate-200">
                 Overall Completion <span className="font-normal text-slate-400">({completedAssignmentsCount} of {totalTasks} tasks completed)</span>
@@ -340,7 +340,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               <div
                 key={asg.id}
                 onClick={() => onNavigate('/assignments')}
-                className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700 cursor-pointer transition-all space-y-2.5 shadow-xs"
+                className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card hover:border-slate-300 dark:hover:border-slate-700 cursor-pointer transition-all space-y-2.5 shadow-xs"
               >
                 <div className="flex items-center justify-between text-xs">
                   <span className="font-mono font-bold text-slate-600 dark:text-slate-400">{asg.classCode || 'Section'}</span>

@@ -90,7 +90,7 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
       </a>
 
       {/* Mobile Top Header */}
-      <header className="lg:hidden w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between sticky top-0 z-40">
+      <header className="lg:hidden w-full bg-card border-b border-slate-200 dark:border-border px-4 py-3 flex items-center justify-between sticky top-0 z-40">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-full bg-slate-950 dark:bg-white text-white dark:text-slate-950 flex items-center justify-center font-black tracking-tighter text-xs">
             OX
@@ -123,7 +123,7 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
       <aside
         aria-label="Main Navigation"
         className={`
-          fixed inset-y-0 left-0 z-50 w-64 bg-white dark:bg-slate-900 border-r border-slate-200/80 dark:border-slate-800 flex flex-col justify-between transition-transform duration-200 ease-in-out shrink-0
+          fixed inset-y-0 left-0 z-50 w-64 bg-card border-r border-slate-200/80 dark:border-border flex flex-col justify-between transition-transform duration-200 ease-in-out shrink-0
           lg:static lg:translate-x-0 ${mobileOpen ? 'translate-x-0' : '-translate-x-full'}
         `}
       >
@@ -156,7 +156,7 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
                     onClick={() => setRoleDropdownOpen(!roleDropdownOpen)}
                     aria-haspopup="listbox"
                     aria-expanded={roleDropdownOpen}
-                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border border-slate-200 dark:border-border bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
                     title="Role Simulation (Admin Clearance)"
                   >
                     <span className={`w-1.5 h-1.5 rounded-full ${effectiveRole === 'admin' ? 'bg-amber-500' : effectiveRole === 'teacher' ? 'bg-blue-500' : 'bg-emerald-500'}`} />
@@ -168,9 +168,9 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
                   {roleDropdownOpen && (
                     <div
                       role="listbox"
-                      className="absolute right-0 mt-1.5 w-48 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-xl py-1.5 z-50 text-xs animate-in fade-in zoom-in-95 duration-100"
+                      className="absolute right-0 mt-1.5 w-48 bg-card rounded-xl border border-slate-200 dark:border-border shadow-xl py-1.5 z-50 text-xs animate-in fade-in zoom-in-95 duration-100"
                     >
-                      <div className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400 border-b border-slate-100 dark:border-slate-800">
+                      <div className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400 border-b border-slate-100 dark:border-border">
                         Role Simulation
                       </div>
                       {(['admin', 'teacher', 'student'] as UserRole[]).map((r) => {
@@ -200,7 +200,7 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
                   )}
                 </div>
               ) : (
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-slate-200 dark:border-border bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                   <span className={`w-1.5 h-1.5 rounded-full ${effectiveRole === 'teacher' ? 'bg-blue-500' : 'bg-emerald-500'}`} />
                   <span>{roleLabel}</span>
                 </div>
@@ -214,7 +214,7 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label="Search classes, assignments, and notes"
-              className="w-full pl-8.5 pr-8 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950 text-xs text-left text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex items-center cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+              className="w-full pl-8.5 pr-8 py-2 rounded-xl border border-slate-200 dark:border-border bg-slate-50/60 dark:bg-input text-xs text-left text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex items-center cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
             >
               <Search className="w-3.5 h-3.5 absolute left-3 text-slate-400" />
               <span>Search...</span>
@@ -241,7 +241,7 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
                     w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium transition-all cursor-pointer relative focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none
                     ${active
                       ? 'bg-blue-50 dark:bg-blue-950/40 text-brand dark:text-blue-400 font-semibold'
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/60'
+                      : 'text-muted-foreground hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/60'
                     }
                   `}
                 >
@@ -257,19 +257,19 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
         </div>
 
         {/* Bottom Section: Feedback, Profile Card, Dark Mode, Sign Out */}
-        <div className="p-4 border-t border-slate-200/80 dark:border-slate-800 space-y-3">
+        <div className="p-4 border-t border-slate-200/80 dark:border-border space-y-3">
           {/* Quick Issue Report Trigger */}
           <button
             type="button"
             onClick={() => setFeedbackOpen(true)}
-            className="w-full flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+            className="w-full flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl border border-slate-200/80 dark:border-border bg-slate-50/60 dark:bg-input text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
           >
             <MessageSquare className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
             <span>Report Issue / Feedback</span>
           </button>
 
           {/* User Profile Box */}
-          <div className="p-2.5 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950 flex items-center gap-3">
+          <div className="p-2.5 rounded-xl border border-slate-200/80 dark:border-border bg-slate-50/50 dark:bg-input flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold text-xs flex items-center justify-center shrink-0 border border-blue-200 dark:border-blue-900">
               {getInitials(profile?.displayName)}
             </div>
@@ -288,7 +288,7 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
             <button
               type="button"
               onClick={() => setMode(isDark ? 'light' : 'dark')}
-              className="w-full flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-medium hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+              className="w-full flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl border border-slate-200 dark:border-border bg-card text-slate-700 dark:text-slate-300 text-xs font-medium hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
             >
               {isDark ? <Sun className="w-3.5 h-3.5 text-amber-500" /> : <Moon className="w-3.5 h-3.5 text-slate-500" />}
               <span>{isDark ? 'Light' : 'Dark'}</span>
@@ -297,7 +297,7 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
             <button
               type="button"
               onClick={() => signOut()}
-              className="w-full flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-medium hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-950/40 dark:hover:text-rose-400 cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+              className="w-full flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl border border-slate-200 dark:border-border bg-card text-slate-700 dark:text-slate-300 text-xs font-medium hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-950/40 dark:hover:text-rose-400 cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
               title="Sign Out"
             >
               <LogOut className="w-3.5 h-3.5" />

@@ -27,7 +27,7 @@ export function AuthLayout({
   tagline = 'Next-Generation Academic LMS'
 }: AuthLayoutProps) {
   return (
-    <div className="min-h-screen w-full flex flex-col lg:flex-row bg-slate-50 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100">
+    <div className="min-h-screen w-full flex flex-col lg:flex-row bg-background font-sans text-foreground">
       {/* ========================================================
           LEFT COLUMN: Immersive Illustration & Editorial Stage
           (Desktop / Tablet-Landscape >= lg)
@@ -167,15 +167,15 @@ export function AuthLayout({
       {/* ========================================================
           RIGHT COLUMN: Centered Authentication Form Container
          ======================================================== */}
-      <div className="w-full lg:w-1/2 xl:w-[48%] min-h-screen flex flex-col justify-between bg-white dark:bg-slate-900 px-6 py-8 sm:px-12 sm:py-12 lg:px-14 xl:px-16 overflow-y-auto">
+      <div className="w-full lg:w-1/2 xl:w-[48%] min-h-screen flex flex-col justify-between bg-card px-6 py-8 sm:px-12 sm:py-12 lg:px-14 xl:px-16 overflow-y-auto">
         {/* Top Action Row */}
         <div className="flex items-center justify-between w-full max-w-[420px] mx-auto">
           {/* Mobile Logo (Visible only on < lg) */}
           <div className="lg:hidden flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-slate-950 dark:bg-white text-white dark:text-slate-950 font-black text-xs flex items-center justify-center">
+            <div className="w-7 h-7 rounded-lg bg-slate-950 text-white font-black text-xs flex items-center justify-center">
               OX
             </div>
-            <span className="font-extrabold text-sm tracking-widest text-slate-900 dark:text-white">
+            <span className="font-extrabold text-sm tracking-widest text-foreground">
               ONYX
             </span>
           </div>
@@ -184,7 +184,7 @@ export function AuthLayout({
           <button
             type="button"
             onClick={() => onNavigate('/')}
-            className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors cursor-pointer ml-auto"
+            className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors cursor-pointer ml-auto"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to home</span>
@@ -195,7 +195,7 @@ export function AuthLayout({
         <div className="w-full max-w-[420px] mx-auto my-auto py-8">
           {/* Form Header */}
           <div className="mb-6 space-y-1.5 text-left">
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
               {title}
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed">

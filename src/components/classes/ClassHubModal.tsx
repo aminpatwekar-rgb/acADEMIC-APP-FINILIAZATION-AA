@@ -462,7 +462,7 @@ export function ClassHubModal({
       aria-labelledby="class-hub-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-5 bg-slate-950/75 backdrop-blur-xs animate-in fade-in duration-150"
     >
-      <div className="w-full max-w-5xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[95vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
+      <div className="w-full max-w-5xl bg-card rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[95vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
         {/* Visual Banner Header */}
         <div
           className="w-full p-5 sm:p-6 text-white flex flex-col justify-between relative shadow-inner shrink-0"
@@ -538,7 +538,7 @@ export function ClassHubModal({
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex items-center gap-1 px-5 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs font-semibold overflow-x-auto shrink-0">
+        <div className="flex items-center gap-1 px-5 border-b border-slate-200 dark:border-slate-800 bg-card text-xs font-semibold overflow-x-auto shrink-0">
           <button
             type="button"
             onClick={() => setActiveTab('overview')}
@@ -626,7 +626,7 @@ export function ClassHubModal({
           {/* TAB 1: OVERVIEW */}
           {activeTab === 'overview' && (
             <div className="space-y-6 text-xs sm:text-sm">
-              <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2 shadow-xs">
+              <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card space-y-2 shadow-xs">
                 <h4 className="font-bold text-slate-900 dark:text-white text-sm">Course Syllabus & Description</h4>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                   {targetClass.description}
@@ -635,7 +635,7 @@ export function ClassHubModal({
 
               {/* Grid with Schedule & Room */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-1.5 shadow-xs">
+                <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-card space-y-1.5 shadow-xs">
                   <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-blue-500" />
                     <span>Meeting Schedule</span>
@@ -644,7 +644,7 @@ export function ClassHubModal({
                   <div className="text-xs text-slate-500">Regular attendance required for lab credit</div>
                 </div>
 
-                <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-1.5 shadow-xs">
+                <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-card space-y-1.5 shadow-xs">
                   <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
                     <BookOpen className="w-3.5 h-3.5 text-blue-500" />
                     <span>Lecture Location</span>
@@ -656,7 +656,7 @@ export function ClassHubModal({
 
               {/* Student Leave Section Button */}
               {isStudent && (
-                <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between shadow-xs">
+                <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-card flex items-center justify-between shadow-xs">
                   <div>
                     <h5 className="font-semibold text-slate-900 dark:text-white text-xs">Enrolled Section Status</h5>
                     <p className="text-slate-500 text-xs">You are currently an enrolled scholar in this section.</p>
@@ -733,12 +733,12 @@ export function ClassHubModal({
                     setRosterPage(1);
                   }}
                   placeholder="Filter student by name or roll number..."
-                  className="w-full pl-9 pr-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs"
+                  className="w-full pl-9 pr-4 py-2 rounded-xl bg-card border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs"
                 />
               </div>
 
               {/* Roster Table */}
-              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xs">
+              <div className="bg-card border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xs">
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-xs">
                     <thead className="bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 text-slate-500 uppercase font-semibold text-[10px] tracking-wider">
@@ -857,7 +857,7 @@ export function ClassHubModal({
           {activeTab === 'announcements' && (
             <div className="space-y-4">
               {isTeacherOrAdmin && (
-                <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 shadow-xs">
+                <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-card space-y-3 shadow-xs">
                   {!showAnnComposer ? (
                     <button
                       type="button"
@@ -940,7 +940,7 @@ export function ClassHubModal({
                 {targetClass.announcements.map(ann => (
                   <div
                     key={ann.id}
-                    className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2.5 shadow-xs"
+                    className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card space-y-2.5 shadow-xs"
                   >
                     <div className="flex items-center justify-between text-[11px] text-slate-500">
                       <div className="flex items-center gap-2">
@@ -984,7 +984,7 @@ export function ClassHubModal({
           {activeTab === 'resources' && (
             <div className="space-y-4">
               {isTeacherOrAdmin && (
-                <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 shadow-xs">
+                <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-card space-y-3 shadow-xs">
                   {!showResComposer ? (
                     <button
                       type="button"
@@ -1074,7 +1074,7 @@ export function ClassHubModal({
                 {targetClass.resources.map(res => (
                   <div
                     key={res.id}
-                    className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between shadow-xs hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
+                    className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-card flex items-center justify-between shadow-xs hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs shrink-0">
@@ -1119,7 +1119,7 @@ export function ClassHubModal({
                 ))}
 
                 {targetClass.resources.length === 0 && (
-                  <div className="p-8 text-center text-xs text-slate-400 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900">
+                  <div className="p-8 text-center text-xs text-slate-400 border border-slate-200 dark:border-slate-800 rounded-2xl bg-card">
                     No learning materials uploaded yet.
                   </div>
                 )}
@@ -1131,7 +1131,7 @@ export function ClassHubModal({
           {activeTab === 'discussions' && (
             <div className="space-y-4">
               {/* Discussion Composer */}
-              <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 shadow-xs">
+              <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-card space-y-3 shadow-xs">
                 {!showDiscComposer ? (
                   <button
                     type="button"
@@ -1199,7 +1199,7 @@ export function ClassHubModal({
                 {targetClass.discussions.map(post => (
                   <div
                     key={post.id}
-                    className={`p-5 rounded-2xl border transition-all space-y-4 bg-white dark:bg-slate-900 shadow-xs ${
+                    className={`p-5 rounded-2xl border transition-all space-y-4 bg-card shadow-xs ${
                       post.pinned ? 'border-amber-400/60 ring-1 ring-amber-400/20' : 'border-slate-200 dark:border-slate-800'
                     }`}
                   >
@@ -1324,7 +1324,7 @@ export function ClassHubModal({
                 ))}
 
                 {targetClass.discussions.length === 0 && (
-                  <div className="p-8 text-center text-xs text-slate-400 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900">
+                  <div className="p-8 text-center text-xs text-slate-400 border border-slate-200 dark:border-slate-800 rounded-2xl bg-card">
                     No discussion threads initiated. Be the first to start a conversation!
                   </div>
                 )}
@@ -1336,7 +1336,7 @@ export function ClassHubModal({
           {activeTab === 'settings' && isTeacherOrAdmin && (
             <div className="space-y-5 text-xs">
               {/* Metadata Edit Block */}
-              <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 shadow-xs">
+              <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card space-y-3 shadow-xs">
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="font-bold text-slate-900 dark:text-white text-sm">Course Metadata & Banner</h4>
@@ -1353,7 +1353,7 @@ export function ClassHubModal({
               </div>
 
               {/* Archive / Restore Block */}
-              <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 shadow-xs">
+              <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card space-y-3 shadow-xs">
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="font-bold text-slate-900 dark:text-white text-sm">
@@ -1433,7 +1433,7 @@ export function ClassHubModal({
         {/* Leave Class Confirmation Modal */}
         {showLeaveConfirm && (
           <div className="fixed inset-0 z-60 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs">
-            <div className="w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4 shadow-2xl">
+            <div className="w-full max-w-md bg-card rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4 shadow-2xl">
               <div className="flex items-center gap-2 text-red-600 dark:text-red-400 font-bold text-sm">
                 <AlertTriangle className="w-5 h-5" />
                 <span>Confirm Class Departure</span>

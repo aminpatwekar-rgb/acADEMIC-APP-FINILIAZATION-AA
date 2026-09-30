@@ -131,7 +131,7 @@ export function QuizGradingModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-xs animate-in fade-in duration-150">
-      <div className="w-full max-w-3xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[94vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
+      <div className="w-full max-w-3xl bg-card rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[94vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-950">
           <div className="flex items-center gap-3">
@@ -220,7 +220,7 @@ export function QuizGradingModal({
             return (
               <div
                 key={q.id}
-                className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-3"
+                className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card/60 shadow-xs space-y-3"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -332,7 +332,7 @@ export function QuizGradingModal({
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between">
+        <div className="p-4 border-t border-slate-200 dark:border-slate-800 bg-card flex items-center justify-between">
           <div className="text-slate-500 font-mono text-[11px]">
             Final Score: <strong>{currentTotalScore}</strong> / {maxPossibleScore} ({scorePercentage}%)
           </div>

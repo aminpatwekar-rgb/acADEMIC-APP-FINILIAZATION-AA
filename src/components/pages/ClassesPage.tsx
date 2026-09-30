@@ -352,7 +352,7 @@ export function ClassesPage() {
               setJoinModalInitialCode('');
               setShowJoinModal(true);
             }}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer shadow-xs"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-card text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer shadow-xs"
           >
             <DoorOpen className="w-4 h-4 text-blue-500" />
             <span>Join Section</span>
@@ -384,7 +384,7 @@ export function ClassesPage() {
               onClick={() => setViewStatus('active')}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg font-semibold transition-colors cursor-pointer ${
                 viewStatus === 'active'
-                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+                  ? 'bg-card text-slate-900 dark:text-white shadow-xs'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -398,7 +398,7 @@ export function ClassesPage() {
               onClick={() => setViewStatus('archived')}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg font-semibold transition-colors cursor-pointer ${
                 viewStatus === 'archived'
-                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+                  ? 'bg-card text-slate-900 dark:text-white shadow-xs'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -419,7 +419,7 @@ export function ClassesPage() {
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             placeholder="Search classes by title, course code, join code, or instructor..."
-            className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs"
+            className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-card border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs"
           />
         </div>
       </div>
@@ -439,7 +439,7 @@ export function ClassesPage() {
           return (
             <div
               key={c.id}
-              className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs hover:border-blue-400 dark:hover:border-blue-600 transition-all flex flex-col justify-between overflow-hidden group"
+              className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs hover:border-blue-400 dark:hover:border-blue-600 transition-all flex flex-col justify-between overflow-hidden group"
             >
               {/* Card Banner Top */}
               <div

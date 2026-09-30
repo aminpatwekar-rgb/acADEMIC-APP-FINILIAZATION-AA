@@ -19,7 +19,7 @@ export function UnauthorizedState({
 }: UnauthorizedStateProps) {
   return (
     <div className="min-h-screen bg-background dark:bg-slate-950 flex items-center justify-center p-6">
-      <div className="max-w-md w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 shadow-xl text-center space-y-5">
+      <div className="max-w-md w-full bg-card border border-slate-200 dark:border-slate-800 rounded-2xl p-8 shadow-xl text-center space-y-5">
         <div className="w-14 h-14 bg-rose-500/10 text-rose-500 rounded-2xl flex items-center justify-center mx-auto">
           <ShieldAlert className="w-7 h-7" />
         </div>

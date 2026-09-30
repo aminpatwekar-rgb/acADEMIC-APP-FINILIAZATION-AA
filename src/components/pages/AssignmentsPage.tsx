@@ -880,7 +880,7 @@ export function AssignmentsPage() {
           <button
             type="button"
             onClick={() => setShowSecurityAuditModal(true)}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 shadow-xs transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-card text-slate-700 dark:text-slate-300 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 shadow-xs transition-colors cursor-pointer"
           >
             <ShieldCheck className="w-4 h-4 text-emerald-500" />
             <span>Phase 4 Audit & Test Suite</span>
@@ -960,7 +960,7 @@ export function AssignmentsPage() {
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               placeholder="Search assignments by title, course code, or subject..."
-              className="w-full pl-9 pr-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs"
+              className="w-full pl-9 pr-4 py-2 rounded-xl bg-card border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs"
             />
           </div>
 
@@ -969,7 +969,7 @@ export function AssignmentsPage() {
             <select
               value={selectedClassFilter}
               onChange={e => setSelectedClassFilter(e.target.value)}
-              className="px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs cursor-pointer"
+              className="px-3 py-2 rounded-xl bg-card border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs cursor-pointer"
             >
               <option value="All">All Courses</option>
               {classes.map(c => (
@@ -994,7 +994,7 @@ export function AssignmentsPage() {
           filteredAssignments.map(asg => (
           <div
             key={asg.id}
-            className="p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs hover:border-slate-300 dark:hover:border-slate-700 transition-all space-y-4"
+            className="p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs hover:border-slate-300 dark:hover:border-slate-700 transition-all space-y-4"
           >
             {/* Top row */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
@@ -1245,7 +1245,7 @@ export function AssignmentsPage() {
       {/* STUDENT WORKSPACE MODAL (Handwritten Multi-page & Typed Anti-Cheat) */}
       {activeWorkspaceAssignment && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-5 bg-slate-950/75 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="w-full max-w-5xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[96vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
+          <div className="w-full max-w-5xl bg-card rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[96vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
             {/* Top Bar */}
             <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/60 dark:bg-slate-950/60">
               <div className="flex items-center gap-3">
@@ -1277,7 +1277,7 @@ export function AssignmentsPage() {
             <div className="px-5 py-2.5 bg-slate-100/70 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-slate-600 dark:text-slate-300">Deliverable Format:</span>
-                <div className="flex items-center p-0.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+                <div className="flex items-center p-0.5 rounded-lg bg-card border border-slate-200 dark:border-slate-700">
                   {(activeWorkspaceAssignment.submissionType === 'handwritten' || activeWorkspaceAssignment.submissionType === 'both') && (
                     <button
                       type="button"
@@ -1350,7 +1350,7 @@ export function AssignmentsPage() {
                   />
 
                   {/* Actions for Typed Workspace */}
-                  <div className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                  <div className="flex items-center justify-between p-3 rounded-xl bg-card border border-slate-200 dark:border-slate-800">
                     <span className="text-xs text-slate-400">
                       Auto-saved in memory • Direct keypress integrity
                     </span>
@@ -1387,7 +1387,7 @@ export function AssignmentsPage() {
       {/* TEACHER GRADING & REVIEW DRAWER MODAL */}
       {activeTeacherGradingAssignment && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/75 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="w-full max-w-5xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[94vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
+          <div className="w-full max-w-5xl bg-card rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[94vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
             {/* Header */}
             <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-950">
               <div>
@@ -1526,7 +1526,7 @@ export function AssignmentsPage() {
                                   {curSub.handwrittenPages.map((page, pIdx) => (
                                     <div
                                       key={pIdx}
-                                      className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2"
+                                      className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-card space-y-2"
                                     >
                                       <div className="flex items-center justify-between text-xs font-semibold">
                                         <span>Page {page.pageNumber}</span>
@@ -1562,14 +1562,14 @@ export function AssignmentsPage() {
                               <div className="font-semibold text-xs text-slate-700 dark:text-slate-300">
                                 Typed Essay & Derivation Deliverable
                               </div>
-                              <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 font-sans text-xs sm:text-sm text-slate-800 dark:text-slate-200 whitespace-pre-wrap leading-relaxed max-h-72 overflow-y-auto">
+                              <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-card font-sans text-xs sm:text-sm text-slate-800 dark:text-slate-200 whitespace-pre-wrap leading-relaxed max-h-72 overflow-y-auto">
                                 {curSub.content}
                               </div>
 
                               {curSub.typedImages && curSub.typedImages.length > 0 && (
                                 <div className="grid grid-cols-2 gap-3 pt-2">
                                   {curSub.typedImages.map((img) => (
-                                    <div key={img.id} className="p-2 rounded-xl border bg-white dark:bg-slate-900 space-y-1">
+                                    <div key={img.id} className="p-2 rounded-xl border bg-card space-y-1">
                                       <img src={img.url} alt={img.caption} className="w-full aspect-video object-cover rounded" />
                                       <div className="text-[11px] text-slate-500 italic">{img.caption}</div>
                                     </div>
@@ -1593,7 +1593,7 @@ export function AssignmentsPage() {
                                   max={activeTeacherGradingAssignment.maximumMarks}
                                   value={gradeInput}
                                   onChange={e => setGradeInput(e.target.value)}
-                                  className="w-full px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold text-sm"
+                                  className="w-full px-3 py-1.5 rounded-lg bg-card border border-slate-200 dark:border-slate-800 font-bold text-sm"
                                 />
                               </div>
 
@@ -1606,7 +1606,7 @@ export function AssignmentsPage() {
                                   value={feedbackInput}
                                   onChange={e => setFeedbackInput(e.target.value)}
                                   placeholder="e.g. Thorough proof methodology with rigorous step justification."
-                                  className="w-full px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
+                                  className="w-full px-3 py-1.5 rounded-lg bg-card border border-slate-200 dark:border-slate-800"
                                 />
                               </div>
                             </div>
@@ -1620,7 +1620,7 @@ export function AssignmentsPage() {
                                 value={improvementNotesInput}
                                 onChange={e => setImprovementNotesInput(e.target.value)}
                                 placeholder="Specify areas for improvement, formula clarifications, or revisions needed..."
-                                className="w-full px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
+                                className="w-full px-3 py-1.5 rounded-lg bg-card border border-slate-200 dark:border-slate-800"
                               />
                             </div>
 
@@ -1630,7 +1630,7 @@ export function AssignmentsPage() {
                                 type="button"
                                 disabled={savingGrade}
                                 onClick={() => handleGradeSubmission('draft_review')}
-                                className="px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 font-semibold cursor-pointer"
+                                className="px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-card text-slate-700 dark:text-slate-300 font-semibold cursor-pointer"
                               >
                                 Save Draft Review
                               </button>
@@ -1668,7 +1668,7 @@ export function AssignmentsPage() {
       {/* CREATE & EDIT ASSIGNMENT MODAL */}
       {showCreateEditModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="w-full max-w-lg bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl p-6 space-y-4 max-h-[94vh] flex flex-col animate-in zoom-in-95 duration-150">
+          <div className="w-full max-w-lg bg-card rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl p-6 space-y-4 max-h-[94vh] flex flex-col animate-in zoom-in-95 duration-150">
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
               <div>
                 <h3 className="text-base font-bold text-slate-900 dark:text-white">
@@ -1889,7 +1889,7 @@ export function AssignmentsPage() {
       {/* PHASE 4 SECURITY & TESTING AUDIT SUITE MODAL */}
       {showSecurityAuditModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-950/75 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="w-full max-w-3xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl p-5 sm:p-6 space-y-4 max-h-[92vh] flex flex-col animate-in zoom-in-95 duration-150">
+          <div className="w-full max-w-3xl bg-card rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl p-5 sm:p-6 space-y-4 max-h-[92vh] flex flex-col animate-in zoom-in-95 duration-150">
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">

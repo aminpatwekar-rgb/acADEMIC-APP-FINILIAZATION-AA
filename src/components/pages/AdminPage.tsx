@@ -274,7 +274,7 @@ export function AdminPage() {
           <button
             type="button"
             onClick={fetchUsers}
-            className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-50 text-xs cursor-pointer"
+            className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-card text-slate-700 dark:text-slate-300 hover:bg-slate-50 text-xs cursor-pointer"
             title="Refresh Users"
           >
             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
@@ -323,7 +323,7 @@ export function AdminPage() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-        <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+        <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-[11px] text-slate-500 font-semibold uppercase">Total Users</span>
             <Users className="w-4 h-4 text-blue-500" />
@@ -333,7 +333,7 @@ export function AdminPage() {
           </div>
         </div>
 
-        <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+        <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-[11px] text-slate-500 font-semibold uppercase">Active Admins</span>
             <ShieldAlert className="w-4 h-4 text-amber-500" />
@@ -346,7 +346,7 @@ export function AdminPage() {
           </div>
         </div>
 
-        <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+        <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-[11px] text-slate-500 font-semibold uppercase">Firestore RLS</span>
             <CheckCircle className="w-4 h-4 text-emerald-500" />
@@ -359,7 +359,7 @@ export function AdminPage() {
           </div>
         </div>
 
-        <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs">
+        <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-[11px] text-slate-500 font-semibold uppercase">Storage</span>
             <Database className="w-4 h-4 text-teal-500" />
@@ -374,7 +374,7 @@ export function AdminPage() {
       </div>
 
       {/* Directory Controls & Table */}
-      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xs space-y-4">
+      <div className="bg-card border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xs space-y-4">
         {/* Filter Bar */}
         <div className="p-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="relative flex-1 max-w-sm">
@@ -555,7 +555,7 @@ export function AdminPage() {
           aria-labelledby="provision-user-title"
           className="fixed inset-0 z-50 bg-black/60 backdrop-blur-2xs flex items-center justify-center p-4 animate-in fade-in duration-100"
         >
-          <div className="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xl space-y-4 animate-in zoom-in-95 duration-100">
+          <div className="w-full max-w-md bg-card border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xl space-y-4 animate-in zoom-in-95 duration-100">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
               <h3 id="provision-user-title" className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <UserPlus className="w-4 h-4 text-brand dark:text-blue-400" aria-hidden="true" />
@@ -663,7 +663,7 @@ export function AdminPage() {
           aria-labelledby="delete-user-title"
           className="fixed inset-0 z-50 bg-black/60 backdrop-blur-2xs flex items-center justify-center p-4 animate-in fade-in duration-100"
         >
-          <div className="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xl space-y-4 animate-in zoom-in-95 duration-100">
+          <div className="w-full max-w-md bg-card border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xl space-y-4 animate-in zoom-in-95 duration-100">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0">
                 <AlertTriangle className="w-5 h-5" aria-hidden="true" />

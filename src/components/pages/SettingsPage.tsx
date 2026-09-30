@@ -170,7 +170,7 @@ export function SettingsPage() {
           PROFILE
         </h2>
 
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-6">
+        <div className="bg-card border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-6">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-2xl bg-slate-950 dark:bg-white text-white dark:text-slate-950 flex items-center justify-center font-black text-lg shadow-sm">
               {getInitials(fullName)}
@@ -244,7 +244,7 @@ export function SettingsPage() {
           <span>NOTIFICATIONS & REMINDERS</span>
         </h2>
 
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-6">
+        <div className="bg-card border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-6">
           <div className="space-y-4">
             {/* 1. In-App Notifications */}
             <div className="flex items-center justify-between">
@@ -411,7 +411,7 @@ export function SettingsPage() {
           <span>DAILY STUDY TARGET</span>
         </h2>
 
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-4">
+        <div className="bg-card border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h4 className="text-xs font-semibold text-slate-900 dark:text-white">
@@ -456,7 +456,7 @@ export function SettingsPage() {
           <span>SUBMISSION & CANVAS PREFERENCES</span>
         </h2>
 
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-4">
+        <div className="bg-card border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
@@ -513,7 +513,7 @@ export function SettingsPage() {
             <span>TEACHER ASSESSMENT DEFAULTS</span>
           </h2>
 
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-4">
+          <div className="bg-card border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
@@ -635,7 +635,7 @@ export function SettingsPage() {
           APPEARANCE & THEME
         </h2>
 
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-6">
+        <div className="bg-card border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-6">
           {/* Mode Selector */}
           <div>
             <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2">
@@ -772,7 +772,7 @@ export function SettingsPage() {
           SYSTEM RELIABILITY & ISSUE REPORTING
         </h2>
 
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-6">
+        <div className="bg-card border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xs space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <div className="flex items-center gap-2">

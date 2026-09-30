@@ -65,7 +65,7 @@ export function QuizSecurityAuditModal({ quiz, onClose }: QuizSecurityAuditModal
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-xs animate-in fade-in duration-150">
-      <div className="w-full max-w-2xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[92vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
+      <div className="w-full max-w-2xl bg-card rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[92vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-950">
           <div className="flex items-center gap-2.5">
@@ -254,7 +254,7 @@ match /quiz_answers/{quizId} {
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between">
+        <div className="p-4 border-t border-slate-200 dark:border-slate-800 bg-card flex items-center justify-between">
           <span className="text-[11px] text-slate-500">
             Phase 6 Answer Security Standard: ABAC Hardened
           </span>

@@ -48,9 +48,9 @@ export function MathEditor({
   const filteredSymbols = MATH_SYMBOLS.filter(s => s.category === activeCategory);
 
   return (
-    <div className="w-full flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+    <div className="w-full flex flex-col bg-card rounded-xl border border-border shadow-sm overflow-hidden">
       {/* Editor Header */}
-      <div className="px-4 py-3 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+      <div className="px-4 py-3 bg-input border-b border-border flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center">
             <Sigma className="w-4 h-4" />
@@ -65,7 +65,7 @@ export function MathEditor({
           <button
             type="button"
             onClick={handleCopy}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-medium text-foreground hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer"
           >
             {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
             <span>{copied ? 'Copied $$' : 'Copy LaTeX'}</span>
@@ -85,7 +85,7 @@ export function MathEditor({
       </div>
 
       {/* Category Tabs */}
-      <div className="px-4 py-2 bg-slate-100/70 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-1.5 text-xs">
+      <div className="px-4 py-2 bg-slate-100/70 dark:bg-card/90 border-b border-border flex flex-wrap items-center gap-1.5 text-xs">
         <span className="text-[11px] font-bold uppercase text-slate-400 mr-2 tracking-wider">Categories:</span>
         {(['calculus', 'algebra', 'greek', 'logic', 'matrices', 'science'] as const).map(cat => (
           <button
@@ -95,7 +95,7 @@ export function MathEditor({
             className={`px-3 py-1 rounded-md font-medium capitalize transition-all cursor-pointer ${
               activeCategory === cat
                 ? 'bg-white dark:bg-slate-800 text-amber-600 dark:text-amber-400 shadow-xs border border-slate-200/80 dark:border-slate-700'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                : 'text-muted-foreground hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             {cat}
@@ -104,7 +104,7 @@ export function MathEditor({
       </div>
 
       {/* Symbol Toolbar / Chips */}
-      <div className="px-4 py-2.5 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800 flex flex-wrap gap-1.5 max-h-36 overflow-y-auto">
+      <div className="px-4 py-2.5 bg-slate-50/50 dark:bg-card/50 border-b border-border flex flex-wrap gap-1.5 max-h-36 overflow-y-auto">
         {activeCategory === 'science' ? (
           SCIENCE_FORMULAS.map((sf, idx) => (
             <button
@@ -146,13 +146,13 @@ export function MathEditor({
             value={latex}
             onChange={(e) => setLatex(e.target.value)}
             placeholder="Type LaTeX commands (e.g. \frac{a}{b}, \int_0^\infty, \sqrt{x})"
-            className="w-full flex-1 min-h-[140px] bg-slate-50 dark:bg-slate-950 p-3 rounded-lg border border-slate-200 dark:border-slate-800 font-mono text-xs sm:text-sm text-slate-900 dark:text-slate-100 resize-none outline-hidden focus:ring-1 focus:ring-amber-500"
+            className="w-full flex-1 min-h-[140px] bg-input p-3 rounded-lg border border-border font-mono text-xs sm:text-sm text-foreground resize-none outline-hidden focus:ring-1 focus:ring-amber-500"
             spellCheck="false"
           />
         </div>
 
         {/* Live Preview Pane */}
-        <div className="p-4 flex flex-col bg-slate-50/40 dark:bg-slate-950/40">
+        <div className="p-4 flex flex-col bg-slate-50/40 dark:bg-input/40">
           <div className="flex items-center justify-between text-xs text-slate-400 mb-2">
             <span className="font-mono">Live KaTeX Preview</span>
             <span className="text-emerald-500 flex items-center gap-1 text-[11px]">
@@ -160,9 +160,9 @@ export function MathEditor({
               Real-time Render
             </span>
           </div>
-          <div className="w-full flex-1 min-h-[140px] bg-white dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center justify-center overflow-x-auto">
+          <div className="w-full flex-1 min-h-[140px] bg-card p-4 rounded-lg border border-border flex items-center justify-center overflow-x-auto">
             {latex.trim() ? (
-              <RenderMathText content={`$$${latex}$$`} className="text-slate-900 dark:text-slate-100 text-lg" />
+              <RenderMathText content={`$$${latex}$$`} className="text-foreground text-lg" />
             ) : (
               <span className="text-xs text-slate-400 italic">Formulas will preview here in real-time</span>
             )}

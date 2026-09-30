@@ -343,7 +343,7 @@ export function QuizWorkspace({
               setSelectedQuestionToSave(null);
               setShowQuestionBankModal(true);
             }}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors shadow-2xs cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-card hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors shadow-2xs cursor-pointer"
           >
             <BookOpen className="w-3.5 h-3.5 text-blue-600" />
             <span>Question Bank</span>
@@ -353,7 +353,7 @@ export function QuizWorkspace({
           <button
             type="button"
             onClick={() => setShowOverviewModal(true)}
-            className="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors shadow-2xs cursor-pointer"
+            className="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-card hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors shadow-2xs cursor-pointer"
           >
             Overview
           </button>
@@ -365,7 +365,7 @@ export function QuizWorkspace({
               setIsPublished(!isPublished);
               showToast(isPublished ? 'Assessment unpublished (draft).' : 'Assessment published.');
             }}
-            className="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors shadow-2xs cursor-pointer"
+            className="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-card hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors shadow-2xs cursor-pointer"
           >
             {isPublished ? 'Unpublish' : 'Publish'}
           </button>
@@ -390,7 +390,7 @@ export function QuizWorkspace({
           onClick={() => setActiveTab('questions')}
           className={`px-4 py-1.5 rounded-xl transition-all cursor-pointer ${
             activeTab === 'questions'
-              ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-semibold shadow-xs'
+              ? 'bg-card text-slate-900 dark:text-white font-semibold shadow-xs'
               : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
           }`}
         >
@@ -402,7 +402,7 @@ export function QuizWorkspace({
           onClick={() => setActiveTab('attempts')}
           className={`px-4 py-1.5 rounded-xl transition-all cursor-pointer ${
             activeTab === 'attempts'
-              ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-semibold shadow-xs'
+              ? 'bg-card text-slate-900 dark:text-white font-semibold shadow-xs'
               : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
           }`}
         >
@@ -414,7 +414,7 @@ export function QuizWorkspace({
           onClick={() => setActiveTab('ai')}
           className={`px-4 py-1.5 rounded-xl transition-all cursor-pointer ${
             activeTab === 'ai'
-              ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-semibold shadow-xs'
+              ? 'bg-card text-slate-900 dark:text-white font-semibold shadow-xs'
               : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
           }`}
         >
@@ -426,7 +426,7 @@ export function QuizWorkspace({
           onClick={() => setActiveTab('settings')}
           className={`px-4 py-1.5 rounded-xl transition-all cursor-pointer ${
             activeTab === 'settings'
-              ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-semibold shadow-xs'
+              ? 'bg-card text-slate-900 dark:text-white font-semibold shadow-xs'
               : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
           }`}
         >
@@ -442,7 +442,7 @@ export function QuizWorkspace({
           {questions.map((q, idx) => (
             <div
               key={q.id}
-              className="p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs space-y-4"
+              className="p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-2xs space-y-4"
             >
               {/* Card Controls Header */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -602,7 +602,7 @@ export function QuizWorkspace({
                       className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 ${
                         q.correctIndex === 1
                           ? 'border-blue-600 bg-blue-600 text-white'
-                          : 'border-slate-400 bg-white dark:bg-slate-900'
+                          : 'border-slate-400 bg-card'
                       }`}
                     >
                       {q.correctIndex === 1 && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
@@ -623,7 +623,7 @@ export function QuizWorkspace({
                       className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 ${
                         q.correctIndex === 0
                           ? 'border-blue-600 bg-blue-600 text-white'
-                          : 'border-slate-400 bg-white dark:bg-slate-900'
+                          : 'border-slate-400 bg-card'
                       }`}
                     >
                       {q.correctIndex === 0 && <Check className="w-3 h-3 stroke-[3]" />}
@@ -840,7 +840,7 @@ export function QuizWorkspace({
           <button
             type="button"
             onClick={() => handleAddQuestion('true_false')}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/80 text-xs font-semibold text-slate-800 dark:text-slate-200 transition-colors shadow-2xs cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-card hover:bg-slate-50 dark:hover:bg-slate-800/80 text-xs font-semibold text-slate-800 dark:text-slate-200 transition-colors shadow-2xs cursor-pointer"
           >
             <Plus className="w-4 h-4" />
             <span>Add question</span>
@@ -885,7 +885,7 @@ export function QuizWorkspace({
           TAB 3: AI GENERATOR (MATCHING SCREENSHOT 2)
          ======================================================== */}
       {activeTab === 'ai' && (
-        <div className="p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs">
+        <div className="p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-2xs">
           <AiGeneratorPanel
             existingQuestions={questions}
             onAddQuestions={(newQuestions, newKeys) => {
@@ -902,7 +902,7 @@ export function QuizWorkspace({
           TAB 4: SETTINGS (SCREENSHOT 3)
          ======================================================== */}
       {activeTab === 'settings' && (
-        <div className="p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs space-y-5">
+        <div className="p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-2xs space-y-5">
           {/* Row 1: Title & Type */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>

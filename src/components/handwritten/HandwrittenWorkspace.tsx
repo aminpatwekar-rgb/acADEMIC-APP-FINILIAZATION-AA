@@ -147,7 +147,7 @@ export function HandwrittenWorkspace({
   return (
     <div className="w-full flex flex-col space-y-4">
       {/* Top Page Thumbnails Bar & Page Manager */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-3 shadow-xs space-y-2">
+      <div className="bg-card rounded-xl border border-slate-200 dark:border-slate-800 p-3 shadow-xs space-y-2">
         <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-900 dark:text-white">
@@ -214,7 +214,7 @@ export function HandwrittenWorkspace({
                       </span>
                     </div>
                   ) : (
-                    <div className="flex-1 my-1 rounded overflow-hidden bg-white dark:bg-slate-900 flex items-center justify-center">
+                    <div className="flex-1 my-1 rounded overflow-hidden bg-card flex items-center justify-center">
                       <img src={page.imageUrl} alt={`Page ${page.pageNumber}`} className="max-h-full object-contain" />
                     </div>
                   )
@@ -260,7 +260,7 @@ export function HandwrittenWorkspace({
       </div>
 
       {/* Active Page Working Area */}
-      <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4 sm:p-5 shadow-xs space-y-4">
+      <div className="bg-card rounded-2xl border border-slate-200 dark:border-slate-800 p-4 sm:p-5 shadow-xs space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
           <div className="flex-1">
             <div className="flex items-center gap-2">
@@ -318,7 +318,7 @@ export function HandwrittenWorkspace({
                 onClick={() => setActiveTab('upload')}
                 className={`flex items-center gap-1 px-3 py-1.5 rounded-lg font-semibold transition-colors cursor-pointer ${
                   activeTab === 'upload'
-                    ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+                    ? 'bg-card text-slate-900 dark:text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
                 }`}
               >
@@ -330,7 +330,7 @@ export function HandwrittenWorkspace({
                 onClick={() => setActiveTab('draw')}
                 className={`flex items-center gap-1 px-3 py-1.5 rounded-lg font-semibold transition-colors cursor-pointer ${
                   activeTab === 'draw'
-                    ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+                    ? 'bg-card text-slate-900 dark:text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
                 }`}
               >
@@ -395,7 +395,7 @@ export function HandwrittenWorkspace({
 
                 {!readOnly && (
                   <div className="flex items-center gap-3 text-xs">
-                    <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
+                    <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-card text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
                       <Upload className="w-3.5 h-3.5 text-blue-500" />
                       <span>Replace This Page</span>
                       <input
@@ -476,7 +476,7 @@ export function HandwrittenWorkspace({
                 type="button"
                 disabled={submitting || isUploading}
                 onClick={() => onSaveDraft(pages, inputNotes)}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer disabled:opacity-50"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-card text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer disabled:opacity-50"
               >
                 <Save className="w-3.5 h-3.5 text-blue-500" />
                 <span>Save Draft (In Progress)</span>

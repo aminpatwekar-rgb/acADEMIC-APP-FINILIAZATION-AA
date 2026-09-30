@@ -52,7 +52,7 @@ export function NotebookPage() {
               onClick={() => setSelectedTemplate('math')}
               className={`px-2.5 py-1 rounded-lg font-medium transition-colors cursor-pointer ${
                 selectedTemplate === 'math'
-                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+                  ? 'bg-card text-slate-900 dark:text-white shadow-xs'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -63,7 +63,7 @@ export function NotebookPage() {
               onClick={() => setSelectedTemplate('notes')}
               className={`px-2.5 py-1 rounded-lg font-medium transition-colors cursor-pointer ${
                 selectedTemplate === 'notes'
-                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+                  ? 'bg-card text-slate-900 dark:text-white shadow-xs'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -74,7 +74,7 @@ export function NotebookPage() {
               onClick={() => setSelectedTemplate('physics')}
               className={`px-2.5 py-1 rounded-lg font-medium transition-colors cursor-pointer ${
                 selectedTemplate === 'physics'
-                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+                  ? 'bg-card text-slate-900 dark:text-white shadow-xs'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -86,7 +86,7 @@ export function NotebookPage() {
 
       {/* Feature Highlights Banner */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-        <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-start gap-3 shadow-xs">
+        <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-card flex items-start gap-3 shadow-xs">
           <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
             <PenTool className="w-4 h-4" />
           </div>
@@ -96,7 +96,7 @@ export function NotebookPage() {
           </div>
         </div>
 
-        <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-start gap-3 shadow-xs">
+        <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-card flex items-start gap-3 shadow-xs">
           <div className="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
             <Sparkles className="w-4 h-4" />
           </div>
@@ -106,7 +106,7 @@ export function NotebookPage() {
           </div>
         </div>
 
-        <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-start gap-3 shadow-xs">
+        <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-card flex items-start gap-3 shadow-xs">
           <div className="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
             <Layers className="w-4 h-4" />
           </div>
@@ -118,7 +118,7 @@ export function NotebookPage() {
       </div>
 
       {/* Embedded Notebook Canvas */}
-      <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-2 sm:p-4 shadow-sm">
+      <div className="bg-card rounded-2xl border border-slate-200 dark:border-slate-800 p-2 sm:p-4 shadow-sm">
         <NotebookCanvas
           assignmentTitle={
             selectedTemplate === 'math'
@@ -134,7 +134,7 @@ export function NotebookPage() {
       </div>
 
       {/* Formula Reference Helper */}
-      <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 shadow-xs">
+      <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card space-y-3 shadow-xs">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sigma className="w-4 h-4 text-brand dark:text-blue-400" />

@@ -188,7 +188,7 @@ export function Breadcrumbs({
         <button
           type="button"
           onClick={() => onNavigate(parentItem.path!)}
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/60 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-800 shadow-2xs transition-all focus:outline-none focus:ring-2 focus:ring-amber-500"
+          className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 bg-card hover:bg-slate-50 dark:hover:bg-slate-800/60 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-800 shadow-2xs transition-all focus:outline-none focus:ring-2 focus:ring-amber-500"
           aria-label={`Back to ${parentItem.label}`}
         >
           <ArrowLeft className="w-3 h-3 text-slate-400" />

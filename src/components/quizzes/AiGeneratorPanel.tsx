@@ -256,7 +256,7 @@ export function AiGeneratorPanel({
 
       {/* DASHED DRAG & DROP UPLOAD BOX (MATCHING SCREENSHOT 2) */}
       <div className="p-8 sm:p-10 rounded-2xl border-2 border-dashed border-slate-200 dark:border-slate-800 text-center space-y-3 bg-slate-50/50 dark:bg-slate-950/40 transition-colors hover:border-slate-300 dark:hover:border-slate-700">
-        <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center mx-auto shadow-2xs">
+        <div className="w-10 h-10 rounded-xl bg-card border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center mx-auto shadow-2xs">
           <UploadCloud className="w-5 h-5" />
         </div>
 
@@ -486,7 +486,7 @@ export function AiGeneratorPanel({
               return (
                 <div
                   key={q.id}
-                  className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 relative overflow-hidden shadow-2xs"
+                  className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card space-y-3 relative overflow-hidden shadow-2xs"
                 >
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-2 flex-wrap">

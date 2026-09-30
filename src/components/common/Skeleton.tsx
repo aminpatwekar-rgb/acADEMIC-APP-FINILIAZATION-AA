@@ -62,7 +62,7 @@ export function SkeletonText({
 export function SkeletonCard({ className = '' }: { className?: string }) {
   return (
     <div
-      className={`p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs space-y-4 ${className}`}
+      className={`p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-xs space-y-4 ${className}`}
     >
       <div className="flex items-center justify-between">
         <Skeleton variant="rounded" className="w-16 h-6" />
@@ -111,7 +111,7 @@ export function SkeletonQuizEditor() {
       </div>
 
       {/* Question Card Box */}
-      <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-4">
+      <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Skeleton variant="circular" className="w-7 h-7" />
@@ -160,7 +160,7 @@ export function SkeletonAuthLoading() {
 
 export function SkeletonTable({ rows = 5, cols = 4 }: { rows?: number; cols?: number }) {
   return (
-    <div className="w-full border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-white dark:bg-slate-900 animate-pulse">
+    <div className="w-full border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-card animate-pulse">
       <div className="p-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950 flex items-center justify-between">
         <Skeleton variant="rounded" className="w-36 h-5" />
         <Skeleton variant="rounded" className="w-24 h-5" />

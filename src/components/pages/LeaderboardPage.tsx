@@ -275,7 +275,7 @@ export function LeaderboardPage() {
             onClick={() => setViewScope('overall')}
             className={`px-4 py-1.5 rounded-xl transition-all cursor-pointer ${
               viewScope === 'overall'
-                ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs font-bold'
+                ? 'bg-card text-slate-900 dark:text-white shadow-xs font-bold'
                 : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
             }`}
           >
@@ -286,7 +286,7 @@ export function LeaderboardPage() {
             onClick={() => setViewScope('class')}
             className={`px-4 py-1.5 rounded-xl transition-all cursor-pointer ${
               viewScope === 'class'
-                ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs font-bold'
+                ? 'bg-card text-slate-900 dark:text-white shadow-xs font-bold'
                 : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
             }`}
           >
@@ -300,7 +300,7 @@ export function LeaderboardPage() {
             <select
               value={selectedClassId}
               onChange={e => setSelectedClassId(e.target.value)}
-              className="px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs font-semibold text-slate-800 dark:text-slate-200"
+              className="px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-card text-xs font-semibold text-slate-800 dark:text-slate-200"
             >
               <option value="all">All Classes</option>
               {classes.map(c => (
@@ -318,7 +318,7 @@ export function LeaderboardPage() {
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               placeholder="Search scholar..."
-              className="w-full pl-8.5 pr-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs text-slate-900 dark:text-white focus:outline-none"
+              className="w-full pl-8.5 pr-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-card text-xs text-slate-900 dark:text-white focus:outline-none"
             />
           </div>
         </div>
@@ -328,7 +328,7 @@ export function LeaderboardPage() {
       {computedScholars.length >= 3 && !searchQuery && (
         <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-2">
           {/* 2nd Place */}
-          <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center text-center shadow-2xs space-y-2">
+          <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card flex flex-col items-center text-center shadow-2xs space-y-2">
             <div className="w-7 h-7 rounded-full bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-200 font-mono font-bold text-xs flex items-center justify-center">
               #2
             </div>
@@ -364,7 +364,7 @@ export function LeaderboardPage() {
           </div>
 
           {/* 3rd Place */}
-          <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center text-center shadow-2xs space-y-2">
+          <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card flex flex-col items-center text-center shadow-2xs space-y-2">
             <div className="w-7 h-7 rounded-full bg-amber-700/30 text-amber-900 dark:text-amber-200 font-mono font-bold text-xs flex items-center justify-center">
               #3
             </div>
@@ -384,7 +384,7 @@ export function LeaderboardPage() {
       )}
 
       {/* LEADERBOARD TABLE */}
-      <div className="p-4 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs overflow-hidden">
+      <div className="p-4 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-2xs overflow-hidden">
         {computedScholars.length === 0 ? (
           <div className="py-12 text-center text-xs text-slate-400">
             No scholars found matching criteria.

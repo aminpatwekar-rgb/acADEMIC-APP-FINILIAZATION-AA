@@ -31,7 +31,7 @@ export function RetryState({
     <div
       role="region"
       aria-label={title}
-      className={`p-8 sm:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs text-center space-y-4 max-w-lg mx-auto my-6 animate-in fade-in duration-150 ${className}`}
+      className={`p-8 sm:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-2xs text-center space-y-4 max-w-lg mx-auto my-6 animate-in fade-in duration-150 ${className}`}
     >
       <div className={`w-14 h-14 rounded-2xl ${iconColor} flex items-center justify-center mx-auto shadow-inner`}>
         <Icon className="w-7 h-7" aria-hidden="true" />

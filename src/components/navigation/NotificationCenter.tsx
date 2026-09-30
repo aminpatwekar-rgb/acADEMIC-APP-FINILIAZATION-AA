@@ -119,7 +119,7 @@ export function NotificationCenter({ onNavigate }: NotificationCenterProps) {
 
       {/* DROPDOWN POPUP */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-80 sm:w-96 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+        <div className="absolute right-0 mt-2 w-80 sm:w-96 rounded-2xl bg-card border border-slate-200 dark:border-slate-800 shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
           {/* Header */}
           <div className="px-4 py-3 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -223,7 +223,7 @@ export function NotificationCenter({ onNavigate }: NotificationCenterProps) {
                   onClick={() => handleNotificationClick(n)}
                   className={`p-3 sm:p-3.5 flex items-start gap-3 transition-colors cursor-pointer relative group ${
                     n.isRead
-                      ? 'bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/50'
+                      ? 'bg-card hover:bg-slate-50 dark:hover:bg-slate-800/50'
                       : 'bg-blue-50/40 dark:bg-blue-950/20 hover:bg-blue-50/80 dark:hover:bg-blue-950/40'
                   }`}
                 >

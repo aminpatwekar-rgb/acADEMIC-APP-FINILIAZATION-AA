@@ -171,7 +171,7 @@ export function QuizAnalyticsPanel({
     <div className="space-y-6">
       {/* 1. TOP STATS CARDS */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-        <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs space-y-1">
+        <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-2xs space-y-1">
           <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
             AVERAGE SCORE
           </span>
@@ -183,7 +183,7 @@ export function QuizAnalyticsPanel({
           </div>
         </div>
 
-        <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs space-y-1">
+        <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-2xs space-y-1">
           <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
             COMPLETION RATE
           </span>
@@ -195,7 +195,7 @@ export function QuizAnalyticsPanel({
           </div>
         </div>
 
-        <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs space-y-1">
+        <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-2xs space-y-1">
           <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
             STUDENTS ATTEMPTED
           </span>
@@ -204,7 +204,7 @@ export function QuizAnalyticsPanel({
           </div>
         </div>
 
-        <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs space-y-1">
+        <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-2xs space-y-1">
           <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
             TOTAL ATTEMPTS
           </span>
@@ -215,7 +215,7 @@ export function QuizAnalyticsPanel({
       </div>
 
       {/* 2. ITEM DIFFICULTY & BREAKDOWN TABLE */}
-      <div className="p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs space-y-4">
+      <div className="p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-2xs space-y-4">
         <div>
           <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
             Question Performance & Difficulty Analysis
@@ -239,7 +239,7 @@ export function QuizAnalyticsPanel({
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div className="flex items-center gap-2.5">
-                      <span className="w-6 h-6 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold flex items-center justify-center">
+                      <span className="w-6 h-6 rounded-lg bg-card border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold flex items-center justify-center">
                         {qa.index}
                       </span>
                       <span className="text-xs font-semibold text-slate-900 dark:text-white line-clamp-1 max-w-md">
@@ -331,7 +331,7 @@ export function QuizAnalyticsPanel({
                               className={`p-2.5 rounded-xl border text-xs flex items-center justify-between ${
                                 isCorrect
                                   ? 'border-emerald-500/60 bg-emerald-50/40 dark:bg-emerald-950/30'
-                                  : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900'
+                                  : 'border-slate-200 dark:border-slate-800 bg-card'
                               }`}
                             >
                               <div className="flex items-center gap-2">
@@ -373,7 +373,7 @@ export function QuizAnalyticsPanel({
       </div>
 
       {/* 3. STUDENT PERFORMANCE LIST */}
-      <div className="p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs space-y-4">
+      <div className="p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card shadow-2xs space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">

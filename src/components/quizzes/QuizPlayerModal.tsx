@@ -431,7 +431,7 @@ export function QuizPlayerModal({
       aria-labelledby="quiz-modal-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/85 backdrop-blur-xs select-none animate-in fade-in duration-150"
     >
-      <div className="w-full max-w-4xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[96vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
+      <div className="w-full max-w-4xl bg-card rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[96vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
         {/* Warning Toast */}
         {latestWarning && (
           <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-rose-600 text-white text-xs font-semibold shadow-2xl animate-in slide-in-from-top-3 duration-200">
@@ -696,7 +696,7 @@ export function QuizPlayerModal({
                                 className={`w-5 h-5 rounded-md flex items-center justify-center border ${
                                   isSelected
                                     ? 'bg-purple-600 border-purple-600 text-white'
-                                    : 'border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900'
+                                    : 'border-slate-300 dark:border-slate-700 bg-card'
                                 }`}
                               >
                                 {isSelected && <Check className="w-3.5 h-3.5" />}
@@ -820,7 +820,7 @@ export function QuizPlayerModal({
                             ? 'ring-2 ring-blue-600 bg-blue-600 text-white shadow-xs'
                             : answered
                             ? 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800'
-                            : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-400'
+                            : 'bg-card text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-400'
                         }`}
                       >
                         {idx + 1}
@@ -839,7 +839,7 @@ export function QuizPlayerModal({
                     <span>Answered ({answeredTotal})</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900" />
+                    <span className="w-3 h-3 rounded border border-slate-300 dark:border-slate-700 bg-card" />
                     <span>Unanswered ({questions.length - answeredTotal})</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -866,7 +866,7 @@ export function QuizPlayerModal({
 
         {/* Bottom Navigation Buttons */}
         {attemptStatus === 'in_progress' && (
-          <div className="p-3.5 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between">
+          <div className="p-3.5 border-t border-slate-200 dark:border-slate-800 bg-card flex items-center justify-between">
             <button
               type="button"
               disabled={currentIdx === 0}
@@ -904,7 +904,7 @@ export function QuizPlayerModal({
         {/* Confirmation Modal */}
         {showConfirmSubmit && (
           <div className="fixed inset-0 z-60 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs animate-in fade-in duration-100">
-            <div className="w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl p-6 space-y-4 animate-in zoom-in-95 duration-100">
+            <div className="w-full max-w-md bg-card rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl p-6 space-y-4 animate-in zoom-in-95 duration-100">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center">
                   <AlertTriangle className="w-5 h-5" />

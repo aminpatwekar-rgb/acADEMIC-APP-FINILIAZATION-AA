@@ -217,7 +217,7 @@ export function GlobalSearchModal({ isOpen, onClose, onNavigate }: GlobalSearchM
 
   return (
     <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-2xs flex items-start justify-center p-4 pt-16 sm:pt-24 animate-in fade-in duration-150">
-      <div className="w-full max-w-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh] animate-in zoom-in-95 duration-150">
+      <div className="w-full max-w-2xl bg-card border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh] animate-in zoom-in-95 duration-150">
         {/* Search Input Bar */}
         <div className="flex items-center gap-3 px-5 py-3.5 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40">
           <Search className="w-5 h-5 text-slate-400 shrink-0" />

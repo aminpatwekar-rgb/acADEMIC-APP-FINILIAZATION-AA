@@ -370,7 +370,7 @@ export function QuizEditorModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-xs animate-in fade-in duration-150">
-      <div className="w-full max-w-4xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[94vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
+      <div className="w-full max-w-4xl bg-card rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-h-[94vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
         {/* Modal Header */}
         <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-950">
           <div className="flex items-center gap-3">
@@ -394,7 +394,7 @@ export function QuizEditorModal({
                 onClick={() => setActiveTab('questions')}
                 className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
                   activeTab === 'questions'
-                    ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+                    ? 'bg-card text-slate-900 dark:text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400'
                 }`}
               >
@@ -405,7 +405,7 @@ export function QuizEditorModal({
                 onClick={() => setActiveTab('settings')}
                 className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
                   activeTab === 'settings'
-                    ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+                    ? 'bg-card text-slate-900 dark:text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400'
                 }`}
               >
@@ -501,42 +501,42 @@ export function QuizEditorModal({
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('mcq')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-card border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + MCQ
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('multi_select')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-card border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + Multi-Select
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('true_false')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-card border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + True/False
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('fill_blank')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-card border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + Fill Blank
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('short_answer')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-card border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + Short Answer
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddQuestion('essay')}
-                    className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
+                    className="px-2.5 py-1 rounded-lg bg-card border border-slate-200 dark:border-slate-700 font-semibold hover:border-blue-500 cursor-pointer"
                   >
                     + Essay
                   </button>
@@ -548,7 +548,7 @@ export function QuizEditorModal({
                 {questions.map((q, qIdx) => (
                   <div
                     key={q.id}
-                    className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-4 relative"
+                    className="p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-card/60 shadow-xs space-y-4 relative"
                   >
                     {/* Question Header & Controls */}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -936,7 +936,7 @@ export function QuizEditorModal({
                       required
                       value={durationMinutes}
                       onChange={e => setDurationMinutes(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
+                      className="w-full px-3 py-2 rounded-xl bg-card border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
                     />
                     <p className="text-[10px] text-slate-500 mt-1">Timer auto-submits when expired.</p>
                   </div>
@@ -948,7 +948,7 @@ export function QuizEditorModal({
                     <select
                       value={maxAttempts}
                       onChange={e => setMaxAttempts(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white font-medium"
+                      className="w-full px-3 py-2 rounded-xl bg-card border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white font-medium"
                     >
                       <option value="1">1 Attempt (Strict Exam)</option>
                       <option value="2">2 Attempts (Best Score)</option>
@@ -988,7 +988,7 @@ export function QuizEditorModal({
                           type="datetime-local"
                           value={opensAt}
                           onChange={e => setOpensAt(e.target.value)}
-                          className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
+                          className="w-full px-3 py-2 rounded-xl bg-card border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
                         />
                       </div>
                       <div>
@@ -999,7 +999,7 @@ export function QuizEditorModal({
                           type="datetime-local"
                           value={closesAt}
                           onChange={e => setClosesAt(e.target.value)}
-                          className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
+                          className="w-full px-3 py-2 rounded-xl bg-card border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
                         />
                       </div>
                     </div>
@@ -1076,7 +1076,7 @@ export function QuizEditorModal({
                         <select
                           value={maxViolations}
                           onChange={e => setMaxViolations(e.target.value)}
-                          className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
+                          className="w-full px-3 py-2 rounded-xl bg-card border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
                         >
                           <option value="1">1 Violation (Zero Tolerance)</option>
                           <option value="2">2 Violations</option>
@@ -1099,7 +1099,7 @@ export function QuizEditorModal({
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2">
-                      <label className="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 cursor-pointer">
+                      <label className="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-card cursor-pointer">
                         <input
                           type="checkbox"
                           checked={trackVisibility}
@@ -1111,7 +1111,7 @@ export function QuizEditorModal({
                         </span>
                       </label>
 
-                      <label className="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 cursor-pointer">
+                      <label className="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-card cursor-pointer">
                         <input
                           type="checkbox"
                           checked={blockCopyPaste}
@@ -1123,7 +1123,7 @@ export function QuizEditorModal({
                         </span>
                       </label>
 
-                      <label className="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 cursor-pointer">
+                      <label className="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-card cursor-pointer">
                         <input
                           type="checkbox"
                           checked={blockRightClick}

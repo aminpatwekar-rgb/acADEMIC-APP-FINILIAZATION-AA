@@ -127,7 +127,7 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
             }}
             className={`flex-1 py-1.5 rounded-lg transition-all text-center cursor-pointer ${
               mode === 'signin'
-                ? 'bg-white dark:bg-slate-900 text-slate-950 dark:text-white shadow-xs'
+                ? 'bg-card text-slate-950 dark:text-white shadow-xs'
                 : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
             }`}
           >
@@ -141,7 +141,7 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
             }}
             className={`flex-1 py-1.5 rounded-lg transition-all text-center cursor-pointer ${
               mode === 'signup'
-                ? 'bg-white dark:bg-slate-900 text-slate-950 dark:text-white shadow-xs'
+                ? 'bg-card text-slate-950 dark:text-white shadow-xs'
                 : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
             }`}
           >
@@ -190,7 +190,7 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
             <div className="w-full border-t border-slate-200 dark:border-slate-800" />
           </div>
           <div className="relative flex justify-center text-xs">
-            <span className="bg-white dark:bg-slate-900 px-3 text-slate-400">or with email</span>
+            <span className="bg-card px-3 text-slate-400">or with email</span>
           </div>
         </div>
 
@@ -333,7 +333,7 @@ export function LoginPage({ onNavigate, initialMode = 'signin' }: LoginPageProps
       {/* Forgot Password Modal */}
       {showResetModal && (
         <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-2xs flex items-center justify-center p-4">
-          <div className="w-full max-w-sm bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+          <div className="w-full max-w-sm bg-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
             <h3 className="font-bold text-slate-950 dark:text-white text-base">Reset your password</h3>
             <p className="text-xs text-slate-500 dark:text-slate-400">
               Enter your account email and we&apos;ll send you a password recovery link.
